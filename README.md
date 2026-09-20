@@ -3,10 +3,10 @@
 # 🥷 SploitAgent
 
 **Security skills for AI agents.**
-160 offensive + defensive techniques your AI agent loads on demand to work an **authorized** target — from recon to report.
+161 offensive + defensive techniques your AI agent loads on demand to work an **authorized** target — from recon to report.
 
 [![CI](https://github.com/NoorQureshi/SploitAgent/actions/workflows/ci.yml/badge.svg)](https://github.com/NoorQureshi/SploitAgent/actions/workflows/ci.yml)
-![skills](https://img.shields.io/badge/skills-160-334155?style=flat-square)
+![skills](https://img.shields.io/badge/skills-161-334155?style=flat-square)
 ![domains](https://img.shields.io/badge/domains-20-334155?style=flat-square)
 ![mapped](https://img.shields.io/badge/mapped-OWASP%20%C2%B7%20MITRE%20ATT%26CK-334155?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-334155?style=flat-square)
@@ -31,7 +31,7 @@
 
 ## What it is
 
-Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 160 short "how to do this one technique" pages the agent flips to when it needs one.
+Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 161 short "how to do this one technique" pages the agent flips to when it needs one.
 
 You describe the task in plain English → it picks the right page, runs it, proves the bug, and writes it up → and it never touches anything outside the scope you set.
 
@@ -149,7 +149,7 @@ Under Claude Code a bundled hook records commands automatically, so the console 
 
 ## What's inside
 
-**160 skills across 20 domains.** [🔎 Search them all](https://noorqureshi.github.io/SploitAgent/catalog.html) · or browse [CATALOG.md](CATALOG.md).
+**161 skills across 20 domains.** [🔎 Search them all](https://noorqureshi.github.io/SploitAgent/catalog.html) · or browse [CATALOG.md](CATALOG.md).
 
 `web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
 
@@ -158,7 +158,7 @@ Under Claude Code a bundled hook records commands automatically, so the console 
 
 | Domain | # | Covers |
 |---|:--:|---|
-| [`web`](skills/web) | 43 | XSS, SQLi, SSRF, SSTI, IDOR, XXE, CSRF, CORS, LFI, command injection, deserialization, OAuth, SAML, request smuggling, prototype pollution, cache poisoning, cache deception, host-header, clickjacking, CSP bypass, DOM clobbering, HTTP parameter pollution, postMessage, WebSocket, race conditions, business logic, file upload, JWT, 2FA/MFA bypass, account takeover, dependency confusion, client-side signing reversal, authenticated session handling, Python sandbox escape, Cypher injection, JDBC/connection-string RCE |
+| [`web`](skills/web) | 44 | XSS, SQLi, SSRF, SSTI, IDOR, XXE, CSRF, CORS, LFI, command injection, deserialization, OAuth, SAML, request smuggling, prototype pollution, cache poisoning, cache deception, host-header, clickjacking, CSP bypass, DOM clobbering, HTTP parameter pollution, postMessage, WebSocket, race conditions, business logic, file upload, JWT, 2FA/MFA bypass, account takeover, dependency confusion, client-side signing reversal, authenticated session handling, Python sandbox escape, Cypher injection, JDBC/connection-string RCE |
 | [`ai-ml`](skills/ai-ml) | 9 | Prompt injection, jailbreaks, RAG poisoning, model extraction, agent/tool and MCP abuse, insecure output handling, supply chain, unbounded consumption |
 | [`cloud`](skills/cloud) | 9 | IMDS credential theft, object-storage exposure, Kubernetes, container escape, exposed Docker/daemon API abuse, IAM privilege escalation, registries, GCP, Azure / Entra ID |
 | [`api`](skills/api) | 9 | BOLA/BFLA, GraphQL, gRPC, mass assignment, authentication attacks, fuzzing, version drift, NoSQL injection |

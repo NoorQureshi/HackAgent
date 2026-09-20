@@ -5,7 +5,7 @@ security skills. This file tells you how to use it. Keep it short in your head: 
 pick the skill that matches the task → follow it → prove impact → report.**
 
 ## What you have here
-- `skills/<domain>/<slug>/SKILL.md` — 160 trigger-loaded skills across 20 domains (offensive **and**
+- `skills/<domain>/<slug>/SKILL.md` — 161 trigger-loaded skills across 20 domains (offensive **and**
   defensive). Each has a `description:` that says *when* to load it, and a body that teaches the mechanism.
 - `CATALOG.md` — the full, browsable index of every skill.
 - `COVERAGE.md` — how skills map to OWASP / MITRE ATT&CK / CWE.

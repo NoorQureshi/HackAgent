@@ -1,5 +1,5 @@
 {
- "count": 160,
+ "count": 161,
  "generated_by": "tools/catalog.py",
  "skills": [
   {
@@ -2284,6 +2284,22 @@
     "CWE-601"
    ],
    "path": "skills/web/web-oauth"
+  },
+  {
+   "name": "web-open-graph-ssrf",
+   "domain": "web",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "SSRF through link-preview / URL-unfurl / oEmbed features.",
+   "tags": [
+    "A10:2021-SSRF",
+    "CWE-918"
+   ],
+   "path": "skills/web/web-open-graph-ssrf"
   },
   {
    "name": "web-open-redirect",

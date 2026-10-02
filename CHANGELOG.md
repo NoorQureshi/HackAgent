@@ -7,6 +7,10 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **Detection companions** — the 20 most prominent attack skills (web, API, cloud, AD,
+  network) now ship a `detection.md` next to the `SKILL.md`: the defender's view of the
+  technique, data sources, a ready Sigma rule, behavioral signals, and false-positive
+  tuning. Every attack doubles as a detection lab.
 - **`bench/` benchmark harness** — proves with numbers that an agent + SploitAgent
   skills outperforms the same agent without them. Runs Claude Code headless against
   a local OWASP Juice Shop target in two arms (skills vs baseline), scores from the

@@ -38,7 +38,7 @@ Same library, five ways in. Everything below runs in your terminal — install o
 | **CTF player** | "help me solve this challenge" (web / pwn / crypto / rev) | loads the technique page for the category (`web-*`, `exploit-*`, `cryptography-*`, `reverse-engineering-*`) and works the full variation matrix instead of quitting after one failed payload |
 | **Pentester** | "assess this app per our signed scope" | plans with `tradecraft-attack-scenarios`, works the checklist as a **coverage map** — every class marked proved, ruled out (with what was tried), or skipped — then `reporting-pentest-report` writes it up |
 | **Red teamer** | "I have a foothold on this AD domain (authorized)" | `privesc-*` to escalate, `ad-*` (Kerberoasting, ADCS, delegation, DACL abuse) to move, `network-pivoting-tunneling` to spread, `tradecraft-attack-path-mapping` to see the whole route |
-| **Blue team / defender** | "write detections for these attacks" | `defense-*` covers detection engineering, Sigma rules, log queries, IR triage, hardening — and `defense-purple-team` turns **any of the 161 attack skills** into a detection test |
+| **Blue team / defender** | "write detections for these attacks" | `defense-*` covers detection engineering, Sigma rules, log queries, IR triage, hardening — `defense-purple-team` turns any attack skill into a detection test, and the top attack skills ship with `detection.md` companions (Sigma rule + log sources + false-positive tuning) |
 
 ## Quickstart
 

@@ -22,6 +22,9 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 - `sploit version`.
 
 ### Changed
+- README restructured around five persona paths (bug bounty, CTF, pentest, red team,
+  blue team); the `sploit watch` console is demoted to an optional extra — the terminal
+  is the workflow.
 - Console redesign: cleaner layout, live diff-based updates, severity summary.
 - README and docs rewritten in plainer language with a glossary and real screenshots.
 

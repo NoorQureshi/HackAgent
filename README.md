@@ -28,6 +28,18 @@ Your AI agent is a strong generalist, but it doesn't know the *exact method* for
 
 You describe the task in plain English → it picks the right page, runs it, proves the bug, and writes it up → and it never touches anything outside the scope you set.
 
+## Pick your door
+
+Same library, five ways in. Everything below runs in your terminal — install once (Quickstart), then talk to your agent.
+
+| You are… | You type… | What the agent does |
+|---|---|---|
+| **Bug bounty hunter** | "target.com is in scope on my program — assess it" | `tradecraft-scope-roe` confirms the boundary → `recon-*` maps the surface → the surface checklist drives coverage → confirmed bugs are written up submission-ready with `reporting-bug-bounty-writeup`, and `tradecraft-duplicate-avoidance` warns you before you burn time on known-dup classes |
+| **CTF player** | "help me solve this challenge" (web / pwn / crypto / rev) | loads the technique page for the category (`web-*`, `exploit-*`, `cryptography-*`, `reverse-engineering-*`) and works the full variation matrix instead of quitting after one failed payload |
+| **Pentester** | "assess this app per our signed scope" | plans with `tradecraft-attack-scenarios`, works the checklist as a **coverage map** — every class marked proved, ruled out (with what was tried), or skipped — then `reporting-pentest-report` writes it up |
+| **Red teamer** | "I have a foothold on this AD domain (authorized)" | `privesc-*` to escalate, `ad-*` (Kerberoasting, ADCS, delegation, DACL abuse) to move, `network-pivoting-tunneling` to spread, `tradecraft-attack-path-mapping` to see the whole route |
+| **Blue team / defender** | "write detections for these attacks" | `defense-*` covers detection engineering, Sigma rules, log queries, IR triage, hardening — and `defense-purple-team` turns **any of the 161 attack skills** into a detection test |
+
 ## Quickstart
 
 > **Need:** an AI agent — [Claude Code](https://claude.com/claude-code), [OpenCode](https://opencode.ai), Codex, Gemini, or your own API script — plus `git` and a terminal. `python3` only for the optional console.
@@ -48,7 +60,7 @@ $ sploit watch                       # runs in the background · stop: sploit wa
 # 4 · open your agent in the workspace and describe the task   ↓ (Claude Code / OpenCode below)
 ```
 
-**How the pieces fit:** your **terminal** runs the agent; **`sploit watch`** shows its plan and live progress in your **browser**; everything lands in the **workspace folder** (`scope.txt · plan.md · notes.md · findings/`) — the source of truth, and what the console reads. Same flow with any agent; none of it is Claude-specific.
+**How the pieces fit:** your **terminal** runs the agent; everything it decides, tries, and proves lands in the **workspace folder** (`scope.txt · plan.md · notes.md · findings/`) — the source of truth you can read, diff, and hand to a client. Same flow with any agent; none of it is Claude-specific.
 
 ## Run it with your agent
 
@@ -100,9 +112,10 @@ No install step: OpenCode reads `AGENTS.md` and the `./skills` folder in the wor
 Any agent works: point it at the workspace with read access to `AGENTS.md` and `./skills`, or paste a single `SKILL.md` into the chat for a one-off. Nothing to wire up.
 </details>
 
-## Watch it work — the console
+<details>
+<summary><b>Optional: watch the agent live in your browser (<code>sploit watch</code>)</b></summary>
 
-`sploit watch` opens a small **read-only** dashboard at `http://127.0.0.1:8787` (in the background, so your terminal stays free). It just reads the workspace on disk, so it works the same whichever agent you run.
+The terminal is the whole workflow — but if you want a live, **read-only** view of what the agent is doing, `sploit watch` opens a small dashboard at `http://127.0.0.1:8787`. It just reads the workspace on disk, so it works the same whichever agent you run.
 
 <p align="center">
   <img src="docs/screenshots/attack-map.png" width="820"
@@ -120,6 +133,7 @@ Any agent works: point it at the workspace with read access to `AGENTS.md` and `
 - **Findings** — each confirmed issue rendered and ready to submit · **Activity** — a live, filterable timeline with the reasoning · **Plan / Notes** — the strategy and running log.
 
 Under Claude Code a bundled hook records commands automatically, so the console fills in even if the agent doesn't log by hand.
+</details>
 
 ## Ask it anything
 

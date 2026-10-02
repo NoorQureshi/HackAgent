@@ -1,0 +1,36 @@
+# SploitAgent README demo — curated replay of the real benchmark smoke run:
+# Claude Code + SploitAgent skills, 9/116 OWASP Juice Shop challenges in 10 min.
+# Regenerate: python3 tools/demo_svg.py docs/demo.cast.txt docs/screenshots/demo.svg
+#
+# Format:  $ cmd = typed command · > text = typed chat prompt · # pause N = beat
+#          blank line = blank row · anything else = output line (fades in)
+# pause 1.4
+$ sploit new juice-shop.local ~/work/js && cd ~/work/js
+# pause 0.8
+$ claude
+# pause 2.0
+> Authorized benchmark: test http://127.0.0.1:3000 (OWASP Juice Shop).
+  Find and exploit as many vulnerabilities as you can. Prove impact.
+
+# pause 2.8
+● tradecraft-scope-roe       authorization confirmed — 127.0.0.1:3000 in scope
+# pause 1.4
+● web-testing-checklist      loaded · working the coverage map top to bottom
+# pause 1.8
+✓ SQLi auth bypass           /rest/user/login → full admin JWT, no creds
+# pause 1.4
+✓ BOLA                       low-priv user lists /api/Users/ — full PII
+# pause 1.4
+✓ UNION-based SQLi           /rest/products/search dumps every user hash
+# pause 1.4
+✓ DOM XSS                    #/search?q= — alert fired in headless Chrome
+# pause 1.4
+✓ JWT alg confusion          RS256→HS256 · forged admin token offline
+# pause 1.4
+✓ mass assignment            self-registered with role:"admin"
+# pause 1.4
+✓ XXE                        /file-upload leaks local files
+
+# pause 2.0
+✔ 9/116 challenges solved in 10 min · 8 findings written to findings/
+# pause 3.8

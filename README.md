@@ -15,32 +15,18 @@
 
 </div>
 
-```console
-~/work/acme $ claude
+<p align="center">
+  <img src="docs/screenshots/demo.svg" width="820"
+       alt="Terminal replay: Claude Code with SploitAgent skills solves 9 of 116 OWASP Juice Shop challenges in 10 minutes">
+</p>
 
-> Start an authorized assessment of acme.com. Confirm scope, then recon.
-
-  ● tradecraft-scope-roe             scope confirmed · *.acme.tld (in scope)
-  ● recon-techstack-fingerprinting   Django REST Framework · Cloudflare WAF
-  ● api-bola                         probing object references on /api/v1/orders
-      ✓ GET /api/v1/orders/1044  (account B's token)  →  returns account A's order
-  ● web-idor                         confirmed cross-tenant read with 2 accounts
-  ● reporting-triage-validation      CVSS 8.1 (High) · reproduced from a clean session
-  ✔ wrote findings/idor-orders.md
-```
+**Benchmarked, not just claimed.** That replay is a real run: against OWASP Juice Shop (116 challenges, running locally), an agent with these skills solved **9 challenges in 10 minutes** — SQLi auth bypass, UNION credential dump, XXE, JWT algorithm confusion, BOLA — each with a written finding. Scoring comes from the target's own solve log, never from what the agent claims. Full A/B (skills vs none) and how to reproduce it yourself: [bench/RESULTS.md](bench/RESULTS.md).
 
 ## What it is
 
 Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 161 short "how to do this one technique" pages the agent flips to when it needs one.
 
 You describe the task in plain English → it picks the right page, runs it, proves the bug, and writes it up → and it never touches anything outside the scope you set.
-
-| Word | What it means |
-|---|---|
-| **skill** | one Markdown file that teaches one technique |
-| **workspace** | a folder for one target — holds your scope, notes, and findings |
-| **scope** | the targets you're allowed to test — the hard boundary the agent won't cross |
-| **console** | the optional local page (`sploit watch`) that shows what the agent is doing |
 
 ## Quickstart
 
@@ -134,12 +120,6 @@ Any agent works: point it at the workspace with read access to `AGENTS.md` and `
 - **Findings** — each confirmed issue rendered and ready to submit · **Activity** — a live, filterable timeline with the reasoning · **Plan / Notes** — the strategy and running log.
 
 Under Claude Code a bundled hook records commands automatically, so the console fills in even if the agent doesn't log by hand.
-
-## Proven, not promised
-
-Does the binder actually help? We benchmark it: same agent, same model, same prompt, same target — OWASP Juice Shop (116 challenges) running locally — once with the skills wired in, once without. Scoring comes from the target's own solve log, never from what the agent claims.
-
-First smoke run (skills arm, 10-minute cap): **9 of 116 challenges solved**, each with a written finding — SQLi login bypass, UNION-based credential dump, XXE file disclosure, mass-assignment admin registration, BOLA. The full A/B table lives in [bench/RESULTS.md](bench/RESULTS.md); methodology and how to reproduce it yourself: [bench/README.md](bench/README.md).
 
 ## Ask it anything
 

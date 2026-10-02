@@ -8,10 +8,10 @@ ok(){ printf '  \033[32m✓\033[0m %s\n' "$1"; }
 
 echo "SploitAgent — local checks"
 
-python3 -m py_compile tools/catalog.py tools/console/server.py tools/hooks/*.py
+python3 -m py_compile tools/catalog.py tools/console/server.py tools/hooks/*.py bench/*.py
 ok "python files compile"
 
-bash -n sploit install.sh
+bash -n sploit install.sh bench/*.sh
 ok "shell syntax"
 
 if command -v shellcheck >/dev/null 2>&1; then

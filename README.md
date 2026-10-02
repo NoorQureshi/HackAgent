@@ -135,6 +135,12 @@ Any agent works: point it at the workspace with read access to `AGENTS.md` and `
 
 Under Claude Code a bundled hook records commands automatically, so the console fills in even if the agent doesn't log by hand.
 
+## Proven, not promised
+
+Does the binder actually help? We benchmark it: same agent, same model, same prompt, same target — OWASP Juice Shop (116 challenges) running locally — once with the skills wired in, once without. Scoring comes from the target's own solve log, never from what the agent claims.
+
+First smoke run (skills arm, 10-minute cap): **9 of 116 challenges solved**, each with a written finding — SQLi login bypass, UNION-based credential dump, XXE file disclosure, mass-assignment admin registration, BOLA. The full A/B table lives in [bench/RESULTS.md](bench/RESULTS.md); methodology and how to reproduce it yourself: [bench/README.md](bench/README.md).
+
 ## Ask it anything
 
 | You type… | The agent loads |

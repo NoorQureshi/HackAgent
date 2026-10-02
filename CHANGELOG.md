@@ -7,6 +7,11 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **`bench/` benchmark harness** — proves with numbers that an agent + SploitAgent
+  skills outperforms the same agent without them. Runs Claude Code headless against
+  a local OWASP Juice Shop target in two arms (skills vs baseline), scores from the
+  target's own solve log, and publishes `bench/RESULTS.md`. `python3 bench/run.py
+  setup|run|report`; see `bench/README.md`.
 - **Attack Map** in the `sploit watch` console — reconstructs an engagement as a
   scope → surface → leads decision graph (status, reasoning, steps, linked findings).
 - **Notes** tab in the console; the finding drawer renders full Markdown (code, tables).

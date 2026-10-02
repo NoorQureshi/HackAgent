@@ -16,6 +16,7 @@ BASE="$(pwd)/.targets/juice-shop"
 APP="$BASE/app"
 LOG="$BASE/target.log"
 PIDF="$BASE/target.pid"
+ZIP="$BASE/app.zip"
 URL="http://127.0.0.1:3000"
 NODE_RUNTIME="${BENCH_NODE_RUNTIME:-node@22}"
 
@@ -46,12 +47,12 @@ do_up(){
     echo $! >"$PIDF"
   )
   local i
-  for i in $(seq 1 90); do
+  for i in $(seq 1 300); do
     is_up && { echo "up → $URL (log: $LOG)"; return 0; }
     kill -0 "$(cat "$PIDF")" 2>/dev/null || { echo "target died on startup — last log lines:" >&2; tail -n 15 "$LOG" >&2; exit 1; }
     sleep 1
   done
-  echo "target did not come up within 90s — see $LOG" >&2
+  echo "target did not come up within 300s — see $LOG" >&2
   exit 1
 }
 
@@ -72,6 +73,23 @@ do_down(){
   for _ in $(seq 1 15); do is_up || break; sleep 1; done
   rm -f "$PIDF"
   echo "down"
+}
+
+do_reset(){
+  do_down >/dev/null
+  if [ -f "$ZIP" ]; then
+    # restore a pristine copy — trials must not inherit state a previous agent poisoned
+    local tmp inner n
+    tmp="$(mktemp -d "$BASE/reextract.XXXXXX")"
+    unzip -qq "$ZIP" -d "$tmp"
+    rm -rf "$APP"
+    n="$(find "$tmp" -mindepth 1 -maxdepth 1 | wc -l | tr -d ' ')"
+    inner="$(find "$tmp" -mindepth 1 -maxdepth 1 | head -1)"
+    if [ "$n" -eq 1 ] && [ -d "$inner" ]; then mv "$inner" "$APP"; rm -rf "$tmp"; else mv "$tmp" "$APP"; fi
+  else
+    rm -f "$APP/data/juiceshop.sqlite"   # no cached zip — at least force a fresh database
+  fi
+  do_up
 }
 
 do_solved(){
@@ -101,7 +119,7 @@ cmd="${1:-}"
 case "$cmd" in
   up)     do_up ;;
   down)   do_down ;;
-  reset)  do_down >/dev/null; do_up ;;
+  reset)  do_reset ;;
   status) if is_up; then echo "up"; else echo "down"; fi ;;
   solved) do_solved ;;
   count)  do_count ;;

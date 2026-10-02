@@ -55,7 +55,10 @@ def sh(cmd, **kw):
 
 
 def adapter(sub):
-    return sh(["bash", ADAPTER, sub])
+    try:
+        return sh(["bash", ADAPTER, sub])
+    except subprocess.CalledProcessError as e:
+        sys.exit(f"target adapter '{sub}' failed:\n{e.stderr.strip()}")
 
 
 # --- setup ---------------------------------------------------------------------
@@ -82,6 +85,7 @@ def cmd_setup(_args):
     entries = [e for e in os.listdir(tmp) if e != asset["name"]]
     root = os.path.join(tmp, entries[0]) if len(entries) == 1 else tmp
     shutil.move(root, app)
+    shutil.move(zippath, os.path.join(TARGET_DIR, "app.zip"))  # kept for pristine resets
     shutil.rmtree(tmp, ignore_errors=True)
     with open(os.path.join(TARGET_DIR, "VERSION"), "w") as f:
         f.write(JUICE_SHOP_TAG + "\n")

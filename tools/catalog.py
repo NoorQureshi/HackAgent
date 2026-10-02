@@ -250,7 +250,7 @@ def cmd_coverage():
 
 # Files that hardcode the skill count(s) in prose/markup. The stamper keeps them
 # in sync with the actual library so the numbers can never go stale (see cmd_stamp).
-STAMP_FILES = ["README.md", "AGENTS.md", "docs/index.html", "docs/catalog.html",
+STAMP_FILES = ["README.md", "AGENTS.md", "docs/USING.md", "docs/index.html", "docs/catalog.html",
                "docs/skills.html", "tools/console/index.html"]
 
 def _stamp(apply):
@@ -276,6 +276,7 @@ def _stamp(apply):
         (r'(All\s+)\d+(\s+skills\s+across)',        rf'\g<1>{total}\g<2>'),
         (r'(20\s+domains,\s+)\d+(\s+skills)',       rf'\g<1>{total}\g<2>'),
         (r'(Search\s+)\d+(\s+skills)',              rf'\g<1>{total}\g<2>'),
+        (r'(the\s+)\d+(\s+skills\s+themselves)',    rf'\g<1>{total}\g<2>'),
         (r'\b\d+(\s+skills\s+across\s+20\s+domains)', rf'{total}\g<1>'),
         (r'\b\d+(\s+offensive\b)',                  rf'{total}\g<1>'),
         (r'\b\d+(\s+trigger-loaded)',               rf'{total}\g<1>'),

@@ -10,7 +10,7 @@
 # Usage:
 #   ./install.sh              # install for your user  (~/.claude/skills)
 #   ./install.sh --project    # install into ./.claude/skills (current project)
-#   ./install.sh --dest DIR   # install into DIR (used by `sploit new` for a workspace)
+#   ./install.sh --dest DIR   # install into DIR instead of the default (~/.claude/skills)
 #   ./install.sh --copy       # copy instead of symlink (for throwaway/portable clones)
 #   ./install.sh --quiet      # only print the summary line
 #   ./install.sh --uninstall  # remove only the skills this installer created

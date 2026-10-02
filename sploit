@@ -40,6 +40,8 @@ ${B}SploitAgent${R} — security skills for AI agents (authorized use only)
   ${G}sploit watch${R}                open the console (runs in the background — your terminal stays free)
       ${D}--stop${R}                  stop the background console      ${D}--fg${R}  run it in the foreground
   ${G}sploit install${R}              expose skills to Claude Code everywhere + put 'sploit' on PATH
+  ${G}sploit uninstall${R}            remove the installed skills + take 'sploit' off PATH
+  ${G}sploit update${R}               git pull the library + refresh the installed skills and links
   ${G}sploit list${R}                 list engagement workspaces under the current directory
   ${G}sploit version${R}              show the installed version
   ${G}sploit help${R}                 show this help
@@ -245,9 +247,17 @@ EOF
 }
 
 do_install(){
+  local uninstall=0 a
+  for a in "$@"; do [ "$a" = "--uninstall" ] && uninstall=1; done
   "$REPO_DIR/install.sh" "$@"          # global skills (~/.claude/skills), passes through --copy/--uninstall
   # put `sploit` on PATH so `sploit new` works from anywhere
   local bindir="$HOME/.local/bin"
+  if [ "$uninstall" -eq 1 ]; then
+    rm -f "$bindir/sploit"
+    say ""
+    say "${G}✔${R} uninstalled ${B}sploit${R} — skills removed and $bindir/sploit deleted"
+    return
+  fi
   mkdir -p "$bindir"
   ln -sf "$REPO_DIR/sploit" "$bindir/sploit"
   say ""
@@ -256,6 +266,17 @@ do_install(){
     *":$bindir:"*) say "  you can now run ${B}sploit new <target>${R} from anywhere." ;;
     *) say "  add it to PATH:  ${B}export PATH=\"\$HOME/.local/bin:\$PATH\"${R}  (add to ~/.bashrc or ~/.zshrc)" ;;
   esac
+}
+
+do_update(){
+  git -C "$REPO_DIR" pull --ff-only
+  SPLOIT_VERSION="$(cat "$REPO_DIR/VERSION" 2>/dev/null || echo dev)"
+  "$REPO_DIR/install.sh" --quiet       # refresh skill links in case skills were added/renamed
+  local bindir="$HOME/.local/bin"
+  mkdir -p "$bindir"
+  ln -sf "$REPO_DIR/sploit" "$bindir/sploit"
+  say ""
+  say "${G}✔${R} updated — SploitAgent ${B}$SPLOIT_VERSION${R}, skills and sploit link refreshed."
 }
 
 open_url(){ python3 -c "import webbrowser,sys; webbrowser.open(sys.argv[1])" "$1" >/dev/null 2>&1 || true; }
@@ -317,6 +338,8 @@ cmd="${1:-help}"
 case "$cmd" in
   new)         shift || true; new_engagement "$@" ;;
   install)     shift || true; do_install "$@" ;;
+  uninstall)   do_install --uninstall ;;
+  update)      do_update ;;
   watch|ui|console) shift || true; do_watch "$@" ;;
   list|ls)     list_engagements ;;
   version|--version|-v) say "SploitAgent ${B}$SPLOIT_VERSION${R}"; say "  ${D}repo: $REPO_DIR${R}" ;;

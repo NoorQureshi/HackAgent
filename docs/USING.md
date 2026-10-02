@@ -7,7 +7,7 @@ skills are plain Markdown.
 
 Two building blocks matter:
 - **`AGENTS.md`** — the operating guide (scope-first, the loop, how to pick a skill, per-engagement structure).
-- **`skills/`** — the 100 skills themselves; **`CATALOG.md`** is the browsable index.
+- **`skills/`** — the 161 skills themselves; **`CATALOG.md`** is the browsable index.
 
 Below are copy-paste setups and **example prompts** for each agent, plus local LLMs.
 

@@ -7,8 +7,9 @@ written so it loads on the right signals (service, vuln class, error string, por
 **Browse the full table in [`../CATALOG.md`](../CATALOG.md)** (generated). This file is the map.
 
 ## Organized by domain × type × stability × modes
-- **Domain** (the folder): `recon web api mobile cloud network ad ai-ml code-review exploit-dev
-  privesc defense payloads reporting automation tradecraft`.
+- **Domain** (the folder): `recon web api mobile cloud network wireless ad ai-ml code-review
+  exploit-dev reverse-engineering cryptography privesc defense payloads reporting automation
+  tradecraft social-eng`.
 - **Type** (`type:`): `arsenal` (tool selection) · `technique` (a concrete chain) · `methodology`
   (how to operate) · `checklist` · `reference` (payloads/tables).
 - **Stability** (`stability:`): 🔒 `locked` (curated core — change deliberately) · ✍️ `learning`

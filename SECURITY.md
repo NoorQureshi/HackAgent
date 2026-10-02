@@ -36,7 +36,8 @@ authorization:
 
 Every engagement loads `tradecraft-scope-roe` first and is bound by the target's `scope.txt`. Do not
 point it at anything you are not authorized to test. Using these techniques against systems without
-permission is illegal in most jurisdictions.
+permission is illegal in most jurisdictions. The library is also intended for security education.
+The authors are not responsible for misuse.
 
 ## No warranty
 

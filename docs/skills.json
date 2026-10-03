@@ -1,5 +1,5 @@
 {
- "count": 161,
+ "count": 179,
  "generated_by": "tools/catalog.py",
  "skills": [
   {
@@ -1143,6 +1143,66 @@
    "path": "skills/exploit-dev/exploit-poc-development"
   },
   {
+   "name": "exploit-pwn-chain",
+   "domain": "exploit-dev",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "critical",
+   "summary": "Engineer a reliable exploit from a known memory-corruption bug \u2014 stack, heap, or kernel \u2014 taking a local crash to a stable remote exploit: ret2libc/re\u2026",
+   "tags": [
+    "T1203",
+    "T1068",
+    "CWE-121",
+    "CWE-122",
+    "CWE-416",
+    "CWE-787"
+   ],
+   "path": "skills/exploit-dev/exploit-pwn-chain"
+  },
+  {
+   "name": "hardware-ot-ics",
+   "domain": "hardware",
+   "type": "methodology",
+   "modes": [
+    "pentest",
+    "defense"
+   ],
+   "severity": "high",
+   "summary": "Assess OT/ICS environments \u2014 PLC, SCADA, DCS, HMI \u2014 safely and passive-first: Purdue-model zoning, industrial protocol discovery (Modbus, S7, DNP3, Et\u2026",
+   "tags": [
+    "T0846",
+    "T0842",
+    "CWE-306"
+   ],
+   "path": "skills/hardware/hardware-ot-ics"
+  },
+  {
+   "name": "hardware-radio-sdr",
+   "domain": "hardware",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "medium",
+   "summary": "Authorized RF/SDR security research on non-Wi-Fi radio signals \u2014 identify a signal's frequency and modulation receive-only, demodulate and reverse the\u2026",
+   "tags": [],
+   "path": "skills/hardware/hardware-radio-sdr"
+  },
+  {
+   "name": "hardware-security",
+   "domain": "hardware",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "medium",
+   "summary": "Discover and triage hardware debug interfaces (UART, JTAG, SWD) on an authorized embedded device \u2014 read boot logs, land a root console, interrupt the \u2026",
+   "tags": [],
+   "path": "skills/hardware/hardware-security"
+  },
+  {
    "name": "mobile-android-assessment",
    "domain": "mobile",
    "type": "technique",
@@ -1158,6 +1218,21 @@
     "CWE-919"
    ],
    "path": "skills/mobile/mobile-android-assessment"
+  },
+  {
+   "name": "mobile-apk-reverse",
+   "domain": "mobile",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse an Android APK end-to-end \u2014 jadx/apktool unpacking, manifest and smali analysis, rebuild-sign-install patching, and Frida runtime hooks.",
+   "tags": [
+    "M7:2024-Insufficient-Binary-Protections"
+   ],
+   "path": "skills/mobile/mobile-apk-reverse"
   },
   {
    "name": "mobile-cert-pinning-bypass",
@@ -1658,6 +1733,23 @@
    "path": "skills/reporting/reporting-triage-validation"
   },
   {
+   "name": "reverse-eng-binary-ninja",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse engineer in Binary Ninja \u2014 HLIL/MLIL/LLIL inspection, strings/imports/exports, cross-references, types, patching, Python API automation, and t\u2026",
+   "tags": [
+    "T1592.002",
+    "CWE-121",
+    "CWE-798"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-binary-ninja"
+  },
+  {
    "name": "reverse-eng-binary-triage",
    "domain": "reverse-engineering",
    "type": "technique",
@@ -1691,6 +1783,39 @@
    "path": "skills/reverse-engineering/reverse-eng-deobfuscation"
   },
   {
+   "name": "reverse-eng-dotnet",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse a .NET / C# assembly \u2014 decompile, deobfuscate, debug, and IL-patch managed binaries.",
+   "tags": [
+    "T1027"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-dotnet"
+  },
+  {
+   "name": "reverse-eng-edr-analysis",
+   "domain": "reverse-engineering",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "high",
+   "summary": "Reverse engineer the EDR/AV on an authorized target host, then evade it \u2014 fingerprint the product, dump its userland hook table, and assemble a matchi\u2026",
+   "tags": [
+    "T1562",
+    "T1562.001",
+    "T1562.006",
+    "T1027",
+    "T1055"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-edr-analysis"
+  },
+  {
    "name": "reverse-eng-firmware",
    "domain": "reverse-engineering",
    "type": "technique",
@@ -1708,6 +1833,170 @@
     "CWE-1188"
    ],
    "path": "skills/reverse-engineering/reverse-eng-firmware"
+  },
+  {
+   "name": "reverse-eng-ghidra",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse engineer with Ghidra (GUI, headless, or ghidra-mcp) \u2014 decompile, cross-references, scripting \u2014 when there's no IDA license, for batch/CI decom\u2026",
+   "tags": [
+    "T1592.002",
+    "CWE-121",
+    "CWE-798"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-ghidra"
+  },
+  {
+   "name": "reverse-eng-go-rust",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse stripped Go and Rust binaries \u2014 recover symbols from pclntab/moduledata and panic metadata, then navigate language-specific idioms.",
+   "tags": [
+    "T1027"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-go-rust"
+  },
+  {
+   "name": "reverse-eng-ida",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Deep reverse engineering in IDA Pro \u2014 Hex-Rays decompile, cross-references, types, patching \u2014 via the GUI or the ida-pro-mcp bridge for agent-driven analysis.",
+   "tags": [
+    "T1592.002",
+    "CWE-121",
+    "CWE-798"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-ida"
+  },
+  {
+   "name": "reverse-eng-js",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse front-end JavaScript end to end: trace which script fires a given request, capture a signing/encryption function's real inputs at runtime, the\u2026",
+   "tags": [
+    "CWE-602"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-js"
+  },
+  {
+   "name": "reverse-eng-macos",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse macOS Mach-O binaries and .app bundles \u2014 codesign/notarization state, entitlements, Objective-C/Swift symbol recovery, and lldb/Frida dynamic analysis.",
+   "tags": [],
+   "path": "skills/reverse-engineering/reverse-eng-macos"
+  },
+  {
+   "name": "reverse-eng-malware",
+   "domain": "reverse-engineering",
+   "type": "methodology",
+   "modes": [
+    "pentest",
+    "defense"
+   ],
+   "severity": "medium",
+   "summary": "Fully analyze a malware sample \u2014 static, dynamic, and behavioral \u2014 including unpacking and IAT rebuild, import-table triage, anti-analysis detection a\u2026",
+   "tags": [
+    "T1027",
+    "T1497",
+    "T1622",
+    "T1055"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-malware"
+  },
+  {
+   "name": "reverse-eng-patch-diff",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "Turn a vendor security patch into a working N-day: diff the patched and unpatched binaries, read the newly added safety checks back to a bug class, th\u2026",
+   "tags": [
+    "CWE-787",
+    "CWE-362",
+    "CWE-416",
+    "CWE-190",
+    "CWE-200"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-patch-diff"
+  },
+  {
+   "name": "reverse-eng-protocol",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Reverse a custom network protocol from captured traffic or the client binary: recover the frame layout, message-type dictionary, field meanings, and s\u2026",
+   "tags": [
+    "CWE-319"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-protocol"
+  },
+  {
+   "name": "reverse-eng-radare2",
+   "domain": "reverse-engineering",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Command-line binary analysis with radare2/r2 \u2014 recon, disassembly, strings/imports, cross-references, patching, diffing, and scripting, no GUI needed.",
+   "tags": [
+    "T1592.002",
+    "CWE-121",
+    "CWE-798"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-radare2"
+  },
+  {
+   "name": "reverse-eng-thick-client",
+   "domain": "reverse-engineering",
+   "type": "methodology",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "Security-test a desktop thick client end to end: map its trust boundaries, then work the local attack surface (config files, credential storage, IPC, \u2026",
+   "tags": [
+    "CWE-798",
+    "CWE-312",
+    "CWE-426",
+    "CWE-319"
+   ],
+   "path": "skills/reverse-engineering/reverse-eng-thick-client"
   },
   {
    "name": "social-eng-methodology",

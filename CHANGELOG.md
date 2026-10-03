@@ -7,6 +7,12 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **18 reverse-engineering / hardware skills** — big coverage expansion (161 → 179
+  skills, 20 → 21 domains with the new `hardware` domain): IDA Pro, Ghidra, radare2,
+  Binary Ninja, .NET, Go/Rust, macOS, JS and protocol reversing, thick clients,
+  patch-diff/N-day, malware analysis, EDR instrumentation analysis, APK reversing,
+  pwn chain (bug → stable remote exploit), and hardware/UART-JTAG, SDR/RF, OT/ICS.
+  Adapted from the MIT-licensed reverse-skill project — see [NOTICE.md](NOTICE.md).
 - **Chinese README** (`README_zh.md`) and **`README_AI.md`** — a condensed,
   agent-facing bootstrap advertised from the top of the README ("If you are an AI
   agent…").

@@ -158,7 +158,7 @@ $ sploit watch                       # runs in the background · stop: sploit wa
 
 **161 个技能,横跨 20 个领域。** [🔎 搜索全部](https://noorqureshi.github.io/SploitAgent/catalog.html) · 或浏览 [CATALOG.md](CATALOG.md)。
 
-`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
+`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `hardware` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
 
 <details>
 <summary><b>查看每个领域的覆盖范围</b></summary>

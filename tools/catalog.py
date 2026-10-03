@@ -20,7 +20,7 @@ SKILLS = os.path.join(ROOT, "skills")
 
 REQUIRED = ["name", "description", "domain", "type", "stability", "modes", "schema_version"]
 DOMAINS = ["recon","web","api","mobile","cloud","network","wireless","ad","ai-ml","code-review",
-           "exploit-dev","reverse-engineering","cryptography","privesc","defense","payloads",
+           "exploit-dev","reverse-engineering","hardware","cryptography","privesc","defense","payloads",
            "reporting","automation","tradecraft","social-eng"]
 TYPES = ["technique","arsenal","methodology","checklist","reference"]
 STABILITY = ["locked","learning"]
@@ -30,7 +30,7 @@ DOMAIN_TITLES = {
     "cloud":"Cloud & containers","network":"Network & services","wireless":"Wireless / Wi-Fi",
     "ad":"Active Directory",
     "ai-ml":"AI / LLM","code-review":"Source-code review","exploit-dev":"Exploit development",
-    "reverse-engineering":"Reverse engineering","cryptography":"Cryptography",
+    "reverse-engineering":"Reverse engineering","hardware":"Hardware / IoT / OT","cryptography":"Cryptography",
     "privesc":"Privilege escalation","defense":"Defense / blue-team","payloads":"Payloads",
     "reporting":"Reporting","automation":"Automation","tradecraft":"Tradecraft & discipline",
     "social-eng":"Social engineering",
@@ -249,6 +249,24 @@ _ROUTING_TRAIL_JUNK = _ROUTING_PURPOSE | {"a", "an", "the", "of", "with", "by", 
 # the description line by _routing_triggers. Curated entries must still
 # round-trip through the matcher — tools/test_routing.py enforces that.
 CURATED_TRIGGERS = {
+    "reverse-eng-ida": ["static analysis in ida pro", "hex-rays decompiler workflow", "ida headless binary analysis"],
+    "reverse-eng-ghidra": ["analyze this binary in ghidra", "analyzeheadless batch triage script", "ghidra decompiler review"],
+    "reverse-eng-radare2": ["reverse this binary with radare2", "r2 analysis and patching session", "rabin2 rasm2 binary inspection"],
+    "reverse-eng-binary-ninja": ["binary ninja hlil analysis", "binary ninja mcp integration", "review this function in binary ninja"],
+    "reverse-eng-dotnet": ["decompile this .net executable", "dnspy patch the license check", "de4dot deobfuscate the assembly"],
+    "reverse-eng-go-rust": ["recover symbols from this go binary", "reverse a stripped rust release build", "goresym pclntab recovery"],
+    "reverse-eng-macos": ["triage this mach-o binary", "macos entitlements and codesign review", "class-dump the objective-c methods"],
+    "mobile-apk-reverse": ["decompile this apk with jadx", "smali patch and rebuild the apk", "frida trace the android crypto"],
+    "reverse-eng-js": ["deobfuscate the javascript encryption", "find the signing algorithm in the minified bundle", "reverse the webpack javascript"],
+    "reverse-eng-protocol": ["reverse this proprietary network protocol", "parse the unknown binary protocol frames", "custom protocol dissection in wireshark"],
+    "reverse-eng-thick-client": ["assess this desktop thick client", "thick client local secrets and traffic", "desktop application security review"],
+    "reverse-eng-patch-diff": ["diff the patched and unpatched binaries", "n-day patch analysis to poc", "bindiff the security update"],
+    "reverse-eng-malware": ["analyze this malware sample", "unpack the sample and extract iocs", "write a yara rule for this family"],
+    "reverse-eng-edr-analysis": ["how does the edr hook ntdll", "analyze edr telemetry blind spots", "etw and amsi instrumentation review"],
+    "exploit-pwn-chain": ["turn this crash into a working exploit", "stabilize the remote pwn exploit", "ret2libc against the correct libc version"],
+    "hardware-security": ["uart jtag debug port on this device", "dump the flash chip in circuit", "hardware triage of the iot board"],
+    "hardware-radio-sdr": ["capture the 433mhz signal with an sdr", "analyze this rf remote in urh", "radio signal reverse engineering"],
+    "hardware-ot-ics": ["passive assessment of the ot network", "modbus and s7 plc security review", "ics protocol traffic analysis"],
     "web-auth-jwt": ["is this jwt forgeable", "test the login token signature", "jwt none alg attack"],
     "web-xss": ["reflected xss in the search box", "prove stored cross-site scripting", "dom xss sink"],
     "web-sqli": ["test the id parameter for sql injection", "time-based blind sqli", "union select column extraction"],

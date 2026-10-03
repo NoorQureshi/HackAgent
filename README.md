@@ -3,10 +3,10 @@
 # 🥷 SploitAgent
 
 **Security skills for AI agents.**
-161 offensive + defensive techniques your AI agent loads on demand to work an **authorized** target — from recon to report.
+179 offensive + defensive techniques your AI agent loads on demand to work an **authorized** target — from recon to report.
 
 [![CI](https://github.com/NoorQureshi/SploitAgent/actions/workflows/ci.yml/badge.svg)](https://github.com/NoorQureshi/SploitAgent/actions/workflows/ci.yml)
-![skills](https://img.shields.io/badge/skills-161-334155?style=flat-square)
+![skills](https://img.shields.io/badge/skills-179-334155?style=flat-square)
 ![domains](https://img.shields.io/badge/domains-20-334155?style=flat-square)
 ![mapped](https://img.shields.io/badge/mapped-OWASP%20%C2%B7%20MITRE%20ATT%26CK-334155?style=flat-square)
 ![routing](https://img.shields.io/badge/routing-483%20trigger%20cases%20CI--verified-334155?style=flat-square)
@@ -29,7 +29,7 @@
 
 ## What it is
 
-Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 161 short "how to do this one technique" pages the agent flips to when it needs one.
+Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 179 short "how to do this one technique" pages the agent flips to when it needs one.
 
 It's not a replacement for your toolkit, either: the skills teach your agent when and how to drive the tools you already have — sqlmap, nmap, ffuf, nuclei, Burp Suite, Ghidra, Frida, hashcat, Impacket — with the exact commands, follow-ups, and verification steps each job calls for. And a machine-readable routing table ([`data/routing.json`](data/routing.json) — **483 trigger cases, CI-verified**) lets any agent or integration pick the right skill deterministically, no prompt guesswork.
 
@@ -156,9 +156,9 @@ Under Claude Code a bundled hook records commands automatically, so the console 
 
 ## What's inside
 
-**161 skills across 20 domains.** [🔎 Search them all](https://noorqureshi.github.io/SploitAgent/catalog.html) · or browse [CATALOG.md](CATALOG.md).
+**179 skills across 20 domains.** [🔎 Search them all](https://noorqureshi.github.io/SploitAgent/catalog.html) · or browse [CATALOG.md](CATALOG.md).
 
-`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
+`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `hardware` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
 
 <details>
 <summary><b>See what each domain covers</b></summary>
@@ -172,13 +172,14 @@ Under Claude Code a bundled hook records commands automatically, so the console 
 | [`recon`](skills/recon) | 9 | Subdomain enumeration, DNS analysis, content and JS discovery, OSINT, GitHub code-leak discovery, cloud-asset discovery, service enumeration, tech-stack fingerprinting |
 | [`defense`](skills/defense) | 13 | Detection engineering (pipeline + Sigma/ATT&CK), threat hunting, incident response, DFIR triage, network detection (NSM), cloud detection & response, Active Directory defense, malware triage, hardening baselines, threat modeling, log analysis, purple teaming |
 | [`code-review`](skills/code-review) | 15 | Methodology, dangerous-sink catalog, secrets detection, CI/CD security, IaC (Terraform/Ansible/K8s), smart contracts (Solidity), Python, Node.js, PHP, Java/Spring, Go, Ruby/Rails, .NET/C#, C/C++, Rust |
-| [`mobile`](skills/mobile) | 5 | Android and iOS assessment, certificate-pinning bypass, deep-link abuse, WebView abuse |
+| [`mobile`](skills/mobile) | 6 | Android and iOS assessment, APK reverse engineering (jadx/smali/Frida), certificate-pinning bypass, deep-link abuse, WebView abuse |
 | [`ad`](skills/ad) | 5 | Kerberoasting / AS-REP, ADCS (ESC1–8), ACL/DACL abuse, Kerberos delegation abuse (RBCD / S4U / coercion→relay), pivoting arsenal |
 | [`network`](skills/network) | 6 | Service attacks, pivoting and tunneling, NTLM coercion and relay, password spraying and credential stuffing, perimeter appliance and VPN offensive, hash and credential cracking |
 | [`wireless`](skills/wireless) | 2 | WPA2-PSK handshake/PMKID capture and cracking, evil-twin / rogue-AP enterprise (PEAP-MSCHAPv2) credential harvesting |
 | [`privesc`](skills/privesc) | 4 | Post-foothold enumeration and credential hunting, Linux arsenal, GTFOBins (sudo/SUID/capabilities), Windows token impersonation |
-| [`exploit-dev`](skills/exploit-dev) | 3 | Exploit chaining and impact amplification, PoC development, memory-corruption exploitation (ROP / format string / ret2libc) |
-| [`reverse-engineering`](skills/reverse-engineering) | 3 | Native binary triage, deobfuscation (packed/JS/WASM/JSVMP), firmware extraction and analysis |
+| [`exploit-dev`](skills/exploit-dev) | 4 | Exploit chaining and impact amplification, PoC development, memory-corruption exploitation (ROP / format string / ret2libc), pwn chain (bug → stable remote exploit, heap & kernel) |
+| [`reverse-engineering`](skills/reverse-engineering) | 16 | Native binary triage, deobfuscation (packed/JS/WASM/JSVMP), firmware, IDA Pro / Ghidra / radare2 / Binary Ninja, .NET / Go / Rust / macOS reversing, JS and protocol reversing, thick clients, patch-diff / N-day analysis, malware analysis, EDR instrumentation analysis |
+| [`hardware`](skills/hardware) | 3 | UART/JTAG/SWD debug-port triage, in-circuit flash dumping, SDR / RF signal analysis, OT/ICS passive assessment (Modbus, S7, DNP3) |
 | [`cryptography`](skills/cryptography) | 2 | Weak/textbook RSA (JWT RS256, custom signatures), symmetric oracles (CBC padding, ECB, hash length extension) |
 | [`payloads`](skills/payloads) | 4 | WAF/filter bypass, XSS polyglots, reverse shells and TTY upgrade, file transfers |
 | [`reporting`](skills/reporting) | 5 | Finding triage and validation, bug-bounty write-up, penetration-test report, CVSS/severity scoring, triage communication |

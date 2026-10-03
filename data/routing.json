@@ -1,5 +1,5 @@
 {
- "count": 161,
+ "count": 179,
  "generated_by": "tools/catalog.py routing",
  "matcher": "token-idf overlap \u2014 documented in tools/test_routing.py",
  "skills": [
@@ -91,11 +91,11 @@
     "crack",
     "kerberos",
     "offline",
-    "recover",
     "user",
+    "recover",
     "service",
-    "request",
-    "ad"
+    "ad",
+    "request"
    ],
    "slug": "ad-kerberoasting",
    "triggers": [
@@ -133,8 +133,8 @@
     "call",
     "chosen",
     "args",
-    "agent",
     "coerce",
+    "agent",
     "tools",
     "exfil",
     "tool",
@@ -164,13 +164,13 @@
     "output",
     "sql",
     "handling",
-    "trust",
     "shell",
+    "trust",
     "insecure",
     "apps",
     "llm",
-    "model",
     "xss",
+    "model",
     "ai"
    ],
    "slug": "ai-insecure-output-handling",
@@ -186,11 +186,11 @@
     "jailbreak",
     "produce",
     "ignore",
-    "safety",
     "guardrails",
     "restricted",
     "output",
     "policy",
+    "safety",
     "llm",
     "ai",
     "bypass"
@@ -230,18 +230,18 @@
   {
    "domain": "ai-ml",
    "keywords": [
-    "mcp",
     "servers",
     "integrations",
     "descriptions",
     "results",
     "broad",
     "context",
+    "mcp",
     "agent",
-    "assess",
-    "protocol",
     "poisoning",
+    "assess",
     "prompt",
+    "protocol",
     "tool",
     "model",
     "ai",
@@ -270,8 +270,8 @@
     "system",
     "prompt",
     "access",
-    "model",
     "llm",
+    "model",
     "data"
    ],
    "slug": "ai-model-extraction",
@@ -291,11 +291,11 @@
     "indirect",
     "exfil",
     "prompt",
-    "function",
     "apps",
+    "function",
     "tool",
-    "test",
     "llm",
+    "test",
     "data",
     "ai",
     "bypass",
@@ -448,12 +448,12 @@
     "method",
     "authz",
     "grpc",
-    "protocol",
     "apis",
+    "protocol",
     "enumeration",
     "test",
-    "api",
-    "injection"
+    "injection",
+    "api"
    ],
    "slug": "api-grpc",
    "triggers": [
@@ -561,11 +561,11 @@
     "templates",
     "codify",
     "scannable",
-    "custom",
     "mass",
     "check",
-    "automation",
+    "custom",
     "repeatable",
+    "automation",
     "write",
     "finding"
    ],
@@ -582,9 +582,9 @@
     "resumable",
     "continuous",
     "coverage",
-    "automation",
     "tools",
     "repeatable",
+    "automation",
     "pipeline",
     "bounty",
     "chain",
@@ -603,12 +603,12 @@
    "keywords": [
     "entra",
     "id",
-    "managed",
     "identity",
     "role",
-    "storage",
+    "managed",
     "misconfig",
     "azure",
+    "storage",
     "app",
     "token",
     "theft",
@@ -621,7 +621,7 @@
    "triggers": [
     "test for azure / entra id",
     "entra",
-    "entra id managed"
+    "entra id identity"
    ]
   },
   {
@@ -655,8 +655,8 @@
     "exposed",
     "host",
     "turn",
-    "api",
     "cloud",
+    "api",
     "abuse"
    ],
    "slug": "cloud-docker-api-abuse",
@@ -698,11 +698,11 @@
     "google",
     "platform",
     "sa",
-    "metadata",
     "iam",
     "gcp",
-    "storage",
+    "metadata",
     "misconfig",
+    "storage",
     "function",
     "token",
     "theft",
@@ -748,8 +748,8 @@
     "imds",
     "metadata",
     "escalate",
-    "credential",
     "service",
+    "credential",
     "theft",
     "ssrf",
     "via",
@@ -772,8 +772,8 @@
     "kubernetes",
     "exposed",
     "server",
-    "api",
     "cloud",
+    "api",
     "attack"
    ],
    "slug": "cloud-kubernetes",
@@ -792,8 +792,8 @@
     "gcs",
     "blob",
     "prove",
-    "storage",
     "object",
+    "storage",
     "azure",
     "cloud",
     "find"
@@ -812,14 +812,14 @@
     "cd",
     "pipelines",
     "workflows",
-    "ci",
     "poisoned",
     "secret",
     "leakage",
+    "ci",
     "flaws",
     "injection",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-cicd",
@@ -834,14 +834,14 @@
    "keywords": [
     "cpp",
     "classic",
-    "c",
     "safety",
-    "memory",
     "unsafe",
-    "api",
+    "c",
+    "memory",
     "sinks",
-    "security",
+    "api",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-cpp",
@@ -875,22 +875,22 @@
   {
    "domain": "code-review",
    "keywords": [
+    "asp",
     "dotnet",
     "net",
-    "asp",
     "c",
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-dotnet",
    "triggers": [
     "test for net / c# code",
     "check net / c# code",
-    "dotnet net asp"
+    "asp dotnet net"
    ]
   },
   {
@@ -901,8 +901,8 @@
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code",
     "web"
    ],
@@ -924,8 +924,8 @@
     "helm",
     "manifests",
     "kubernetes",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-iac",
@@ -943,8 +943,8 @@
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-java",
@@ -964,8 +964,8 @@
     "systematic",
     "bugs",
     "find",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-methodology",
@@ -981,14 +981,14 @@
     "nodejs",
     "node",
     "express",
-    "javascript",
     "framework",
-    "js",
+    "javascript",
     "pitfalls",
+    "js",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-nodejs",
@@ -1009,8 +1009,8 @@
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-php",
@@ -1032,8 +1032,8 @@
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-python",
@@ -1051,8 +1051,8 @@
     "pitfalls",
     "dangerous",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-ruby",
@@ -1065,28 +1065,28 @@
   {
    "domain": "code-review",
    "keywords": [
-    "rust",
     "still",
     "ffi",
     "panics",
     "usual",
+    "rust",
     "safe",
     "language",
-    "memory",
     "unsafe",
+    "memory",
     "bugs",
     "logic",
     "injection",
     "sinks",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-rust",
    "triggers": [
     "test for rust code",
     "ffi",
-    "rust still ffi"
+    "still ffi panics"
    ]
   },
   {
@@ -1123,8 +1123,8 @@
     "control",
     "bugs",
     "access",
-    "security",
     "review",
+    "security",
     "code"
    ],
    "slug": "code-review-solidity",
@@ -1172,9 +1172,9 @@
     "private",
     "crypto",
     "weak",
-    "recover",
     "key",
     "break",
+    "recover",
     "public",
     "attacks"
    ],
@@ -1219,8 +1219,8 @@
     "persistence",
     "audit",
     "imds",
-    "logs",
     "control",
+    "logs",
     "detect",
     "credential",
     "detection",
@@ -1243,19 +1243,19 @@
    "keywords": [
     "alerts",
     "detections",
-    "engineering",
     "repeatable",
+    "engineering",
     "pipeline",
     "build",
-    "detection",
     "one",
+    "detection",
     "defense"
    ],
    "slug": "defense-detection-engineering",
    "triggers": [
     "test for detections as a repeatable pipeline",
     "not one-off alerts",
-    "alerts detections engineering"
+    "alerts detections repeatable"
    ]
   },
   {
@@ -1263,11 +1263,11 @@
    "keywords": [
     "sigma",
     "portable",
-    "map",
     "mitre",
     "convert",
     "siem",
     "detections",
+    "map",
     "att",
     "ck",
     "write",
@@ -1288,16 +1288,16 @@
     "dfir",
     "collect",
     "volatile",
-    "first",
     "incident",
     "evidence",
+    "first",
     "activity",
     "linux",
     "windows",
     "response",
     "scope",
-    "triage",
     "attacker",
+    "triage",
     "defense",
     "find"
    ],
@@ -1315,12 +1315,12 @@
     "baseline",
     "offensive",
     "vuln",
-    "class",
     "plus",
-    "config",
     "baselines",
     "findings",
     "fix",
+    "class",
+    "config",
     "concrete",
     "side",
     "turn",
@@ -1340,9 +1340,9 @@
     "eradicate",
     "learn",
     "incident",
-    "recover",
     "response",
     "detect",
+    "recover",
     "scope",
     "run",
     "defense"
@@ -1363,11 +1363,11 @@
     "hunt",
     "queries",
     "activity",
-    "logs",
     "concrete",
-    "analysis",
+    "logs",
     "attacker",
     "auth",
+    "analysis",
     "defense",
     "cloud",
     "web"
@@ -1382,25 +1382,25 @@
   {
    "domain": "defense",
    "keywords": [
-    "malware",
     "suspicious",
     "process",
     "iocs",
     "yield",
+    "malware",
     "malicious",
     "safely",
     "static",
-    "dynamic",
-    "analysis",
     "file",
+    "dynamic",
     "triage",
+    "analysis",
     "defense"
    ],
    "slug": "defense-malware-triage",
    "triggers": [
     "test for suspicious file",
     "is it malicious",
-    "malware suspicious process"
+    "suspicious process iocs"
    ]
   },
   {
@@ -1417,9 +1417,9 @@
     "movement",
     "detect",
     "detection",
-    "network",
     "attacker",
     "data",
+    "network",
     "defense"
    ],
    "slug": "defense-network-detection",
@@ -1436,9 +1436,9 @@
     "team",
     "exercise",
     "emulate",
-    "specific",
     "techniques",
     "validate",
+    "specific",
     "response",
     "detection",
     "attacker",
@@ -1459,14 +1459,14 @@
     "alert",
     "fired",
     "hypothesis",
-    "driven",
     "guided",
     "searching",
-    "edr",
     "threat",
     "hunt",
+    "driven",
     "att",
     "ck",
+    "edr",
     "hunting",
     "logs",
     "defense"
@@ -1515,8 +1515,8 @@
     "demonstrated",
     "low",
     "impact",
-    "chain",
     "one",
+    "chain",
     "exploit"
    ],
    "slug": "exploit-chaining",
@@ -1529,18 +1529,18 @@
   {
    "domain": "exploit-dev",
    "keywords": [
-    "corruption",
     "overflows",
-    "strings",
     "rop",
     "modern",
     "mitigations",
-    "binary",
-    "stack",
+    "corruption",
     "format",
-    "memory",
     "execution",
+    "stack",
+    "strings",
+    "memory",
     "native",
+    "binary",
     "bug",
     "exploit",
     "turn",
@@ -1549,8 +1549,8 @@
    "slug": "exploit-memory-corruption",
    "triggers": [
     "test for memory-corruption bug in a native binary",
-    "stack overflows",
-    "corruption overflows strings"
+    "rop against modern mitigations",
+    "overflows rop modern"
    ]
   },
   {
@@ -1558,23 +1558,131 @@
    "keywords": [
     "poc",
     "development",
-    "day",
     "vulnerability",
     "raw",
+    "day",
     "working",
     "known",
     "reliable",
     "bug",
     "target",
     "exploit",
-    "authorized",
-    "turn"
+    "turn",
+    "authorized"
    ],
    "slug": "exploit-poc-development",
    "triggers": [
     "test for known/1-day vulnerability",
     "reliable poc",
-    "poc development day"
+    "poc development vulnerability"
+   ]
+  },
+  {
+   "domain": "exploit-dev",
+   "keywords": [
+    "pwn",
+    "heap",
+    "kernel",
+    "taking",
+    "crash",
+    "stable",
+    "remote",
+    "corruption",
+    "reliable",
+    "known",
+    "stack",
+    "engineer",
+    "memory",
+    "local",
+    "chain",
+    "bug"
+   ],
+   "slug": "exploit-pwn-chain",
+   "triggers": [
+    "turn this crash into a working exploit",
+    "stabilize the remote pwn exploit",
+    "ret2libc against the correct libc version"
+   ]
+  },
+  {
+   "domain": "hardware",
+   "keywords": [
+    "ot",
+    "ics",
+    "environments",
+    "plc",
+    "scada",
+    "dcs",
+    "hmi",
+    "purdue",
+    "zoning",
+    "industrial",
+    "modbus",
+    "s7",
+    "dnp3",
+    "passive",
+    "first",
+    "hardware"
+   ],
+   "slug": "hardware-ot-ics",
+   "triggers": [
+    "passive assessment of the ot network",
+    "modbus and s7 plc security review",
+    "ics protocol traffic analysis"
+   ]
+  },
+  {
+   "domain": "hardware",
+   "keywords": [
+    "radio",
+    "sdr",
+    "rf",
+    "research",
+    "signals",
+    "signal",
+    "frequency",
+    "modulation",
+    "receive",
+    "demodulate",
+    "non",
+    "wi",
+    "fi",
+    "identify",
+    "hardware",
+    "authorized"
+   ],
+   "slug": "hardware-radio-sdr",
+   "triggers": [
+    "capture the 433mhz signal with an sdr",
+    "analyze this rf remote in urh",
+    "radio signal reverse engineering"
+   ]
+  },
+  {
+   "domain": "hardware",
+   "keywords": [
+    "interfaces",
+    "uart",
+    "jtag",
+    "swd",
+    "embedded",
+    "boot",
+    "land",
+    "root",
+    "console",
+    "interrupt",
+    "debug",
+    "device",
+    "hardware",
+    "logs",
+    "discover",
+    "read"
+   ],
+   "slug": "hardware-security",
+   "triggers": [
+    "uart jtag debug port on this device",
+    "dump the flash chip in circuit",
+    "hardware triage of the iot board"
    ]
   },
   {
@@ -1584,9 +1692,9 @@
     "assess",
     "app",
     "static",
-    "dynamic",
     "mobile",
-    "assessment"
+    "assessment",
+    "dynamic"
    ],
    "slug": "mobile-android-assessment",
    "triggers": [
@@ -1598,12 +1706,39 @@
   {
    "domain": "mobile",
    "keywords": [
+    "apk",
+    "jadx",
+    "apktool",
+    "manifest",
+    "smali",
+    "sign",
+    "install",
+    "hooks",
+    "android",
+    "unpacking",
+    "rebuild",
+    "frida",
+    "runtime",
+    "patching",
+    "mobile",
+    "analysis"
+   ],
+   "slug": "mobile-apk-reverse",
+   "triggers": [
+    "decompile this apk with jadx",
+    "smali patch and rebuild the apk",
+    "frida trace the android crypto"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
     "cert",
     "pinning",
     "tls",
     "proxy",
-    "traffic",
     "certificate",
+    "traffic",
     "app",
     "mobile",
     "bypass"
@@ -1622,14 +1757,14 @@
     "schemes",
     "intents",
     "screens",
-    "deep",
     "links",
-    "custom",
     "redirect",
     "reaching",
-    "mobile",
+    "deep",
+    "custom",
     "url",
     "internal",
+    "mobile",
     "token",
     "theft",
     "abuse"
@@ -1648,9 +1783,9 @@
     "assess",
     "app",
     "static",
-    "dynamic",
     "mobile",
-    "assessment"
+    "assessment",
+    "dynamic"
    ],
    "slug": "mobile-ios-assessment",
    "triggers": [
@@ -1666,12 +1801,12 @@
     "webviews",
     "bridge",
     "native",
-    "mobile",
     "insecure",
+    "mobile",
     "file",
     "access",
-    "js",
     "xss",
+    "js",
     "exploit",
     "abuse"
    ],
@@ -1714,17 +1849,17 @@
    "keywords": [
     "hashes",
     "handshakes",
-    "captured",
     "pick",
     "right",
     "hashcat",
     "john",
     "wordlist",
     "crack",
+    "captured",
     "engagement",
-    "identify",
     "format",
     "cracking",
+    "identify",
     "mode",
     "rules",
     "credential"
@@ -1748,9 +1883,9 @@
     "movement",
     "adcs",
     "authentication",
-    "network",
     "privilege",
-    "escalation"
+    "escalation",
+    "network"
    ],
    "slug": "network-ntlm-relay",
    "triggers": [
@@ -1772,12 +1907,12 @@
     "creds",
     "locking",
     "accounts",
-    "known",
     "low",
+    "known",
     "password",
-    "credential",
     "exposed",
-    "users"
+    "users",
+    "credential"
    ],
    "slug": "network-password-spraying",
    "triggers": [
@@ -1811,8 +1946,8 @@
   {
    "domain": "network",
    "keywords": [
-    "non",
     "surfaced",
+    "non",
     "services",
     "service",
     "network",
@@ -1825,7 +1960,7 @@
    "triggers": [
     "test for non-web network services surfaced by recon",
     "check non-web network services surfaced by recon",
-    "non surfaced services"
+    "surfaced non services"
    ]
   },
   {
@@ -1837,13 +1972,13 @@
     "nc",
     "exploits",
     "transfers",
-    "files",
     "shared",
     "upload",
-    "back",
+    "files",
     "tools",
     "pull",
     "loot",
+    "back",
     "payloads",
     "pivot",
     "file"
@@ -1919,10 +2054,10 @@
   {
    "domain": "privesc",
    "keywords": [
-    "local",
     "arsenal",
     "linux",
     "windows",
+    "local",
     "privesc",
     "engagements",
     "tool",
@@ -1934,7 +2069,7 @@
    "triggers": [
     "test for linux + windows local privilege-escalation tool arsenal",
     "check linux + windows local privilege-escalation tool arsenal",
-    "local arsenal linux"
+    "arsenal linux windows"
    ]
   },
   {
@@ -1952,9 +2087,9 @@
     "windows",
     "privesc",
     "enumeration",
+    "build",
     "host",
     "credential",
-    "build",
     "find"
    ],
    "slug": "privesc-enumeration",
@@ -1972,11 +2107,11 @@
     "suid",
     "sgid",
     "capabilities",
-    "binaries",
     "techniques",
     "linux",
     "rules",
     "privesc",
+    "binaries",
     "privilege",
     "escalation",
     "via"
@@ -2019,20 +2154,20 @@
    "domain": "recon",
    "keywords": [
     "port",
-    "discovery",
     "arsenal",
-    "host",
+    "discovery",
     "service",
     "engagements",
+    "host",
     "tool",
-    "authorized",
-    "recon"
+    "recon",
+    "authorized"
    ],
    "slug": "recon-arsenal",
    "triggers": [
     "test for port/host/service discovery tool arsenal",
     "check port/host/service discovery tool arsenal",
-    "port discovery arsenal"
+    "port arsenal discovery"
    ]
   },
   {
@@ -2047,9 +2182,9 @@
     "aws",
     "assets",
     "gcp",
-    "discover",
     "services",
     "azure",
+    "discover",
     "apps",
     "recon",
     "cloud"
@@ -2066,10 +2201,10 @@
    "keywords": [
     "paths",
     "routes",
-    "discovery",
     "hidden",
     "params",
     "content",
+    "discovery",
     "discover",
     "endpoints",
     "exposed",
@@ -2094,13 +2229,13 @@
     "nsec",
     "walking",
     "records",
-    "deep",
     "record",
     "transfers",
     "dangling",
     "dns",
-    "analysis",
+    "deep",
     "surface",
+    "analysis",
     "recon",
     "attack"
    ],
@@ -2145,11 +2280,11 @@
     "functionality",
     "params",
     "hidden",
-    "analysis",
-    "javascript",
     "endpoints",
     "secrets",
+    "javascript",
     "js",
+    "analysis",
     "recon"
    ],
    "slug": "recon-js-analysis",
@@ -2163,13 +2298,13 @@
    "domain": "recon",
    "keywords": [
     "osint",
-    "passive",
     "expand",
     "touching",
     "dorks",
     "shodan",
     "censys",
     "employees",
+    "passive",
     "secret",
     "leaks",
     "assets",
@@ -2220,12 +2355,12 @@
     "passively",
     "technology",
     "frontend",
-    "runtime",
     "cms",
-    "identify",
-    "stack",
     "backend",
     "cdn",
+    "identify",
+    "stack",
+    "runtime",
     "waf",
     "versions",
     "framework",
@@ -2317,7 +2452,6 @@
    "domain": "reporting",
    "keywords": [
     "communication",
-    "work",
     "productively",
     "triagers",
     "submit",
@@ -2327,6 +2461,7 @@
     "applicable",
     "disputes",
     "professionally",
+    "work",
     "follow",
     "duplicate",
     "severity",
@@ -2337,7 +2472,7 @@
    "triggers": [
     "test for triagers after you submit",
     "not-applicable",
-    "communication work productively"
+    "communication productively triagers"
    ]
   },
   {
@@ -2368,28 +2503,55 @@
   {
    "domain": "reverse-engineering",
    "keywords": [
+    "ninja",
+    "hlil",
+    "mlil",
+    "llil",
+    "inspection",
+    "exports",
+    "imports",
+    "types",
+    "strings",
+    "python",
+    "engineer",
+    "references",
+    "patching",
+    "automation",
     "binary",
+    "cross"
+   ],
+   "slug": "reverse-eng-binary-ninja",
+   "triggers": [
+    "binary ninja hlil analysis",
+    "binary ninja mcp integration",
+    "review this function in binary ninja"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
     "vulnerable",
     "input",
     "native",
     "path",
+    "binary",
+    "logic",
     "static",
     "dynamic",
-    "reverse",
-    "logic",
-    "analysis",
     "read",
-    "eng",
     "triage",
     "run",
     "dangerous",
-    "sinks"
+    "analysis",
+    "sinks",
+    "find",
+    "reverse"
    ],
    "slug": "reverse-eng-binary-triage",
    "triggers": [
     "test for native binary you can run",
     "input path",
-    "binary vulnerable input"
+    "vulnerable input native"
    ]
   },
   {
@@ -2405,12 +2567,12 @@
     "minified",
     "webassembly",
     "vm",
-    "binaries",
     "obfuscated",
     "protected",
     "native",
-    "reverse",
-    "javascript"
+    "binaries",
+    "javascript",
+    "js"
    ],
    "slug": "reverse-eng-deobfuscation",
    "triggers": [
@@ -2422,27 +2584,347 @@
   {
    "domain": "reverse-engineering",
    "keywords": [
-    "analyze",
-    "device",
+    "assembly",
+    "deobfuscate",
+    "il",
+    "dotnet",
+    "net",
+    "debug",
+    "patch",
+    "managed",
+    "decompile",
+    "c",
+    "binaries",
+    "reverse",
+    "eng"
+   ],
+   "slug": "reverse-eng-dotnet",
+   "triggers": [
+    "decompile this .net executable",
+    "dnspy patch the license check",
+    "de4dot deobfuscate the assembly"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "av",
+    "evade",
+    "fingerprint",
+    "product",
+    "dump",
+    "userland",
+    "hook",
+    "assemble",
+    "edr",
+    "table",
+    "engineer",
+    "host",
+    "target",
+    "analysis",
+    "authorized",
+    "reverse"
+   ],
+   "slug": "reverse-eng-edr-analysis",
+   "triggers": [
+    "how does the edr hook ntdll",
+    "analyze edr telemetry blind spots",
+    "etw and amsi instrumentation review"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
     "hardcoded",
     "backdoors",
     "behind",
     "firmware",
     "extract",
+    "analyze",
+    "device",
     "vulnerable",
     "version",
     "appliance",
     "services",
-    "reverse",
     "secrets",
-    "eng",
-    "find"
+    "find",
+    "reverse",
+    "eng"
    ],
    "slug": "reverse-eng-firmware",
    "triggers": [
     "test for device firmware",
     "backdoors",
-    "analyze device hardcoded"
+    "hardcoded backdoors behind"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "ghidra",
+    "headless",
+    "license",
+    "batch",
+    "ida",
+    "gui",
+    "mcp",
+    "decompile",
+    "scripting",
+    "ci",
+    "engineer",
+    "references",
+    "cross",
+    "reverse",
+    "eng"
+   ],
+   "slug": "reverse-eng-ghidra",
+   "triggers": [
+    "analyze this binary in ghidra",
+    "analyzeheadless batch triage script",
+    "ghidra decompiler review"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "stripped",
+    "symbols",
+    "pclntab",
+    "moduledata",
+    "panic",
+    "navigate",
+    "idioms",
+    "go",
+    "rust",
+    "metadata",
+    "language",
+    "specific",
+    "recover",
+    "binaries",
+    "reverse",
+    "eng"
+   ],
+   "slug": "reverse-eng-go-rust",
+   "triggers": [
+    "recover symbols from this go binary",
+    "reverse a stripped rust release build",
+    "goresym pclntab recovery"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "pro",
+    "hex",
+    "rays",
+    "ida",
+    "types",
+    "bridge",
+    "driven",
+    "deep",
+    "decompile",
+    "gui",
+    "mcp",
+    "agent",
+    "engineering",
+    "references",
+    "patching",
+    "cross"
+   ],
+   "slug": "reverse-eng-ida",
+   "triggers": [
+    "static analysis in ida pro",
+    "hex-rays decompiler workflow",
+    "ida headless binary analysis"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "trace",
+    "fires",
+    "given",
+    "encryption",
+    "inputs",
+    "front",
+    "signing",
+    "script",
+    "capture",
+    "runtime",
+    "function",
+    "javascript",
+    "request",
+    "js",
+    "reverse",
+    "eng"
+   ],
+   "slug": "reverse-eng-js",
+   "triggers": [
+    "deobfuscate the javascript encryption",
+    "find the signing algorithm in the minified bundle",
+    "reverse the webpack javascript"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "macos",
+    "mach",
+    "bundles",
+    "codesign",
+    "notarization",
+    "entitlements",
+    "objective",
+    "swift",
+    "symbol",
+    "recovery",
+    "lldb",
+    "state",
+    "frida",
+    "c",
+    "app",
+    "binaries"
+   ],
+   "slug": "reverse-eng-macos",
+   "triggers": [
+    "triage this mach-o binary",
+    "macos entitlements and codesign review",
+    "class-dump the objective-c methods"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "fully",
+    "sample",
+    "behavioral",
+    "including",
+    "iat",
+    "import",
+    "malware",
+    "analyze",
+    "unpacking",
+    "rebuild",
+    "table",
+    "anti",
+    "static",
+    "dynamic",
+    "detection",
+    "triage"
+   ],
+   "slug": "reverse-eng-malware",
+   "triggers": [
+    "analyze this malware sample",
+    "unpack the sample and extract iocs",
+    "write a yara rule for this family"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "diff",
+    "vendor",
+    "patched",
+    "unpatched",
+    "newly",
+    "added",
+    "patch",
+    "working",
+    "day",
+    "checks",
+    "class",
+    "safety",
+    "back",
+    "binaries",
+    "read",
+    "bug"
+   ],
+   "slug": "reverse-eng-patch-diff",
+   "triggers": [
+    "diff the patched and unpatched binaries",
+    "n-day patch analysis to poc",
+    "bindiff the security update"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "layout",
+    "type",
+    "dictionary",
+    "field",
+    "meanings",
+    "captured",
+    "traffic",
+    "frame",
+    "message",
+    "custom",
+    "client",
+    "protocol",
+    "binary",
+    "recover",
+    "network",
+    "reverse"
+   ],
+   "slug": "reverse-eng-protocol",
+   "triggers": [
+    "reverse this proprietary network protocol",
+    "parse the unknown binary protocol frames",
+    "custom protocol dissection in wireshark"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "radare2",
+    "line",
+    "r2",
+    "disassembly",
+    "diffing",
+    "command",
+    "imports",
+    "needed",
+    "strings",
+    "scripting",
+    "gui",
+    "references",
+    "patching",
+    "binary",
+    "cross",
+    "analysis"
+   ],
+   "slug": "reverse-eng-radare2",
+   "triggers": [
+    "reverse this binary with radare2",
+    "r2 analysis and patching session",
+    "rabin2 rasm2 binary inspection"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "thick",
+    "desktop",
+    "boundaries",
+    "ipc",
+    "map",
+    "work",
+    "config",
+    "files",
+    "client",
+    "trust",
+    "local",
+    "storage",
+    "surface",
+    "credential",
+    "test",
+    "security"
+   ],
+   "slug": "reverse-eng-thick-client",
+   "triggers": [
+    "assess this desktop thick client",
+    "thick client local secrets and traffic",
+    "desktop application security review"
    ]
   },
   {
@@ -2450,25 +2932,25 @@
    "keywords": [
     "plan",
     "load",
-    "first",
     "guardrails",
     "human",
     "methodology",
-    "engineering",
-    "safely",
+    "first",
     "factor",
     "social",
+    "engineering",
+    "safely",
     "assessment",
-    "eng",
     "test",
     "run",
-    "authorized"
+    "authorized",
+    "eng"
    ],
    "slug": "social-eng-methodology",
    "triggers": [
     "test for authorized social-engineering assessment safely",
     "load-first guardrails",
-    "plan load first"
+    "plan load guardrails"
    ]
   },
   {
@@ -2487,9 +2969,9 @@
     "pretext",
     "social",
     "assessment",
-    "eng",
     "run",
-    "authorized"
+    "authorized",
+    "eng"
    ],
    "slug": "social-eng-phishing",
    "triggers": [
@@ -2507,16 +2989,16 @@
     "badge",
     "rfid",
     "cloning",
-    "checks",
     "media",
     "drop",
     "tests",
     "measure",
-    "engineering",
+    "checks",
     "pretext",
     "social",
+    "engineering",
     "assessment",
-    "eng"
+    "run"
    ],
    "slug": "social-eng-physical",
    "triggers": [
@@ -2540,10 +3022,10 @@
     "follow",
     "pretext",
     "phishing",
-    "safely",
     "social",
-    "eng",
-    "test"
+    "safely",
+    "test",
+    "run"
    ],
    "slug": "social-eng-vishing-pretext",
    "triggers": [
@@ -2563,12 +3045,12 @@
     "next",
     "graph",
     "assets",
-    "trust",
     "gets",
     "path",
+    "trust",
     "one",
-    "model",
     "tradecraft",
+    "model",
     "target",
     "find"
    ],
@@ -2619,9 +3101,9 @@
     "bounty",
     "rules",
     "scope",
+    "tradecraft",
     "bug",
-    "triage",
-    "tradecraft"
+    "triage"
    ],
    "slug": "tradecraft-bugbounty-platforms",
    "triggers": [
@@ -2646,8 +3128,8 @@
     "hosts",
     "path",
     "engagements",
-    "chain",
     "bugs",
+    "chain",
     "tradecraft"
    ],
    "slug": "tradecraft-complex-engagements",
@@ -2818,8 +3300,8 @@
     "otp",
     "session",
     "surface",
-    "test",
     "auth",
+    "test",
     "attack",
     "web"
    ],
@@ -2905,9 +3387,9 @@
     "clickjacking",
     "ui",
     "redress",
-    "frame",
     "clicks",
     "hit",
+    "frame",
     "actions",
     "victim",
     "hidden",
@@ -2924,36 +3406,36 @@
   {
    "domain": "web",
    "keywords": [
-    "signing",
     "replay",
     "outside",
-    "client",
+    "signing",
     "obfuscated",
     "fuzz",
     "protected",
     "browser",
+    "client",
     "side",
-    "reverse",
     "request",
     "js",
     "bypass",
     "api",
+    "reverse",
     "web"
    ],
    "slug": "web-client-side-signing-bypass",
    "triggers": [
     "test for client-side request signing / obfuscated js",
     "check client-side request signing / obfuscated js",
-    "signing replay outside"
+    "replay outside signing"
    ]
   },
   {
    "domain": "web",
    "keywords": [
-    "command",
     "reaches",
     "arbitrary",
     "os",
+    "command",
     "input",
     "user",
     "shell",
@@ -2976,10 +3458,10 @@
     "misconfiguration",
     "responses",
     "origin",
-    "cross",
-    "read",
     "theft",
+    "read",
     "data",
+    "cross",
     "exploit",
     "web"
    ],
@@ -2996,9 +3478,9 @@
     "csp",
     "despite",
     "step",
-    "script",
     "policy",
     "blocking",
+    "script",
     "content",
     "finding",
     "run",
@@ -3019,16 +3501,16 @@
    "keywords": [
     "csrf",
     "perform",
-    "state",
     "changing",
     "forgery",
     "browser",
+    "state",
     "actions",
     "site",
     "force",
     "victim",
-    "cross",
     "request",
+    "cross",
     "web"
    ],
    "slug": "web-csrf",
@@ -3096,8 +3578,8 @@
     "chains",
     "deserialization",
     "insecure",
-    "via",
     "rce",
+    "via",
     "web"
    ],
    "slug": "web-deserialization",
@@ -3114,10 +3596,10 @@
     "overwrite",
     "variables",
     "injected",
-    "needed",
     "dom",
     "page",
     "html",
+    "needed",
     "script",
     "javascript",
     "web"
@@ -3137,8 +3619,8 @@
     "file",
     "xss",
     "ssrf",
-    "turn",
     "rce",
+    "turn",
     "web"
    ],
    "slug": "web-file-upload",
@@ -3232,10 +3714,10 @@
     "itself",
     "url",
     "attacker",
-    "via",
-    "turn",
     "rce",
+    "via",
     "attacks",
+    "turn",
     "web"
    ],
    "slug": "web-jdbc-attacks",
@@ -3251,10 +3733,10 @@
     "lfi",
     "traversal",
     "inclusion",
-    "local",
-    "files",
     "sometimes",
+    "files",
     "path",
+    "local",
     "file",
     "read",
     "rce",
@@ -3371,9 +3853,9 @@
     "origin",
     "trust",
     "insecure",
-    "cross",
     "xss",
     "data",
+    "cross",
     "exploit",
     "web"
    ],
@@ -3395,8 +3877,8 @@
     "server",
     "xss",
     "auth",
-    "via",
     "rce",
+    "via",
     "bypass",
     "web"
    ],
@@ -3416,13 +3898,13 @@
     "keyword",
     "blocklists",
     "exec",
-    "python",
     "escape",
     "reach",
     "defeat",
     "restricted",
     "reaching",
     "objects",
+    "python",
     "execution",
     "code",
     "web"
@@ -3461,15 +3943,15 @@
    "keywords": [
     "rate",
     "limit",
-    "anti",
     "enable",
     "brute",
     "guessing",
     "coupon",
     "limits",
-    "automation",
+    "anti",
     "force",
     "otp",
+    "automation",
     "enumeration",
     "bypass",
     "abuse",
@@ -3479,7 +3961,7 @@
    "triggers": [
     "test for rate limits",
     "otp guessing",
-    "rate limit anti"
+    "rate limit enable"
    ]
   },
   {
@@ -3489,8 +3971,8 @@
     "cl",
     "te",
     "desync",
-    "front",
     "http",
+    "front",
     "back",
     "poison",
     "requests",
@@ -3558,8 +4040,8 @@
    "domain": "web",
    "keywords": [
     "forgery",
-    "discover",
     "escalate",
+    "discover",
     "side",
     "server",
     "request",
@@ -3582,9 +4064,9 @@
     "unauthenticated",
     "cron",
     "job",
-    "protocol",
     "write",
     "side",
+    "protocol",
     "internal",
     "server",
     "request",
@@ -3671,9 +4153,9 @@
     "party",
     "self",
     "built",
-    "hardware",
     "rp",
     "requests",
+    "hardware",
     "key",
     "web"
    ],
@@ -3690,13 +4172,13 @@
     "websocket",
     "cswsh",
     "hijacking",
-    "message",
     "tampering",
     "gaps",
+    "message",
     "site",
     "endpoints",
-    "cross",
     "auth",
+    "cross",
     "attack",
     "web"
    ],
@@ -3710,14 +4192,14 @@
   {
    "domain": "web",
    "keywords": [
-    "scripting",
     "reflected",
     "prove",
     "stored",
     "dom",
     "site",
-    "cross",
+    "scripting",
     "xss",
+    "cross",
     "find",
     "web"
    ],
@@ -3781,18 +4263,18 @@
    "domain": "wireless",
    "keywords": [
     "psk",
-    "wi",
-    "fi",
     "monitor",
     "handshake",
     "pmkid",
     "wireless",
     "wpa2",
-    "capture",
+    "wi",
+    "fi",
     "offline",
     "mode",
-    "discovery",
+    "capture",
     "cracking",
+    "discovery",
     "network",
     "attacks",
     "attack"

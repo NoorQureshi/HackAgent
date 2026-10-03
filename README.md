@@ -9,11 +9,16 @@
 ![skills](https://img.shields.io/badge/skills-161-334155?style=flat-square)
 ![domains](https://img.shields.io/badge/domains-20-334155?style=flat-square)
 ![mapped](https://img.shields.io/badge/mapped-OWASP%20%C2%B7%20MITRE%20ATT%26CK-334155?style=flat-square)
+![routing](https://img.shields.io/badge/routing-483%20trigger%20cases%20CI--verified-334155?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-334155?style=flat-square)
 
 <sub>[Docs](https://noorqureshi.github.io/SploitAgent/) · [How it works](https://noorqureshi.github.io/SploitAgent/interact.html) · [Search skills](https://noorqureshi.github.io/SploitAgent/catalog.html) · [Contributing](CONTRIBUTING.md)</sub>
 
+🌐 English | [中文](README_zh.md)
+
 </div>
+
+> **If you are an AI agent:** read [AGENTS.md](AGENTS.md) (or [README_AI.md](README_AI.md) for the short bootstrap) and follow it strictly — this repo is designed to be operated by you, not just read by humans.
 
 <p align="center">
   <img src="docs/screenshots/demo.svg" width="820"
@@ -25,6 +30,8 @@
 ## What it is
 
 Your AI agent is a strong generalist, but it doesn't know the *exact method* for a specific job — say, testing an API for access-control bugs. **SploitAgent is that missing know-how:** a binder of 161 short "how to do this one technique" pages the agent flips to when it needs one.
+
+It's not a replacement for your toolkit, either: the skills teach your agent when and how to drive the tools you already have — sqlmap, nmap, ffuf, nuclei, Burp Suite, Ghidra, Frida, hashcat, Impacket — with the exact commands, follow-ups, and verification steps each job calls for. And a machine-readable routing table ([`data/routing.json`](data/routing.json) — **483 trigger cases, CI-verified**) lets any agent or integration pick the right skill deterministically, no prompt guesswork.
 
 You describe the task in plain English → it picks the right page, runs it, proves the bug, and writes it up → and it never touches anything outside the scope you set.
 

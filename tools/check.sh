@@ -8,7 +8,7 @@ ok(){ printf '  \033[32m✓\033[0m %s\n' "$1"; }
 
 echo "SploitAgent — local checks"
 
-python3 -m py_compile tools/catalog.py tools/console/server.py tools/hooks/*.py tools/demo_svg.py bench/*.py
+python3 -m py_compile tools/catalog.py tools/test_routing.py tools/console/server.py tools/hooks/*.py tools/demo_svg.py bench/*.py
 ok "python files compile"
 
 bash -n sploit install.sh bench/*.sh
@@ -30,11 +30,15 @@ python3 tools/catalog.py check-counts
 
 python3 tools/catalog.py catalog >/dev/null
 python3 tools/catalog.py coverage >/dev/null
-if ! git diff --quiet -- CATALOG.md COVERAGE.md docs/skills.json; then
+python3 tools/catalog.py routing >/dev/null
+if ! git diff --quiet -- CATALOG.md COVERAGE.md docs/skills.json data/routing.json; then
   echo "  ✗ generated files are stale — commit these:"
-  git --no-pager diff --stat -- CATALOG.md COVERAGE.md docs/skills.json
+  git --no-pager diff --stat -- CATALOG.md COVERAGE.md docs/skills.json data/routing.json
   exit 1
 fi
 ok "generated indexes up to date"
+
+python3 tools/test_routing.py
+ok "routing regression suite"
 
 printf '\n\033[32mAll checks passed.\033[0m\n'

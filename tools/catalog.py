@@ -5,9 +5,10 @@ Scans skills/<domain>/<slug>/SKILL.md, then:
   validate      -> check every skill's frontmatter against the schema keys/enums
   catalog       -> write CATALOG.md (browsable) + data/skills_index.json + docs/skills.json
   coverage      -> write COVERAGE.md (standards mapping)
+  routing       -> write data/routing.json (per-skill trigger utterances + keywords)
   stamp         -> rewrite hardcoded skill counts (total + per-domain) in README/docs
   check-counts  -> non-mutating guard: fail if any hardcoded count is stale (for CI)
-  all           -> validate + catalog + coverage + stamp  (default)
+  all           -> validate + catalog + coverage + routing + stamp  (default)
 
 No third-party deps: a minimal frontmatter parser handles our controlled files.
 Run: python3 tools/catalog.py [validate|catalog|all]
@@ -206,6 +207,219 @@ def cmd_catalog():
     print(f"  wrote CATALOG.md ({len(skills)} skills) + data/skills_index.json + docs/skills.json")
     return 0
 
+# ---------------------------------------------------------------------------
+# Routing table (data/routing.json): per-skill trigger utterances + keywords,
+# distilled from each skill's description line. The matcher that consumes this
+# file is documented and regression-tested in tools/test_routing.py.
+
+# Common English function words excluded from generated keywords/triggers.
+# (The matcher itself needs no stopword list — idf weighting neutralizes them.)
+ROUTING_STOPWORDS = set("""
+a an the and or of to in on for with without from by at as is are was were be been being it its this that these
+those you your we our they their he she his her me my him them us what which who whom how when where why can
+could should would may might must do does did done have has had having not no nor but if then than so such too
+very just also into over under again once only own same each few more most other some any all both between
+through during before after above below up down out off here there per vs etc about against within across based
+will get got take takes make makes use used using keep keeps real full fast end
+""".split())
+
+# Imperative verbs stripped when a description clause becomes a task utterance.
+ROUTING_LEAD_VERBS = set("""
+attack abuse test exploit find detect assess review audit bypass escalate extract forge crack break use map
+build perform identify discover enumerate steal coerce force pass request recover turn get run write hunt choose
+decide avoid understand establish structure model plan stand trick send claim defeat peel register combine inject
+overwrite poison assign validate chain move mine kill make reverse measure speak harden work fuzz respond acquire
+convert triage analyze escape
+""".split())
+
+# Leading filler stripped alongside lead verbs when shaping an utterance.
+_ROUTING_LEAD_FILLER = {"a", "an", "the", "one", "your", "their", "its", "our", "this", "that",
+                        "security", "systematic", "of", "and", "against", "or", "for", "to", "with",
+                        "into", "how", "then", "offensively", "legitimately", "productively", "safely",
+                        "passively"}
+
+# Words that start a purpose tail ("...to escalate to Domain Admin") — clip there.
+_ROUTING_PURPOSE = {"to", "so", "via", "into", "without", "that", "which", "when", "until", "while", "for", "and", "or", "after"}
+
+# Dangling trailing words clipped after truncation ("...you can run or").
+_ROUTING_TRAIL_JUNK = _ROUTING_PURPOSE | {"a", "an", "the", "of", "with", "by", "in", "on", "at", "as",
+                                          "using", "per", "your", "their", "its", "our", "from"}
+
+# Hand-tuned utterances for the flagship skills; everything else is derived from
+# the description line by _routing_triggers. Curated entries must still
+# round-trip through the matcher — tools/test_routing.py enforces that.
+CURATED_TRIGGERS = {
+    "web-auth-jwt": ["is this jwt forgeable", "test the login token signature", "jwt none alg attack"],
+    "web-xss": ["reflected xss in the search box", "prove stored cross-site scripting", "dom xss sink"],
+    "web-sqli": ["test the id parameter for sql injection", "time-based blind sqli", "union select column extraction"],
+    "web-ssrf": ["make the server fetch an internal url", "server-side request forgery probe", "ssrf to the internal network"],
+    "web-idor": ["change the user id and read another account", "idor on the invoice endpoint", "insecure direct object reference"],
+    "web-csrf": ["forge a state-changing request as the victim", "csrf on the email change form", "cross-site request forgery"],
+    "web-ssti": ["template injection in the greeting field", "{{7*7}} renders 49", "ssti to rce"],
+    "web-xxe": ["xml external entity file read", "xxe in the upload parser", "dtd entity injection"],
+    "web-lfi-path-traversal": ["read /etc/passwd through the page param", "lfi to log poisoning", "path traversal dot dot slash"],
+    "web-command-injection": ["user input reaches a shell", "os command injection in the ping field", "inject commands with a semicolon"],
+    "web-file-upload": ["upload a webshell past the filter", "file upload to rce", "svg upload gives stored xss"],
+    "web-deserialization": ["java deserialization gadget chain", "unserialize object injection", "insecure deserialization to rce"],
+    "web-open-redirect": ["redirect param to an attacker site", "open redirect in the login return url", "unvalidated redirect chaining"],
+    "web-oauth": ["oauth redirect_uri manipulation", "steal the authorization code", "oidc state parameter missing"],
+    "web-saml": ["saml signature wrapping xsw", "unsigned assertion accepted", "forge a saml response"],
+    "web-request-smuggling": ["http request smuggling cl.te", "desync the front-end and back-end", "te.cl smuggle a request past the waf"],
+    "web-cache-poisoning": ["poison the shared cache with an unkeyed header", "web cache poisoning via x-forwarded-host", "cache serves my content to everyone"],
+    "web-cache-deception": ["trick the cdn into caching a private page", "cache deception on the account page", "victim profile cached at a public url"],
+    "web-cors": ["cors reflects an arbitrary origin", "read cross-origin responses with credentials", "cors misconfig data theft"],
+    "web-csp-bypass": ["bypass the content-security-policy", "script runs despite csp", "csp nonce reuse"],
+    "web-clickjacking": ["frame the settings page invisibly", "clickjacking the delete button", "ui redress attack"],
+    "web-prototype-pollution": ["pollute object.prototype", "client-side prototype pollution to xss", "__proto__ in the query string"],
+    "web-race-conditions": ["fire parallel requests to double-spend", "race condition on the coupon endpoint", "toctou single-use token reused"],
+    "web-mfa-bypass": ["bypass the otp step", "totp brute force with no rate limit", "skip the second factor"],
+    "web-account-takeover": ["take over an account via password reset", "ato through the email change flow", "reset token is predictable"],
+    "web-websocket": ["cross-site websocket hijacking cswsh", "tamper websocket messages", "ws endpoint missing auth"],
+    "web-subdomain-takeover": ["dangling cname to an unclaimed service", "subdomain takeover on the old host", "claim the orphaned dns record"],
+    "web-business-logic": ["abuse the checkout flow logic", "negative quantity in the cart", "business logic flaw skips payment"],
+    "web-host-header": ["host header injection poisons reset links", "x-forwarded-host cache abuse", "password reset link points to my domain"],
+    "web-testing-checklist": ["systematic web app testing checklist", "what to test on this web application", "web pentest coverage checklist"],
+    "api-testing-checklist": ["systematic api testing checklist", "what to test on this rest api", "api assessment coverage checklist"],
+    "api-graphql": ["introspection enabled on the graphql endpoint", "graphql batching abuse", "deeply nested query dos"],
+    "api-bola": ["bola on the rest api", "read another user's object by id", "broken object level authorization"],
+    "api-mass-assignment": ["add role admin to the json body", "mass assignment privilege escalation", "auto-binding extra fields"],
+    "cloud-s3-exposure": ["is this s3 bucket public", "list the exposed bucket anonymously", "azure blob open to everyone"],
+    "cloud-kubernetes": ["exposed kubelet api", "kubernetes dashboard unauthenticated", "etcd readable from a pod"],
+    "cloud-imds-ssrf": ["steal instance metadata credentials", "imdsv1 reached through ssrf", "169.254.169.254 from the app"],
+    "cloud-container-escape": ["break out of the container to the host", "privileged container escape", "escape the pod to the node"],
+    "cloud-docker-api-abuse": ["docker api on 2375 unauthenticated", "abuse the exposed docker daemon", "docker.sock mounted in the container"],
+    "cloud-iam-privesc": ["escalate aws iam from read-only", "iam privilege escalation path", "passrole abuse"],
+    "ad-kerberoasting": ["kerberoast the service accounts", "as-rep roast users without preauth", "crack the tgs tickets offline"],
+    "ad-adcs": ["esc1 certificate template misconfig", "adcs escalation to domain admin", "abuse the certificate authority"],
+    "network-ntlm-relay": ["relay ntlm auth to smb", "coerce and relay authentication", "ntlm relay to ldap"],
+    "network-password-spraying": ["spray one password across all users", "password spraying without lockouts", "stuff breached creds against the portal"],
+    "network-credential-cracking": ["crack this ntlm hash", "which hashcat mode for this hash", "john wordlist and rules for the capture"],
+    "network-pivoting-tunneling": ["pivot into the internal network", "socks proxy through the foothold", "port forward through the jump host"],
+    "ai-prompt-injection": ["prompt injection in the chatbot", "indirect injection through a web page", "make the llm ignore its instructions"],
+    "ai-jailbreak": ["jailbreak the llm's guardrails", "bypass the model's safety policy", "make it produce restricted output"],
+    "ai-rag-poisoning": ["poison the rag knowledge base", "planted document hijacks retrieval", "poisoned content the model retrieves"],
+    "ai-mcp-security": ["audit this mcp server", "tool poisoning in the mcp tool list", "prompt injection through tool results"],
+    "recon-subdomain-enum": ["enumerate subdomains for the program", "find live hosts in scope", "subdomain brute force and permutations"],
+    "recon-osint": ["passive osint on the target org", "google dorks for exposed files", "shodan recon without touching the target"],
+    "privesc-linux-gtfobins": ["suid binary privesc via gtfobins", "sudo rule lets me escalate", "abuse capabilities to get root"],
+    "privesc-windows-tokens": ["seimpersonate potato privesc", "token impersonation to system", "potato family escalation"],
+    "payloads-reverse-shells": ["get a reverse shell on the target", "upgrade to a fully interactive tty", "bind shell payload that works"],
+    "crypto-oracle-attacks": ["padding oracle on the cookie", "decrypt the token without the key", "cbc bit-flipping forgery"],
+    "mobile-cert-pinning-bypass": ["bypass certificate pinning on the app", "frida unpinning to proxy traffic", "ssl pinning blocks burp"],
+    "wireless-wpa2-attacks": ["capture the wpa2 handshake", "pmkid attack with no clients", "crack the wifi psk offline"],
+    "wireless-evil-twin": ["stand up an evil twin ap", "rogue captive portal harvests credentials", "peap mschapv2 challenge capture"],
+    "ad-pivot-arsenal": ["arsenal of ad pivoting and cracking tools", "password cracking tool arsenal", "which tools for ad post-exploitation"],
+    "ai-agent-tool-abuse": ["make the llm agent call tools with bad args", "tool abuse through the agent's functions", "coerce the agent into ssrf or exfil"],
+    "code-review-cpp": ["review this c/c++ code for memory safety", "cpp unsafe api sinks", "buffer overflow in the c source"],
+    "code-review-python": ["review this python code for security bugs", "django and flask dangerous sinks", "security review of the python codebase"],
+    "code-review-secrets-detection": ["find leaked secrets in the git history", "api keys committed to the repo", "scan ci logs for leaked credentials"],
+    "defense-log-analysis": ["hunt attacker activity in the logs", "what to look for in auth logs", "siem queries for suspicious logons"],
+    "recon-content-discovery": ["find hidden paths on the web target", "brute force directories and files", "content discovery with wordlists"],
+    "recon-js-analysis": ["mine the javascript for secrets", "endpoints hidden in the js bundles", "extract api routes from frontend js"],
+    "defense-incident-response": ["run the incident response process", "contain and eradicate the intrusion", "ir playbook for this breach"],
+    "crypto-rsa-attacks": ["break rsa with weak parameters", "recover the private key from the public key", "rsa padding attack"],
+    "api-fuzzing": ["fuzz the api endpoints systematically", "enumerate api methods and params", "ffuf the api for hidden endpoints"],
+    "defense-detection-sigma": ["write a sigma rule for this behavior", "convert sigma rules to our siem", "portable detections mapped to att&ck"],
+    "social-eng-phishing": ["phishing campaign for the client's employees", "spear-phishing assessment with a landing page", "measure the click rate safely"],
+}
+
+def _rtokens(text):
+    """Routing tokens: lowercase alnum runs minus stopwords and 1-char tokens
+    (except 'c', needed by code-review-cpp)."""
+    return [t for t in re.findall(r"[a-z0-9]+", text.lower())
+            if (len(t) > 1 or t == "c") and t not in ROUTING_STOPWORDS]
+
+def _routing_clauses(desc):
+    """Split a description into utterance-shaped clauses: cut on punctuation,
+    strip a leading imperative verb/article, clip purpose tails."""
+    out = []
+    for part in re.split(r"\s+[—–]\s+|,\s*|;\s*|\(|\)|\s+→\s+|:\s+", desc):
+        words = part.split()
+        while words and (words[0].lower().strip(".,") in ROUTING_LEAD_VERBS
+                         or words[0].lower() in _ROUTING_LEAD_FILLER):
+            words = words[1:]
+        for i, w in enumerate(words):
+            if i >= 2 and w.lower().strip(".,") in _ROUTING_PURPOSE:
+                words = words[:i]
+                break
+        words = words[:8]
+        while words and words[-1].lower().strip(".,") in _ROUTING_TRAIL_JUNK:
+            words = words[:-1]
+        u = " ".join(words).strip(" .,;:—–-/&").lower()
+        if "…" not in u and _rtokens(u):
+            out.append(u)
+    return out
+
+def _routing_disc_tokens(name, desc, df):
+    """The skill's distinct tokens, most library-rare first (stable on ties) —
+    the discriminative core used for keywords and the keyword-style trigger."""
+    seen, ordered = set(), []
+    for t in _rtokens(name.replace("-", " ") + " " + desc):
+        if t not in seen:
+            seen.add(t)
+            ordered.append(t)
+    return sorted(ordered, key=lambda t: (df.get(t, 0), ordered.index(t)))
+
+def _routing_triggers(name, desc, df):
+    """2–4 deterministic triggers per skill: a 'test for <head clause>'
+    utterance, a second clause that carries a library-rare token (a bare
+    keyword-style utterance), and a pure-keyword query from the rarest tokens.
+    df = document frequency of tokens across all skills."""
+    if name in CURATED_TRIGGERS:
+        return list(CURATED_TRIGGERS[name])
+    disc = _routing_disc_tokens(name, desc, df)
+    clauses = _routing_clauses(desc)
+    head = clauses[0] if clauses else ""
+    rare = [c for c in clauses[1:]
+            if min((df.get(t, 0) for t in set(_rtokens(c))), default=99) <= 3]
+    rare.sort(key=lambda u: sum(df.get(t, 0) for t in set(_rtokens(u))))
+    triggers = []
+    if head:
+        triggers.append("test for " + head)
+    if rare:
+        triggers.append(rare[0])
+    elif head:
+        triggers.append("check " + head)
+    if disc:
+        triggers.append(" ".join(disc[:3]))
+    while len(triggers) < 2:
+        triggers.append(name.replace("-", " "))
+    out = []
+    for t in triggers:
+        if t and t not in out:
+            out.append(t)
+    return out[:4]
+
+def cmd_routing():
+    """Write data/routing.json — committed trigger/keyword table for routing a
+    task utterance to a skill. Deterministic: sorted skills, no timestamps."""
+    skills = collect()
+    df = {}
+    descs = {}  # name -> description with the 150-char cap's partial last word dropped
+    for s in skills:
+        name = s["fm"].get("name", "")
+        descs[name] = re.sub(r"\S*…$", "", short_desc(s["fm"])).strip()
+        for t in set(_rtokens(name.replace("-", " ") + " " + descs[name])):
+            df[t] = df.get(t, 0) + 1
+    entries = []
+    for s in sorted(skills, key=lambda x: x["fm"].get("name", "")):
+        fm = s["fm"]
+        name = fm.get("name", "")
+        desc = descs.get(name, "")
+        entries.append({"slug": name, "domain": fm.get("domain", ""),
+                        "triggers": _routing_triggers(name, desc, df),
+                        "keywords": _routing_disc_tokens(name, desc, df)[:16]})
+    os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
+    payload = {"count": len(entries), "generated_by": "tools/catalog.py routing",
+               "matcher": "token-idf overlap — documented in tools/test_routing.py",
+               "skills": entries}
+    with open(os.path.join(ROOT, "data", "routing.json"), "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=1, sort_keys=True)
+        f.write("\n")
+    n = sum(len(e["triggers"]) for e in entries)
+    print(f"  wrote data/routing.json ({len(entries)} skills, {n} triggers)")
+    return 0
+
 def cmd_coverage():
     """Roll frontmatter mappings into COVERAGE.md (which standards each skill touches)."""
     skills = collect()
@@ -319,9 +533,9 @@ def cmd_check_counts():
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
     if cmd == "all":
-        return cmd_validate() or cmd_catalog() or cmd_coverage() or cmd_stamp()
+        return cmd_validate() or cmd_catalog() or cmd_coverage() or cmd_routing() or cmd_stamp()
     return {"catalog":cmd_catalog,"validate":cmd_validate,"coverage":cmd_coverage,
-            "stamp":cmd_stamp,"check-counts":cmd_check_counts}.get(cmd, lambda:2)()
+            "routing":cmd_routing,"stamp":cmd_stamp,"check-counts":cmd_check_counts}.get(cmd, lambda:2)()
 
 if __name__ == "__main__":
     sys.exit(main())

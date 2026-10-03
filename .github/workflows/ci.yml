@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Python files compile
-        run: python3 -m py_compile tools/catalog.py tools/console/server.py tools/hooks/*.py tools/demo_svg.py bench/*.py
+        run: python3 -m py_compile tools/catalog.py tools/test_routing.py tools/console/server.py tools/hooks/*.py tools/demo_svg.py bench/*.py
 
       - name: Shell scripts — syntax + lint (real errors only)
         run: |
@@ -45,8 +45,12 @@ jobs:
         run: |
           python3 tools/catalog.py catalog >/dev/null
           python3 tools/catalog.py coverage >/dev/null
-          if ! git diff --quiet -- CATALOG.md COVERAGE.md docs/skills.json; then
-            echo "::error::Generated files are stale. Run 'python3 tools/catalog.py' and commit CATALOG.md, COVERAGE.md, and docs/skills.json"
-            git --no-pager diff -- CATALOG.md COVERAGE.md docs/skills.json
+          python3 tools/catalog.py routing >/dev/null
+          if ! git diff --quiet -- CATALOG.md COVERAGE.md docs/skills.json data/routing.json; then
+            echo "::error::Generated files are stale. Run 'python3 tools/catalog.py' and commit CATALOG.md, COVERAGE.md, docs/skills.json, and data/routing.json"
+            git --no-pager diff -- CATALOG.md COVERAGE.md docs/skills.json data/routing.json
             exit 1
           fi
+
+      - name: Routing triggers round-trip (regression suite)
+        run: python3 tools/test_routing.py

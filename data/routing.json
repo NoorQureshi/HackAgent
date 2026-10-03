@@ -1,0 +1,3808 @@
+{
+ "count": 161,
+ "generated_by": "tools/catalog.py routing",
+ "matcher": "token-idf overlap \u2014 documented in tools/test_routing.py",
+ "skills": [
+  {
+   "domain": "ad",
+   "keywords": [
+    "esc1",
+    "esc8",
+    "ca",
+    "misconfigurations",
+    "domain",
+    "admin",
+    "certificate",
+    "template",
+    "adcs",
+    "active",
+    "directory",
+    "services",
+    "escalate",
+    "ad",
+    "attack"
+   ],
+   "slug": "ad-adcs",
+   "triggers": [
+    "esc1 certificate template misconfig",
+    "adcs escalation to domain admin",
+    "abuse the certificate authority"
+   ]
+  },
+  {
+   "domain": "ad",
+   "keywords": [
+    "dacl",
+    "acls",
+    "dacls",
+    "genericall",
+    "writedacl",
+    "genericwrite",
+    "writeowner",
+    "addmember",
+    "lateral",
+    "movement",
+    "active",
+    "directory",
+    "object",
+    "ad",
+    "escalation",
+    "abuse"
+   ],
+   "slug": "ad-dacl-abuse",
+   "triggers": [
+    "test for active directory object acls/dacls",
+    "genericall",
+    "dacl acls dacls"
+   ]
+  },
+  {
+   "domain": "ad",
+   "keywords": [
+    "impersonate",
+    "unconstrained",
+    "constrained",
+    "s4u2self",
+    "s4u2proxy",
+    "resource",
+    "rbcd",
+    "delegation",
+    "kerberos",
+    "hosts",
+    "users",
+    "ad",
+    "abuse"
+   ],
+   "slug": "ad-delegation-abuse",
+   "triggers": [
+    "test for kerberos delegation",
+    "unconstrained",
+    "impersonate unconstrained constrained"
+   ]
+  },
+  {
+   "domain": "ad",
+   "keywords": [
+    "tickets",
+    "passwords",
+    "kerberoasting",
+    "rep",
+    "roasting",
+    "crack",
+    "kerberos",
+    "offline",
+    "recover",
+    "user",
+    "service",
+    "request",
+    "ad"
+   ],
+   "slug": "ad-kerberoasting",
+   "triggers": [
+    "kerberoast the service accounts",
+    "as-rep roast users without preauth",
+    "crack the tgs tickets offline"
+   ]
+  },
+  {
+   "domain": "ad",
+   "keywords": [
+    "pivoting",
+    "tunneling",
+    "cracking",
+    "pivot",
+    "arsenal",
+    "active",
+    "directory",
+    "password",
+    "engagements",
+    "ad",
+    "authorized"
+   ],
+   "slug": "ad-pivot-arsenal",
+   "triggers": [
+    "arsenal of ad pivoting and cracking tools",
+    "password cracking tool arsenal",
+    "which tools for ad post-exploitation"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "functions",
+    "call",
+    "chosen",
+    "args",
+    "agent",
+    "coerce",
+    "tools",
+    "exfil",
+    "tool",
+    "llm",
+    "attacker",
+    "data",
+    "privilege",
+    "ai",
+    "ssrf",
+    "rce"
+   ],
+   "slug": "ai-agent-tool-abuse",
+   "triggers": [
+    "make the llm agent call tools with bad args",
+    "tool abuse through the agent's functions",
+    "coerce the agent into ssrf or exfil"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "pass",
+    "text",
+    "unsanitized",
+    "downstream",
+    "calls",
+    "output",
+    "sql",
+    "handling",
+    "trust",
+    "shell",
+    "insecure",
+    "apps",
+    "llm",
+    "model",
+    "xss",
+    "ai"
+   ],
+   "slug": "ai-insecure-output-handling",
+   "triggers": [
+    "test for apps that trust llm output",
+    "text unsanitized",
+    "pass text unsanitized"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "jailbreak",
+    "produce",
+    "ignore",
+    "safety",
+    "guardrails",
+    "restricted",
+    "output",
+    "policy",
+    "llm",
+    "ai",
+    "bypass"
+   ],
+   "slug": "ai-jailbreak",
+   "triggers": [
+    "jailbreak the llm's guardrails",
+    "bypass the model's safety policy",
+    "make it produce restricted output"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "dos",
+    "unbounded",
+    "consumption",
+    "denial",
+    "wallet",
+    "runaway",
+    "cost",
+    "latency",
+    "force",
+    "tokens",
+    "apps",
+    "llm",
+    "ai",
+    "attacks"
+   ],
+   "slug": "ai-llm-dos",
+   "triggers": [
+    "test for unbounded-consumption / denial-of-wallet attacks on llm apps",
+    "cost",
+    "dos unbounded consumption"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "mcp",
+    "servers",
+    "integrations",
+    "descriptions",
+    "results",
+    "broad",
+    "context",
+    "agent",
+    "assess",
+    "protocol",
+    "poisoning",
+    "prompt",
+    "tool",
+    "model",
+    "ai",
+    "via"
+   ],
+   "slug": "ai-mcp-security",
+   "triggers": [
+    "audit this mcp server",
+    "tool poisoning in the mcp tool list",
+    "prompt injection through tool results"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "extraction",
+    "steal",
+    "training",
+    "query",
+    "stealing",
+    "membership",
+    "extract",
+    "ml",
+    "parameters",
+    "inference",
+    "system",
+    "prompt",
+    "access",
+    "model",
+    "llm",
+    "data"
+   ],
+   "slug": "ai-model-extraction",
+   "triggers": [
+    "test for ml/llm model's parameters",
+    "stealing",
+    "extraction steal training"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "backed",
+    "consequences",
+    "guardrail",
+    "direct",
+    "indirect",
+    "exfil",
+    "prompt",
+    "function",
+    "apps",
+    "tool",
+    "test",
+    "llm",
+    "data",
+    "ai",
+    "bypass",
+    "injection"
+   ],
+   "slug": "ai-prompt-injection",
+   "triggers": [
+    "prompt injection in the chatbot",
+    "indirect injection through a web page",
+    "make the llm ignore its instructions"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "rag",
+    "knowledge",
+    "base",
+    "retrieved",
+    "hijacks",
+    "exfiltrates",
+    "indirect",
+    "scale",
+    "poisoning",
+    "poison",
+    "pipeline",
+    "content",
+    "prompt",
+    "model",
+    "data",
+    "ai"
+   ],
+   "slug": "ai-rag-poisoning",
+   "triggers": [
+    "poison the rag knowledge base",
+    "planted document hijacks retrieval",
+    "poisoned content the model retrieves"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
+    "supply",
+    "models",
+    "datasets",
+    "plugins",
+    "ml",
+    "poisoned",
+    "deserialization",
+    "unsafe",
+    "chain",
+    "llm",
+    "model",
+    "ai",
+    "attack"
+   ],
+   "slug": "ai-supply-chain",
+   "triggers": [
+    "test for ml/llm supply chain",
+    "datasets",
+    "supply models datasets"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "leakage",
+    "jwt",
+    "handling",
+    "weak",
+    "key",
+    "session",
+    "break",
+    "authentication",
+    "endpoints",
+    "token",
+    "auth",
+    "attacks",
+    "api"
+   ],
+   "slug": "api-auth-attacks",
+   "triggers": [
+    "test for api authentication",
+    "key leakage",
+    "leakage jwt handling"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "bola",
+    "json",
+    "broken",
+    "level",
+    "authorization",
+    "rest",
+    "apis",
+    "risk",
+    "object",
+    "function",
+    "api"
+   ],
+   "slug": "api-bola",
+   "triggers": [
+    "bola on the rest api",
+    "read another user's object by id",
+    "broken object level authorization"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "fuzzing",
+    "methods",
+    "systematically",
+    "fuzz",
+    "params",
+    "versions",
+    "discover",
+    "endpoints",
+    "api"
+   ],
+   "slug": "api-fuzzing",
+   "triggers": [
+    "fuzz the api endpoints systematically",
+    "enumerate api methods and params",
+    "ffuf the api for hidden endpoints"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "graphql",
+    "apis",
+    "api",
+    "attack"
+   ],
+   "slug": "api-graphql",
+   "triggers": [
+    "introspection enabled on the graphql endpoint",
+    "graphql batching abuse",
+    "deeply nested query dos"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "buffers",
+    "reflection",
+    "method",
+    "authz",
+    "grpc",
+    "protocol",
+    "apis",
+    "enumeration",
+    "test",
+    "api",
+    "injection"
+   ],
+   "slug": "api-grpc",
+   "triggers": [
+    "test for grpc / protocol buffers apis",
+    "reflection",
+    "buffers reflection method"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "assignment",
+    "auto",
+    "binding",
+    "mass",
+    "privilege",
+    "escalation",
+    "api"
+   ],
+   "slug": "api-mass-assignment",
+   "triggers": [
+    "add role admin to the json body",
+    "mass assignment privilege escalation",
+    "auto-binding extra fields"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "mongo",
+    "agg",
+    "facet",
+    "mongodb",
+    "aggregation",
+    "allowlist",
+    "nesting",
+    "disallowed",
+    "stages",
+    "inside",
+    "unionwith",
+    "lookup",
+    "sibling",
+    "collections",
+    "stage",
+    "pipeline"
+   ],
+   "slug": "api-mongo-agg-facet-bypass",
+   "triggers": [
+    "test for mongodb aggregation-pipeline stage allowlist by nesting disallowed read",
+    "$unionwith/$lookup sibling collections",
+    "mongo agg facet"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "assessing",
+    "soap",
+    "checklist",
+    "rest",
+    "graphql",
+    "grpc",
+    "nothing",
+    "skipped",
+    "testing",
+    "ordered",
+    "methodology",
+    "gets",
+    "api"
+   ],
+   "slug": "api-testing-checklist",
+   "triggers": [
+    "systematic api testing checklist",
+    "what to test on this rest api",
+    "api assessment coverage checklist"
+   ]
+  },
+  {
+   "domain": "api",
+   "keywords": [
+    "versioning",
+    "old",
+    "shadow",
+    "missed",
+    "improper",
+    "inventory",
+    "management",
+    "fix",
+    "versions",
+    "api",
+    "find",
+    "attack"
+   ],
+   "slug": "api-versioning",
+   "triggers": [
+    "test for old/shadow api versions",
+    "improper inventory management",
+    "versioning old shadow"
+   ]
+  },
+  {
+   "domain": "automation",
+   "keywords": [
+    "nuclei",
+    "templates",
+    "codify",
+    "scannable",
+    "custom",
+    "mass",
+    "check",
+    "automation",
+    "repeatable",
+    "write",
+    "finding"
+   ],
+   "slug": "automation-nuclei-templates",
+   "triggers": [
+    "test for custom nuclei templates",
+    "mass-scannable check",
+    "nuclei templates codify"
+   ]
+  },
+  {
+   "domain": "automation",
+   "keywords": [
+    "resumable",
+    "continuous",
+    "coverage",
+    "automation",
+    "tools",
+    "repeatable",
+    "pipeline",
+    "bounty",
+    "chain",
+    "bug",
+    "recon"
+   ],
+   "slug": "automation-recon-pipeline",
+   "triggers": [
+    "test for recon tools",
+    "resumable pipeline",
+    "resumable continuous coverage"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "entra",
+    "id",
+    "managed",
+    "identity",
+    "role",
+    "storage",
+    "misconfig",
+    "azure",
+    "app",
+    "token",
+    "theft",
+    "ad",
+    "cloud",
+    "abuse",
+    "attack"
+   ],
+   "slug": "cloud-azure",
+   "triggers": [
+    "test for azure / entra id",
+    "entra",
+    "entra id managed"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "escape",
+    "container",
+    "break",
+    "host",
+    "cloud"
+   ],
+   "slug": "cloud-container-escape",
+   "triggers": [
+    "break out of the container to the host",
+    "privileged container escape",
+    "escape the pod to the node"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "daemon",
+    "privileged",
+    "compromise",
+    "2375",
+    "2376",
+    "mounted",
+    "sock",
+    "docker",
+    "container",
+    "exposed",
+    "host",
+    "turn",
+    "api",
+    "cloud",
+    "abuse"
+   ],
+   "slug": "cloud-docker-api-abuse",
+   "triggers": [
+    "docker api on 2375 unauthenticated",
+    "abuse the exposed docker daemon",
+    "docker.sock mounted in the container"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "registry",
+    "registries",
+    "image",
+    "baked",
+    "layers",
+    "docker",
+    "push",
+    "loot",
+    "container",
+    "pull",
+    "misconfig",
+    "exposed",
+    "secrets",
+    "cloud",
+    "find"
+   ],
+   "slug": "cloud-docker-registry",
+   "triggers": [
+    "test for loot exposed container registries",
+    "registry misconfig",
+    "registry registries image"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "google",
+    "platform",
+    "sa",
+    "metadata",
+    "iam",
+    "gcp",
+    "storage",
+    "misconfig",
+    "function",
+    "token",
+    "theft",
+    "privilege",
+    "escalation",
+    "cloud",
+    "attack"
+   ],
+   "slug": "cloud-gcp",
+   "triggers": [
+    "test for google cloud platform",
+    "storage/ function misconfig",
+    "google platform sa"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "priv",
+    "set",
+    "iam",
+    "privileges",
+    "aws",
+    "credentials",
+    "gcp",
+    "low",
+    "escalate",
+    "azure",
+    "privesc",
+    "cloud"
+   ],
+   "slug": "cloud-iam-privesc",
+   "triggers": [
+    "escalate aws iam from read-only",
+    "iam privilege escalation path",
+    "passrole abuse"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "instance",
+    "imds",
+    "metadata",
+    "escalate",
+    "credential",
+    "service",
+    "theft",
+    "ssrf",
+    "via",
+    "cloud"
+   ],
+   "slug": "cloud-imds-ssrf",
+   "triggers": [
+    "steal instance metadata credentials",
+    "imdsv1 reached through ssrf",
+    "169.254.169.254 from the app"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "kubelet",
+    "etcd",
+    "dashboards",
+    "rbac",
+    "kubernetes",
+    "exposed",
+    "server",
+    "api",
+    "cloud",
+    "attack"
+   ],
+   "slug": "cloud-kubernetes",
+   "triggers": [
+    "exposed kubelet api",
+    "kubernetes dashboard unauthenticated",
+    "etcd readable from a pod"
+   ]
+  },
+  {
+   "domain": "cloud",
+   "keywords": [
+    "s3",
+    "exposure",
+    "misconfigured",
+    "gcs",
+    "blob",
+    "prove",
+    "storage",
+    "object",
+    "azure",
+    "cloud",
+    "find"
+   ],
+   "slug": "cloud-s3-exposure",
+   "triggers": [
+    "is this s3 bucket public",
+    "list the exposed bucket anonymously",
+    "azure blob open to everyone"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "cicd",
+    "cd",
+    "pipelines",
+    "workflows",
+    "ci",
+    "poisoned",
+    "secret",
+    "leakage",
+    "flaws",
+    "injection",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-cicd",
+   "triggers": [
+    "test for ci/cd pipelines",
+    "poisoned workflows",
+    "cicd cd pipelines"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "cpp",
+    "classic",
+    "c",
+    "safety",
+    "memory",
+    "unsafe",
+    "api",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-cpp",
+   "triggers": [
+    "review this c/c++ code for memory safety",
+    "cpp unsafe api sinks",
+    "buffer overflow in the c source"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "grep",
+    "ready",
+    "sink",
+    "catalog",
+    "language",
+    "function",
+    "dangerous",
+    "sinks",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-dangerous-sinks",
+   "triggers": [
+    "test for grep-ready dangerous function/sink catalog per language",
+    "check grep-ready dangerous function/sink catalog per language",
+    "grep ready sink"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "dotnet",
+    "net",
+    "asp",
+    "c",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-dotnet",
+   "triggers": [
+    "test for net / c# code",
+    "check net / c# code",
+    "dotnet net asp"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "go",
+    "framework",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code",
+    "web"
+   ],
+   "slug": "code-review-go",
+   "triggers": [
+    "test for go code",
+    "check go code",
+    "go framework pitfalls"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "iac",
+    "infrastructure",
+    "terraform",
+    "cloudformation",
+    "ansible",
+    "helm",
+    "manifests",
+    "kubernetes",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-iac",
+   "triggers": [
+    "test for infrastructure-as-code",
+    "terraform",
+    "iac infrastructure terraform"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "java",
+    "spring",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-java",
+   "triggers": [
+    "test for java code",
+    "check java code",
+    "java spring pitfalls"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "manual",
+    "reading",
+    "source",
+    "methodology",
+    "systematic",
+    "bugs",
+    "find",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-methodology",
+   "triggers": [
+    "test for manual source-code security review",
+    "bugs by reading code",
+    "manual reading source"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "nodejs",
+    "node",
+    "express",
+    "javascript",
+    "framework",
+    "js",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-nodejs",
+   "triggers": [
+    "test for node.js / javascript code",
+    "check node.js / javascript code",
+    "nodejs node express"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "php",
+    "laravel",
+    "symfony",
+    "wordpress",
+    "framework",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-php",
+   "triggers": [
+    "test for php code",
+    "laravel/symfony/wordpress",
+    "php laravel symfony"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "django",
+    "flask",
+    "fastapi",
+    "python",
+    "specific",
+    "framework",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-python",
+   "triggers": [
+    "review this python code for security bugs",
+    "django and flask dangerous sinks",
+    "security review of the python codebase"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "ruby",
+    "rails",
+    "pitfalls",
+    "dangerous",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-ruby",
+   "triggers": [
+    "test for ruby code",
+    "check ruby code",
+    "ruby rails pitfalls"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "rust",
+    "still",
+    "ffi",
+    "panics",
+    "usual",
+    "safe",
+    "language",
+    "memory",
+    "unsafe",
+    "bugs",
+    "logic",
+    "injection",
+    "sinks",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-rust",
+   "triggers": [
+    "test for rust code",
+    "ffi",
+    "rust still ffi"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "git",
+    "leaked",
+    "history",
+    "ci",
+    "secrets",
+    "detection",
+    "find",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-secrets-detection",
+   "triggers": [
+    "find leaked secrets in the git history",
+    "api keys committed to the repo",
+    "scan ci logs for leaked credentials"
+   ]
+  },
+  {
+   "domain": "code-review",
+   "keywords": [
+    "solidity",
+    "evm",
+    "smart",
+    "contracts",
+    "reentrancy",
+    "arithmetic",
+    "defi",
+    "economic",
+    "control",
+    "bugs",
+    "access",
+    "security",
+    "review",
+    "code"
+   ],
+   "slug": "code-review-solidity",
+   "triggers": [
+    "test for solidity / evm smart contracts",
+    "reentrancy",
+    "solidity evm smart"
+   ]
+  },
+  {
+   "domain": "cryptography",
+   "keywords": [
+    "oracle",
+    "symmetric",
+    "decrypt",
+    "encrypted",
+    "cookies",
+    "oracles",
+    "cbc",
+    "ecb",
+    "block",
+    "shuffling",
+    "forge",
+    "padding",
+    "crypto",
+    "weak",
+    "tokens",
+    "key"
+   ],
+   "slug": "crypto-oracle-attacks",
+   "triggers": [
+    "padding oracle on the cookie",
+    "decrypt the token without the key",
+    "cbc bit-flipping forgery"
+   ]
+  },
+  {
+   "domain": "cryptography",
+   "keywords": [
+    "rsa",
+    "plaintext",
+    "ciphertext",
+    "parameters",
+    "padding",
+    "private",
+    "crypto",
+    "weak",
+    "recover",
+    "key",
+    "break",
+    "public",
+    "attacks"
+   ],
+   "slug": "crypto-rsa-attacks",
+   "triggers": [
+    "break rsa with weak parameters",
+    "recover the private key from the public key",
+    "rsa padding attack"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "harden",
+    "dcsync",
+    "kerberoasting",
+    "rep",
+    "roasting",
+    "delegation",
+    "relay",
+    "adcs",
+    "active",
+    "directory",
+    "detect",
+    "ad",
+    "attacks",
+    "defense",
+    "abuse"
+   ],
+   "slug": "defense-ad-defense",
+   "triggers": [
+    "test for active directory attacks",
+    "dcsync",
+    "harden dcsync kerberoasting"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "respond",
+    "planes",
+    "persistence",
+    "audit",
+    "imds",
+    "logs",
+    "control",
+    "detect",
+    "credential",
+    "detection",
+    "theft",
+    "privilege",
+    "escalation",
+    "attacks",
+    "defense",
+    "cloud"
+   ],
+   "slug": "defense-cloud-detection",
+   "triggers": [
+    "test for attacks in cloud control planes",
+    "persistence",
+    "respond planes persistence"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "alerts",
+    "detections",
+    "engineering",
+    "repeatable",
+    "pipeline",
+    "build",
+    "detection",
+    "one",
+    "defense"
+   ],
+   "slug": "defense-detection-engineering",
+   "triggers": [
+    "test for detections as a repeatable pipeline",
+    "not one-off alerts",
+    "alerts detections engineering"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "sigma",
+    "portable",
+    "map",
+    "mitre",
+    "convert",
+    "siem",
+    "detections",
+    "att",
+    "ck",
+    "write",
+    "rules",
+    "detection",
+    "defense"
+   ],
+   "slug": "defense-detection-sigma",
+   "triggers": [
+    "write a sigma rule for this behavior",
+    "convert sigma rules to our siem",
+    "portable detections mapped to att&ck"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "dfir",
+    "collect",
+    "volatile",
+    "first",
+    "incident",
+    "evidence",
+    "activity",
+    "linux",
+    "windows",
+    "response",
+    "scope",
+    "triage",
+    "attacker",
+    "defense",
+    "find"
+   ],
+   "slug": "defense-dfir-triage",
+   "triggers": [
+    "test for first-response dfir triage",
+    "collect volatile evidence",
+    "dfir collect volatile"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "hardening",
+    "baseline",
+    "offensive",
+    "vuln",
+    "class",
+    "plus",
+    "config",
+    "baselines",
+    "findings",
+    "fix",
+    "concrete",
+    "side",
+    "turn",
+    "defense"
+   ],
+   "slug": "defense-hardening-baseline",
+   "triggers": [
+    "test for offensive findings",
+    "plus config baselines",
+    "hardening baseline offensive"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "contain",
+    "eradicate",
+    "learn",
+    "incident",
+    "recover",
+    "response",
+    "detect",
+    "scope",
+    "run",
+    "defense"
+   ],
+   "slug": "defense-incident-response",
+   "triggers": [
+    "run the incident response process",
+    "contain and eradicate the intrusion",
+    "ir playbook for this breach"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "log",
+    "endpoint",
+    "look",
+    "hunt",
+    "queries",
+    "activity",
+    "logs",
+    "concrete",
+    "analysis",
+    "attacker",
+    "auth",
+    "defense",
+    "cloud",
+    "web"
+   ],
+   "slug": "defense-log-analysis",
+   "triggers": [
+    "hunt attacker activity in the logs",
+    "what to look for in auth logs",
+    "siem queries for suspicious logons"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "malware",
+    "suspicious",
+    "process",
+    "iocs",
+    "yield",
+    "malicious",
+    "safely",
+    "static",
+    "dynamic",
+    "analysis",
+    "file",
+    "triage",
+    "defense"
+   ],
+   "slug": "defense-malware-triage",
+   "triggers": [
+    "test for suspicious file",
+    "is it malicious",
+    "malware suspicious process"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "telemetry",
+    "c2",
+    "beaconing",
+    "tunnelling",
+    "activity",
+    "dns",
+    "exfil",
+    "lateral",
+    "movement",
+    "detect",
+    "detection",
+    "network",
+    "attacker",
+    "data",
+    "defense"
+   ],
+   "slug": "defense-network-detection",
+   "triggers": [
+    "test for attacker activity in network telemetry",
+    "c2 beaconing",
+    "telemetry c2 beaconing"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "purple",
+    "team",
+    "exercise",
+    "emulate",
+    "specific",
+    "techniques",
+    "validate",
+    "response",
+    "detection",
+    "attacker",
+    "run",
+    "defense"
+   ],
+   "slug": "defense-purple-team",
+   "triggers": [
+    "test for purple-team exercise",
+    "emulate specific attacker techniques",
+    "purple team exercise"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "intrusions",
+    "alert",
+    "fired",
+    "hypothesis",
+    "driven",
+    "guided",
+    "searching",
+    "edr",
+    "threat",
+    "hunt",
+    "att",
+    "ck",
+    "hunting",
+    "logs",
+    "defense"
+   ],
+   "slug": "defense-threat-hunting",
+   "triggers": [
+    "test for intrusions no alert fired",
+    "hypothesis-driven",
+    "intrusions alert fired"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "modeling",
+    "feature",
+    "stride",
+    "trees",
+    "design",
+    "threat",
+    "level",
+    "system",
+    "risk",
+    "model",
+    "defense",
+    "find",
+    "attack",
+    "code"
+   ],
+   "slug": "defense-threat-modeling",
+   "triggers": [
+    "test for threat-model a system",
+    "stride + attack trees",
+    "modeling feature stride"
+   ]
+  },
+  {
+   "domain": "exploit-dev",
+   "keywords": [
+    "chaining",
+    "combine",
+    "medium",
+    "high",
+    "amplify",
+    "findings",
+    "demonstrated",
+    "low",
+    "impact",
+    "chain",
+    "one",
+    "exploit"
+   ],
+   "slug": "exploit-chaining",
+   "triggers": [
+    "test for low/medium findings",
+    "amplify demonstrated impact",
+    "chaining combine medium"
+   ]
+  },
+  {
+   "domain": "exploit-dev",
+   "keywords": [
+    "corruption",
+    "overflows",
+    "strings",
+    "rop",
+    "modern",
+    "mitigations",
+    "binary",
+    "stack",
+    "format",
+    "memory",
+    "execution",
+    "native",
+    "bug",
+    "exploit",
+    "turn",
+    "code"
+   ],
+   "slug": "exploit-memory-corruption",
+   "triggers": [
+    "test for memory-corruption bug in a native binary",
+    "stack overflows",
+    "corruption overflows strings"
+   ]
+  },
+  {
+   "domain": "exploit-dev",
+   "keywords": [
+    "poc",
+    "development",
+    "day",
+    "vulnerability",
+    "raw",
+    "working",
+    "known",
+    "reliable",
+    "bug",
+    "target",
+    "exploit",
+    "authorized",
+    "turn"
+   ],
+   "slug": "exploit-poc-development",
+   "triggers": [
+    "test for known/1-day vulnerability",
+    "reliable poc",
+    "poc development day"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
+    "android",
+    "assess",
+    "app",
+    "static",
+    "dynamic",
+    "mobile",
+    "assessment"
+   ],
+   "slug": "mobile-android-assessment",
+   "triggers": [
+    "test for android app",
+    "check android app",
+    "android assess app"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
+    "cert",
+    "pinning",
+    "tls",
+    "proxy",
+    "traffic",
+    "certificate",
+    "app",
+    "mobile",
+    "bypass"
+   ],
+   "slug": "mobile-cert-pinning-bypass",
+   "triggers": [
+    "bypass certificate pinning on the app",
+    "frida unpinning to proxy traffic",
+    "ssl pinning blocks burp"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
+    "deeplink",
+    "schemes",
+    "intents",
+    "screens",
+    "deep",
+    "links",
+    "custom",
+    "redirect",
+    "reaching",
+    "mobile",
+    "url",
+    "internal",
+    "token",
+    "theft",
+    "abuse"
+   ],
+   "slug": "mobile-deeplink-abuse",
+   "triggers": [
+    "test for deep links / custom url schemes / intents",
+    "reaching internal screens",
+    "deeplink schemes intents"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
+    "ios",
+    "assess",
+    "app",
+    "static",
+    "dynamic",
+    "mobile",
+    "assessment"
+   ],
+   "slug": "mobile-ios-assessment",
+   "triggers": [
+    "test for ios app",
+    "check ios app",
+    "ios assess app"
+   ]
+  },
+  {
+   "domain": "mobile",
+   "keywords": [
+    "webview",
+    "webviews",
+    "bridge",
+    "native",
+    "mobile",
+    "insecure",
+    "file",
+    "access",
+    "js",
+    "xss",
+    "exploit",
+    "abuse"
+   ],
+   "slug": "mobile-webview",
+   "triggers": [
+    "test for insecure mobile webviews",
+    "js-bridge abuse",
+    "webview webviews bridge"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "offensively",
+    "perimeter",
+    "appliances",
+    "vpn",
+    "ike",
+    "ipsec",
+    "aggressive",
+    "transform",
+    "dh",
+    "appliance",
+    "safe",
+    "firmware",
+    "version",
+    "inference",
+    "crypto",
+    "mode"
+   ],
+   "slug": "network-appliance-attacks",
+   "triggers": [
+    "test for perimeter appliances",
+    "ike/ipsec aggressive mode",
+    "offensively perimeter appliances"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "hashes",
+    "handshakes",
+    "captured",
+    "pick",
+    "right",
+    "hashcat",
+    "john",
+    "wordlist",
+    "crack",
+    "engagement",
+    "identify",
+    "format",
+    "cracking",
+    "mode",
+    "rules",
+    "credential"
+   ],
+   "slug": "network-credential-cracking",
+   "triggers": [
+    "crack this ntlm hash",
+    "which hashcat mode for this hash",
+    "john wordlist and rules for the capture"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "ntlm",
+    "smb",
+    "ldap",
+    "relay",
+    "coerce",
+    "lateral",
+    "movement",
+    "adcs",
+    "authentication",
+    "network",
+    "privilege",
+    "escalation"
+   ],
+   "slug": "network-ntlm-relay",
+   "triggers": [
+    "relay ntlm auth to smb",
+    "coerce and relay authentication",
+    "ntlm relay to ldap"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "spraying",
+    "slow",
+    "surfaces",
+    "spray",
+    "many",
+    "stuff",
+    "breach",
+    "creds",
+    "locking",
+    "accounts",
+    "known",
+    "low",
+    "password",
+    "credential",
+    "exposed",
+    "users"
+   ],
+   "slug": "network-password-spraying",
+   "triggers": [
+    "spray one password across all users",
+    "password spraying without lockouts",
+    "stuff breached creds against the portal"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "networks",
+    "tunnels",
+    "forwards",
+    "proxychains",
+    "pivoting",
+    "tunneling",
+    "foothold",
+    "port",
+    "pivot",
+    "internal",
+    "network"
+   ],
+   "slug": "network-pivoting-tunneling",
+   "triggers": [
+    "pivot into the internal network",
+    "socks proxy through the foothold",
+    "port forward through the jump host"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "non",
+    "surfaced",
+    "services",
+    "service",
+    "network",
+    "attacks",
+    "recon",
+    "attack",
+    "web"
+   ],
+   "slug": "network-service-attacks",
+   "triggers": [
+    "test for non-web network services surfaced by recon",
+    "check non-web network services surfaced by recon",
+    "non surfaced services"
+   ]
+  },
+  {
+   "domain": "payloads",
+   "keywords": [
+    "move",
+    "drive",
+    "linpeas",
+    "nc",
+    "exploits",
+    "transfers",
+    "files",
+    "shared",
+    "upload",
+    "back",
+    "tools",
+    "pull",
+    "loot",
+    "payloads",
+    "pivot",
+    "file"
+   ],
+   "slug": "payloads-file-transfers",
+   "triggers": [
+    "test for files on/off a target",
+    "linpeas",
+    "move drive linpeas"
+   ]
+  },
+  {
+   "domain": "payloads",
+   "keywords": [
+    "shells",
+    "bind",
+    "upgrade",
+    "interactive",
+    "tty",
+    "reliable",
+    "shell",
+    "payloads",
+    "reverse"
+   ],
+   "slug": "payloads-reverse-shells",
+   "triggers": [
+    "get a reverse shell on the target",
+    "upgrade to a fully interactive tty",
+    "bind shell payload that works"
+   ]
+  },
+  {
+   "domain": "payloads",
+   "keywords": [
+    "wafs",
+    "filters",
+    "blocking",
+    "waf",
+    "payloads",
+    "bypass"
+   ],
+   "slug": "payloads-waf-bypass",
+   "triggers": [
+    "test for wafs/filters blocking your payloads",
+    "check wafs/filters blocking your payloads",
+    "wafs filters blocking"
+   ]
+  },
+  {
+   "domain": "payloads",
+   "keywords": [
+    "polyglots",
+    "breaking",
+    "attribute",
+    "shot",
+    "context",
+    "fire",
+    "html",
+    "payloads",
+    "url",
+    "one",
+    "xss",
+    "js",
+    "sinks"
+   ],
+   "slug": "payloads-xss-polyglots",
+   "triggers": [
+    "test for context-breaking xss polyglots",
+    "check context-breaking xss polyglots",
+    "polyglots breaking attribute"
+   ]
+  },
+  {
+   "domain": "privesc",
+   "keywords": [
+    "local",
+    "arsenal",
+    "linux",
+    "windows",
+    "privesc",
+    "engagements",
+    "tool",
+    "privilege",
+    "escalation",
+    "authorized"
+   ],
+   "slug": "privesc-arsenal",
+   "triggers": [
+    "test for linux + windows local privilege-escalation tool arsenal",
+    "check linux + windows local privilege-escalation tool arsenal",
+    "local arsenal linux"
+   ]
+  },
+  {
+   "domain": "privesc",
+   "keywords": [
+    "situational",
+    "awareness",
+    "post",
+    "foothold",
+    "lead",
+    "systematic",
+    "loot",
+    "hunting",
+    "linux",
+    "windows",
+    "privesc",
+    "enumeration",
+    "host",
+    "credential",
+    "build",
+    "find"
+   ],
+   "slug": "privesc-enumeration",
+   "triggers": [
+    "test for post-foothold host enumeration",
+    "situational awareness",
+    "situational awareness post"
+   ]
+  },
+  {
+   "domain": "privesc",
+   "keywords": [
+    "gtfobins",
+    "sudo",
+    "suid",
+    "sgid",
+    "capabilities",
+    "binaries",
+    "techniques",
+    "linux",
+    "rules",
+    "privesc",
+    "privilege",
+    "escalation",
+    "via"
+   ],
+   "slug": "privesc-linux-gtfobins",
+   "triggers": [
+    "suid binary privesc via gtfobins",
+    "sudo rule lets me escalate",
+    "abuse capabilities to get root"
+   ]
+  },
+  {
+   "domain": "privesc",
+   "keywords": [
+    "impersonation",
+    "seimpersonate",
+    "seassignprimarytoken",
+    "potato",
+    "family",
+    "related",
+    "privileges",
+    "tokens",
+    "system",
+    "windows",
+    "privesc",
+    "token",
+    "privilege",
+    "escalation",
+    "via",
+    "abuse"
+   ],
+   "slug": "privesc-windows-tokens",
+   "triggers": [
+    "seimpersonate potato privesc",
+    "token impersonation to system",
+    "potato family escalation"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "port",
+    "discovery",
+    "arsenal",
+    "host",
+    "service",
+    "engagements",
+    "tool",
+    "authorized",
+    "recon"
+   ],
+   "slug": "recon-arsenal",
+   "triggers": [
+    "test for port/host/service discovery tool arsenal",
+    "check port/host/service discovery tool arsenal",
+    "port discovery arsenal"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "organization",
+    "footprint",
+    "buckets",
+    "blobs",
+    "ip",
+    "ranges",
+    "aws",
+    "assets",
+    "gcp",
+    "discover",
+    "services",
+    "azure",
+    "apps",
+    "recon",
+    "cloud"
+   ],
+   "slug": "recon-cloud-assets",
+   "triggers": [
+    "test for organization's cloud footprint",
+    "buckets",
+    "organization footprint buckets"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "paths",
+    "routes",
+    "discovery",
+    "hidden",
+    "params",
+    "content",
+    "discover",
+    "endpoints",
+    "exposed",
+    "js",
+    "target",
+    "recon",
+    "web"
+   ],
+   "slug": "recon-content-discovery",
+   "triggers": [
+    "find hidden paths on the web target",
+    "brute force directories and files",
+    "content discovery with wordlists"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "mining",
+    "zone",
+    "dnssec",
+    "nsec",
+    "walking",
+    "records",
+    "deep",
+    "record",
+    "transfers",
+    "dangling",
+    "dns",
+    "analysis",
+    "surface",
+    "recon",
+    "attack"
+   ],
+   "slug": "recon-dns-analysis",
+   "triggers": [
+    "test for deep dns analysis",
+    "record mining",
+    "mining zone dnssec"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "github",
+    "detail",
+    "organisation",
+    "gitlab",
+    "repos",
+    "gists",
+    "commit",
+    "leaks",
+    "leaked",
+    "history",
+    "secrets",
+    "internal",
+    "public",
+    "recon",
+    "find",
+    "code"
+   ],
+   "slug": "recon-github-code-leaks",
+   "triggers": [
+    "test for secrets and internal detail an organisation leaked",
+    "gists",
+    "github detail organisation"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "mine",
+    "functionality",
+    "params",
+    "hidden",
+    "analysis",
+    "javascript",
+    "endpoints",
+    "secrets",
+    "js",
+    "recon"
+   ],
+   "slug": "recon-js-analysis",
+   "triggers": [
+    "mine the javascript for secrets",
+    "endpoints hidden in the js bundles",
+    "extract api routes from frontend js"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "osint",
+    "passive",
+    "expand",
+    "touching",
+    "dorks",
+    "shodan",
+    "censys",
+    "employees",
+    "secret",
+    "leaks",
+    "assets",
+    "surface",
+    "target",
+    "recon",
+    "cloud",
+    "attack"
+   ],
+   "slug": "recon-osint",
+   "triggers": [
+    "passive osint on the target org",
+    "google dorks for exposed files",
+    "shodan recon without touching the target"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "enum",
+    "enumerate",
+    "subdomains",
+    "live",
+    "subdomain",
+    "external",
+    "hosts",
+    "program",
+    "bounty",
+    "build",
+    "surface",
+    "assessment",
+    "bug",
+    "recon",
+    "attack"
+   ],
+   "slug": "recon-subdomain-enum",
+   "triggers": [
+    "enumerate subdomains for the program",
+    "find live hosts in scope",
+    "subdomain brute force and permutations"
+   ]
+  },
+  {
+   "domain": "recon",
+   "keywords": [
+    "techstack",
+    "fingerprinting",
+    "passively",
+    "technology",
+    "frontend",
+    "runtime",
+    "cms",
+    "identify",
+    "stack",
+    "backend",
+    "cdn",
+    "waf",
+    "versions",
+    "framework",
+    "public",
+    "server"
+   ],
+   "slug": "recon-techstack-fingerprinting",
+   "triggers": [
+    "test for target's full technology stack",
+    "cms",
+    "techstack fingerprinting passively"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
+    "writeup",
+    "confirmed",
+    "friendly",
+    "hackerone",
+    "bugcrowd",
+    "correct",
+    "clean",
+    "report",
+    "evidence",
+    "severity",
+    "bounty",
+    "reporting",
+    "finding",
+    "bug",
+    "triage",
+    "turn"
+   ],
+   "slug": "reporting-bug-bounty-writeup",
+   "triggers": [
+    "test for confirmed finding",
+    "hackerone/bugcrowd",
+    "writeup confirmed friendly"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
+    "cvss",
+    "scoring",
+    "assign",
+    "defensible",
+    "vector",
+    "reconcile",
+    "demonstrated",
+    "scale",
+    "severity",
+    "impact",
+    "program",
+    "reporting",
+    "finding",
+    "build"
+   ],
+   "slug": "reporting-cvss-scoring",
+   "triggers": [
+    "test for defensible severity",
+    "cvss 3.1 vector from demonstrated impact",
+    "cvss scoring assign"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
+    "pentest",
+    "professional",
+    "penetration",
+    "deliverable",
+    "report",
+    "structure",
+    "engagement",
+    "single",
+    "reporting",
+    "test",
+    "bug"
+   ],
+   "slug": "reporting-pentest-report",
+   "triggers": [
+    "test for professional penetration-test report",
+    "engagement deliverable",
+    "pentest professional penetration"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
+    "communication",
+    "work",
+    "productively",
+    "triagers",
+    "submit",
+    "answer",
+    "ups",
+    "handle",
+    "applicable",
+    "disputes",
+    "professionally",
+    "follow",
+    "duplicate",
+    "severity",
+    "reporting",
+    "triage"
+   ],
+   "slug": "reporting-triage-communication",
+   "triggers": [
+    "test for triagers after you submit",
+    "not-applicable",
+    "communication work productively"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
+    "validation",
+    "kill",
+    "false",
+    "positives",
+    "confirm",
+    "deduplicate",
+    "validate",
+    "check",
+    "impact",
+    "write",
+    "reporting",
+    "finding",
+    "scope",
+    "triage"
+   ],
+   "slug": "reporting-triage-validation",
+   "triggers": [
+    "test for finding before you write it up",
+    "deduplicate",
+    "validation kill false"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "binary",
+    "vulnerable",
+    "input",
+    "native",
+    "path",
+    "static",
+    "dynamic",
+    "reverse",
+    "logic",
+    "analysis",
+    "read",
+    "eng",
+    "triage",
+    "run",
+    "dangerous",
+    "sinks"
+   ],
+   "slug": "reverse-eng-binary-triage",
+   "triggers": [
+    "test for native binary you can run",
+    "input path",
+    "binary vulnerable input"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "deobfuscation",
+    "peel",
+    "obfuscation",
+    "until",
+    "readable",
+    "callable",
+    "packed",
+    "minified",
+    "webassembly",
+    "vm",
+    "binaries",
+    "obfuscated",
+    "protected",
+    "native",
+    "reverse",
+    "javascript"
+   ],
+   "slug": "reverse-eng-deobfuscation",
+   "triggers": [
+    "test for obfuscation off code",
+    "webassembly",
+    "deobfuscation peel obfuscation"
+   ]
+  },
+  {
+   "domain": "reverse-engineering",
+   "keywords": [
+    "analyze",
+    "device",
+    "hardcoded",
+    "backdoors",
+    "behind",
+    "firmware",
+    "extract",
+    "vulnerable",
+    "version",
+    "appliance",
+    "services",
+    "reverse",
+    "secrets",
+    "eng",
+    "find"
+   ],
+   "slug": "reverse-eng-firmware",
+   "triggers": [
+    "test for device firmware",
+    "backdoors",
+    "analyze device hardcoded"
+   ]
+  },
+  {
+   "domain": "social-eng",
+   "keywords": [
+    "plan",
+    "load",
+    "first",
+    "guardrails",
+    "human",
+    "methodology",
+    "engineering",
+    "safely",
+    "factor",
+    "social",
+    "assessment",
+    "eng",
+    "test",
+    "run",
+    "authorized"
+   ],
+   "slug": "social-eng-methodology",
+   "triggers": [
+    "test for authorized social-engineering assessment safely",
+    "load-first guardrails",
+    "plan load first"
+   ]
+  },
+  {
+   "domain": "social-eng",
+   "keywords": [
+    "spear",
+    "measures",
+    "delivery",
+    "landing",
+    "tracking",
+    "human",
+    "page",
+    "phishing",
+    "factor",
+    "risk",
+    "pretext",
+    "social",
+    "assessment",
+    "eng",
+    "run",
+    "authorized"
+   ],
+   "slug": "social-eng-phishing",
+   "triggers": [
+    "phishing campaign for the client's employees",
+    "spear-phishing assessment with a landing page",
+    "measure the click rate safely"
+   ]
+  },
+  {
+   "domain": "social-eng",
+   "keywords": [
+    "physical",
+    "tailgating",
+    "entry",
+    "badge",
+    "rfid",
+    "cloning",
+    "checks",
+    "media",
+    "drop",
+    "tests",
+    "measure",
+    "engineering",
+    "pretext",
+    "social",
+    "assessment",
+    "eng"
+   ],
+   "slug": "social-eng-physical",
+   "triggers": [
+    "test for authorized physical social-engineering assessment",
+    "tailgating",
+    "physical tailgating entry"
+   ]
+  },
+  {
+   "domain": "social-eng",
+   "keywords": [
+    "vishing",
+    "voice",
+    "whether",
+    "staff",
+    "help",
+    "desks",
+    "verification",
+    "procedures",
+    "scenarios",
+    "follow",
+    "pretext",
+    "phishing",
+    "safely",
+    "social",
+    "eng",
+    "test"
+   ],
+   "slug": "social-eng-vishing-pretext",
+   "triggers": [
+    "test for authorized voice-phishing",
+    "vishing",
+    "vishing voice whether"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "mapping",
+    "nodes",
+    "identities",
+    "edges",
+    "technique",
+    "next",
+    "graph",
+    "assets",
+    "trust",
+    "gets",
+    "path",
+    "one",
+    "model",
+    "tradecraft",
+    "target",
+    "find"
+   ],
+   "slug": "tradecraft-attack-path-mapping",
+   "triggers": [
+    "test for target as an attack graph",
+    "nodes",
+    "mapping nodes identities"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "goal",
+    "scenario",
+    "skills",
+    "isolation",
+    "scenarios",
+    "multiple",
+    "technique",
+    "concrete",
+    "ordered",
+    "scope",
+    "one",
+    "tradecraft",
+    "turn",
+    "attack"
+   ],
+   "slug": "tradecraft-attack-scenarios",
+   "triggers": [
+    "test for goal + a scope",
+    "not one technique in isolation",
+    "goal scenario skills"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "bugbounty",
+    "platforms",
+    "understand",
+    "major",
+    "differ",
+    "disclosure",
+    "reputation",
+    "play",
+    "correctly",
+    "bounty",
+    "rules",
+    "scope",
+    "bug",
+    "triage",
+    "tradecraft"
+   ],
+   "slug": "tradecraft-bugbounty-platforms",
+   "triggers": [
+    "test for major bug-bounty platforms differ",
+    "disclosure",
+    "bugbounty platforms understand"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "complex",
+    "discipline",
+    "multi",
+    "targets",
+    "several",
+    "needs",
+    "structure",
+    "stage",
+    "multiple",
+    "source",
+    "hosts",
+    "path",
+    "engagements",
+    "chain",
+    "bugs",
+    "tradecraft"
+   ],
+   "slug": "tradecraft-complex-engagements",
+   "triggers": [
+    "test for discipline for complex",
+    "multi-stage targets",
+    "complex discipline multi"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "avoidance",
+    "avoid",
+    "burning",
+    "closed",
+    "duplicates",
+    "duplicate",
+    "time",
+    "bugs",
+    "tradecraft"
+   ],
+   "slug": "tradecraft-duplicate-avoidance",
+   "triggers": [
+    "test for burning time on bugs",
+    "check burning time on bugs",
+    "avoidance avoid burning"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "decisions",
+    "decide",
+    "result",
+    "branching",
+    "turns",
+    "outcome",
+    "next",
+    "lead",
+    "single",
+    "pivot",
+    "logic",
+    "tradecraft"
+   ],
+   "slug": "tradecraft-pivot-decisions",
+   "triggers": [
+    "test for what to do next",
+    "branching logic",
+    "decisions decide result"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "roe",
+    "establish",
+    "enforce",
+    "envelope",
+    "rule",
+    "governs",
+    "everything",
+    "authorization",
+    "testing",
+    "scope",
+    "tradecraft"
+   ],
+   "slug": "tradecraft-scope-roe",
+   "triggers": [
+    "test for enforce the authorization envelope before any testing",
+    "scope rule",
+    "roe establish enforce"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "selection",
+    "choose",
+    "spend",
+    "effort",
+    "best",
+    "return",
+    "asset",
+    "program",
+    "surface",
+    "tradecraft",
+    "target"
+   ],
+   "slug": "tradecraft-target-selection",
+   "triggers": [
+    "test for where to spend effort",
+    "which asset",
+    "selection choose spend"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "email",
+    "change",
+    "linking",
+    "seize",
+    "another",
+    "account",
+    "reset",
+    "takeover",
+    "systematic",
+    "hunting",
+    "flaws",
+    "user",
+    "password",
+    "session",
+    "web"
+   ],
+   "slug": "web-account-takeover",
+   "triggers": [
+    "take over an account via password reset",
+    "ato through the email change flow",
+    "reset token is predictable"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "exploitation",
+    "arsenal",
+    "enumeration",
+    "engagements",
+    "tool",
+    "authorized",
+    "web"
+   ],
+   "slug": "web-arsenal",
+   "triggers": [
+    "test for web enumeration + exploitation tool arsenal",
+    "check web enumeration + exploitation tool arsenal",
+    "exploitation arsenal enumeration"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "jwt",
+    "session",
+    "authentication",
+    "auth",
+    "attack",
+    "web"
+   ],
+   "slug": "web-auth-jwt",
+   "triggers": [
+    "is this jwt forgeable",
+    "test the login token signature",
+    "jwt none alg attack"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "legitimately",
+    "acquire",
+    "hand",
+    "authenticated",
+    "mfa",
+    "post",
+    "handling",
+    "otp",
+    "session",
+    "surface",
+    "test",
+    "auth",
+    "attack",
+    "web"
+   ],
+   "slug": "web-auth-session-handling",
+   "triggers": [
+    "test for keep an authenticated session",
+    "through mfa/otp",
+    "legitimately acquire hand"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "abusing",
+    "intended",
+    "unintended",
+    "ways",
+    "business",
+    "functionality",
+    "flaws",
+    "logic",
+    "find",
+    "web"
+   ],
+   "slug": "web-business-logic",
+   "triggers": [
+    "abuse the checkout flow logic",
+    "negative quantity in the cart",
+    "business logic flaw skips payment"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "storing",
+    "cache",
+    "deception",
+    "trick",
+    "cdn",
+    "authenticated",
+    "victim",
+    "response",
+    "public",
+    "url",
+    "read",
+    "web"
+   ],
+   "slug": "web-cache-deception",
+   "triggers": [
+    "trick the cdn into caching a private page",
+    "cache deception on the account page",
+    "victim profile cached at a public url"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "serve",
+    "caching",
+    "victims",
+    "pages",
+    "cache",
+    "deception",
+    "shared",
+    "trick",
+    "private",
+    "poisoning",
+    "content",
+    "users",
+    "attacker",
+    "web"
+   ],
+   "slug": "web-cache-poisoning",
+   "triggers": [
+    "poison the shared cache with an unkeyed header",
+    "web cache poisoning via x-forwarded-host",
+    "cache serves my content to everyone"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "clickjacking",
+    "ui",
+    "redress",
+    "frame",
+    "clicks",
+    "hit",
+    "actions",
+    "victim",
+    "hidden",
+    "target",
+    "web"
+   ],
+   "slug": "web-clickjacking",
+   "triggers": [
+    "frame the settings page invisibly",
+    "clickjacking the delete button",
+    "ui redress attack"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "signing",
+    "replay",
+    "outside",
+    "client",
+    "obfuscated",
+    "fuzz",
+    "protected",
+    "browser",
+    "side",
+    "reverse",
+    "request",
+    "js",
+    "bypass",
+    "api",
+    "web"
+   ],
+   "slug": "web-client-side-signing-bypass",
+   "triggers": [
+    "test for client-side request signing / obfuscated js",
+    "check client-side request signing / obfuscated js",
+    "signing replay outside"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "command",
+    "reaches",
+    "arbitrary",
+    "os",
+    "input",
+    "user",
+    "shell",
+    "execution",
+    "turn",
+    "injection",
+    "web"
+   ],
+   "slug": "web-command-injection",
+   "triggers": [
+    "user input reaches a shell",
+    "os command injection in the ping field",
+    "inject commands with a semicolon"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "cors",
+    "misconfiguration",
+    "responses",
+    "origin",
+    "cross",
+    "read",
+    "theft",
+    "data",
+    "exploit",
+    "web"
+   ],
+   "slug": "web-cors",
+   "triggers": [
+    "cors reflects an arbitrary origin",
+    "read cross-origin responses with credentials",
+    "cors misconfig data theft"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "csp",
+    "despite",
+    "step",
+    "script",
+    "policy",
+    "blocking",
+    "content",
+    "finding",
+    "run",
+    "bypass",
+    "injection",
+    "security",
+    "web"
+   ],
+   "slug": "web-csp-bypass",
+   "triggers": [
+    "bypass the content-security-policy",
+    "script runs despite csp",
+    "csp nonce reuse"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "csrf",
+    "perform",
+    "state",
+    "changing",
+    "forgery",
+    "browser",
+    "actions",
+    "site",
+    "force",
+    "victim",
+    "cross",
+    "request",
+    "web"
+   ],
+   "slug": "web-csrf",
+   "triggers": [
+    "forge a state-changing request as the victim",
+    "csrf on the email change form",
+    "cross-site request forgery"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "cypher",
+    "inject",
+    "neo4j",
+    "exfiltrate",
+    "queries",
+    "reach",
+    "graph",
+    "auth",
+    "data",
+    "ssrf",
+    "rce",
+    "bypass",
+    "injection",
+    "web"
+   ],
+   "slug": "web-cypher-injection",
+   "triggers": [
+    "test for neo4j cypher queries",
+    "exfiltrate graph data",
+    "cypher inject neo4j"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "dependency",
+    "confusion",
+    "substitution",
+    "publish",
+    "package",
+    "matching",
+    "name",
+    "systems",
+    "yours",
+    "malicious",
+    "pull",
+    "public",
+    "internal",
+    "build",
+    "web"
+   ],
+   "slug": "web-dependency-confusion",
+   "triggers": [
+    "test for dependency confusion / substitution",
+    "publish a malicious public package matching an internal",
+    "dependency confusion substitution"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "gadget",
+    "chains",
+    "deserialization",
+    "insecure",
+    "via",
+    "rce",
+    "web"
+   ],
+   "slug": "web-deserialization",
+   "triggers": [
+    "java deserialization gadget chain",
+    "unserialize object injection",
+    "insecure deserialization to rce"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "clobbering",
+    "overwrite",
+    "variables",
+    "injected",
+    "needed",
+    "dom",
+    "page",
+    "html",
+    "script",
+    "javascript",
+    "web"
+   ],
+   "slug": "web-dom-clobbering",
+   "triggers": [
+    "test for page's javascript variables using only injected html",
+    "no script needed",
+    "clobbering overwrite variables"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "upload",
+    "stored",
+    "file",
+    "xss",
+    "ssrf",
+    "turn",
+    "rce",
+    "web"
+   ],
+   "slug": "web-file-upload",
+   "triggers": [
+    "upload a webshell past the filter",
+    "file upload to rce",
+    "svg upload gives stored xss"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "header",
+    "trusted",
+    "forwarded",
+    "routing",
+    "caches",
+    "reset",
+    "links",
+    "poison",
+    "password",
+    "host",
+    "injection",
+    "abuse",
+    "web"
+   ],
+   "slug": "web-host-header",
+   "triggers": [
+    "host header injection poisons reset links",
+    "x-forwarded-host cache abuse",
+    "password reset link points to my domain"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "parameter",
+    "validator",
+    "disagree",
+    "value",
+    "wins",
+    "bypassing",
+    "http",
+    "pollution",
+    "send",
+    "backend",
+    "filters",
+    "business",
+    "waf",
+    "control",
+    "logic",
+    "access"
+   ],
+   "slug": "web-http-parameter-pollution",
+   "triggers": [
+    "test for same parameter more than once",
+    "bypassing filters",
+    "parameter validator disagree"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "idor",
+    "reference",
+    "direct",
+    "broken",
+    "objects",
+    "object",
+    "control",
+    "insecure",
+    "access",
+    "web"
+   ],
+   "slug": "web-idor",
+   "triggers": [
+    "change the user id and read another account",
+    "idor on the invoice endpoint",
+    "insecure direct object reference"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "jdbc",
+    "controllable",
+    "database",
+    "connection",
+    "string",
+    "driver",
+    "itself",
+    "url",
+    "attacker",
+    "via",
+    "turn",
+    "rce",
+    "attacks",
+    "web"
+   ],
+   "slug": "web-jdbc-attacks",
+   "triggers": [
+    "test for attacker-controllable database connection string / jdbc url",
+    "check attacker-controllable database connection string / jdbc url",
+    "jdbc controllable database"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "lfi",
+    "traversal",
+    "inclusion",
+    "local",
+    "files",
+    "sometimes",
+    "path",
+    "file",
+    "read",
+    "rce",
+    "web"
+   ],
+   "slug": "web-lfi-path-traversal",
+   "triggers": [
+    "read /etc/passwd through the page param",
+    "lfi to log poisoning",
+    "path traversal dot dot slash"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "second",
+    "totp",
+    "sms",
+    "backup",
+    "codes",
+    "mfa",
+    "defeat",
+    "push",
+    "factor",
+    "otp",
+    "authentication",
+    "bypass",
+    "web"
+   ],
+   "slug": "web-mfa-bypass",
+   "triggers": [
+    "bypass the otp step",
+    "totp brute force with no rate limit",
+    "skip the second factor"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "oidc",
+    "flows",
+    "oauth",
+    "sso",
+    "account",
+    "takeover",
+    "attack",
+    "web"
+   ],
+   "slug": "web-oauth",
+   "triggers": [
+    "oauth redirect_uri manipulation",
+    "steal the authorization code",
+    "oidc state parameter missing"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "link",
+    "preview",
+    "unfurl",
+    "oembed",
+    "features",
+    "open",
+    "graph",
+    "url",
+    "ssrf",
+    "web"
+   ],
+   "slug": "web-open-graph-ssrf",
+   "triggers": [
+    "test for ssrf through link-preview / url-unfurl / oembed features",
+    "check ssrf through link-preview / url-unfurl / oembed features",
+    "link preview unfurl"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "param",
+    "sites",
+    "filter",
+    "open",
+    "redirect",
+    "send",
+    "oauth",
+    "phishing",
+    "users",
+    "chain",
+    "token",
+    "theft",
+    "attacker",
+    "ssrf",
+    "bypass",
+    "abuse"
+   ],
+   "slug": "web-open-redirect",
+   "triggers": [
+    "redirect param to an attacker site",
+    "open redirect in the login return url",
+    "unvalidated redirect chaining"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "postmessage",
+    "window",
+    "messaging",
+    "handlers",
+    "event",
+    "checking",
+    "leading",
+    "origin",
+    "trust",
+    "insecure",
+    "cross",
+    "xss",
+    "data",
+    "exploit",
+    "web"
+   ],
+   "slug": "web-postmessage",
+   "triggers": [
+    "test for insecure cross-window messaging",
+    "`window.postmessage`",
+    "postmessage window messaging"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "prototype",
+    "gadgets",
+    "pollution",
+    "client",
+    "javascript",
+    "server",
+    "xss",
+    "auth",
+    "via",
+    "rce",
+    "bypass",
+    "web"
+   ],
+   "slug": "web-prototype-pollution",
+   "triggers": [
+    "pollute object.prototype",
+    "client-side prototype pollution to xss",
+    "__proto__ in the query string"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "sandbox",
+    "eval",
+    "jail",
+    "keyword",
+    "blocklists",
+    "exec",
+    "python",
+    "escape",
+    "reach",
+    "defeat",
+    "restricted",
+    "reaching",
+    "objects",
+    "execution",
+    "code",
+    "web"
+   ],
+   "slug": "web-python-sandbox-escape",
+   "triggers": [
+    "test for python sandbox / eval jail",
+    "keyword blocklists",
+    "sandbox eval jail"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "race",
+    "conditions",
+    "toctou",
+    "concurrent",
+    "fire",
+    "limits",
+    "requests",
+    "single",
+    "break",
+    "exploit",
+    "web"
+   ],
+   "slug": "web-race-conditions",
+   "triggers": [
+    "fire parallel requests to double-spend",
+    "race condition on the coupon endpoint",
+    "toctou single-use token reused"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "rate",
+    "limit",
+    "anti",
+    "enable",
+    "brute",
+    "guessing",
+    "coupon",
+    "limits",
+    "automation",
+    "force",
+    "otp",
+    "enumeration",
+    "bypass",
+    "abuse",
+    "web"
+   ],
+   "slug": "web-rate-limit-bypass",
+   "triggers": [
+    "test for rate limits",
+    "otp guessing",
+    "rate limit anti"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "smuggling",
+    "cl",
+    "te",
+    "desync",
+    "front",
+    "http",
+    "back",
+    "poison",
+    "requests",
+    "users",
+    "request",
+    "web"
+   ],
+   "slug": "web-request-smuggling",
+   "triggers": [
+    "http request smuggling cl.te",
+    "desync the front-end and back-end",
+    "te.cl smuggle a request past the waf"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "saml",
+    "signature",
+    "exclusion",
+    "wrapping",
+    "xsw",
+    "unsigned",
+    "assertions",
+    "comment",
+    "tricks",
+    "sso",
+    "xxe",
+    "forge",
+    "authentication",
+    "attack",
+    "web"
+   ],
+   "slug": "web-saml",
+   "triggers": [
+    "saml signature wrapping xsw",
+    "unsigned assertion accepted",
+    "forge a saml response"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "sqli",
+    "error",
+    "union",
+    "boolean",
+    "blind",
+    "stacked",
+    "sql",
+    "time",
+    "detect",
+    "exploit",
+    "injection",
+    "web"
+   ],
+   "slug": "web-sqli",
+   "triggers": [
+    "test the id parameter for sql injection",
+    "time-based blind sqli",
+    "union select column extraction"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "forgery",
+    "discover",
+    "escalate",
+    "side",
+    "server",
+    "request",
+    "ssrf",
+    "web"
+   ],
+   "slug": "web-ssrf",
+   "triggers": [
+    "make the server fetch an internal url",
+    "server-side request forgery probe",
+    "ssrf to the internal network"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "gopher",
+    "redis",
+    "speaking",
+    "unauthenticated",
+    "cron",
+    "job",
+    "protocol",
+    "write",
+    "side",
+    "internal",
+    "server",
+    "request",
+    "ssrf",
+    "rce",
+    "turn",
+    "web"
+   ],
+   "slug": "web-ssrf-gopher-redis-rce",
+   "triggers": [
+    "test for server-side request",
+    "unauthenticated redis",
+    "gopher redis speaking"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "ssti",
+    "template",
+    "side",
+    "server",
+    "rce",
+    "injection",
+    "web"
+   ],
+   "slug": "web-ssti",
+   "triggers": [
+    "template injection in the greeting field",
+    "{{7*7}} renders 49",
+    "ssti to rce"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "claim",
+    "pointing",
+    "deprovisioned",
+    "subdomain",
+    "dangling",
+    "record",
+    "takeover",
+    "dns",
+    "service",
+    "web"
+   ],
+   "slug": "web-subdomain-takeover",
+   "triggers": [
+    "dangling cname to an unclaimed service",
+    "subdomain takeover on the old host",
+    "claim the orphaned dns record"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "application",
+    "checklist",
+    "nothing",
+    "skipped",
+    "testing",
+    "ordered",
+    "gets",
+    "web"
+   ],
+   "slug": "web-testing-checklist",
+   "triggers": [
+    "systematic web app testing checklist",
+    "what to test on this web application",
+    "web pentest coverage checklist"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "webauthn",
+    "software",
+    "authenticator",
+    "register",
+    "authenticate",
+    "fido2",
+    "relying",
+    "party",
+    "self",
+    "built",
+    "hardware",
+    "rp",
+    "requests",
+    "key",
+    "web"
+   ],
+   "slug": "web-webauthn-software-authenticator",
+   "triggers": [
+    "test for authenticate against a webauthn/fido2 relying party",
+    "when the rp requests",
+    "webauthn software authenticator"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "websocket",
+    "cswsh",
+    "hijacking",
+    "message",
+    "tampering",
+    "gaps",
+    "site",
+    "endpoints",
+    "cross",
+    "auth",
+    "attack",
+    "web"
+   ],
+   "slug": "web-websocket",
+   "triggers": [
+    "cross-site websocket hijacking cswsh",
+    "tamper websocket messages",
+    "ws endpoint missing auth"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "scripting",
+    "reflected",
+    "prove",
+    "stored",
+    "dom",
+    "site",
+    "cross",
+    "xss",
+    "find",
+    "web"
+   ],
+   "slug": "web-xss",
+   "triggers": [
+    "reflected xss in the search box",
+    "prove stored cross-site scripting",
+    "dom xss sink"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
+    "xml",
+    "entity",
+    "xxe",
+    "external",
+    "sometimes",
+    "file",
+    "read",
+    "ssrf",
+    "rce",
+    "injection",
+    "web"
+   ],
+   "slug": "web-xxe",
+   "triggers": [
+    "xml external entity file read",
+    "xxe in the upload parser",
+    "dtd entity injection"
+   ]
+  },
+  {
+   "domain": "wireless",
+   "keywords": [
+    "evil",
+    "twin",
+    "stand",
+    "rogue",
+    "point",
+    "harvest",
+    "enterprise",
+    "peap",
+    "mschapv2",
+    "challenge",
+    "captive",
+    "portal",
+    "wireless",
+    "credentials",
+    "wpa2",
+    "capture"
+   ],
+   "slug": "wireless-evil-twin",
+   "triggers": [
+    "stand up an evil twin ap",
+    "rogue captive portal harvests credentials",
+    "peap mschapv2 challenge capture"
+   ]
+  },
+  {
+   "domain": "wireless",
+   "keywords": [
+    "psk",
+    "wi",
+    "fi",
+    "monitor",
+    "handshake",
+    "pmkid",
+    "wireless",
+    "wpa2",
+    "capture",
+    "offline",
+    "mode",
+    "discovery",
+    "cracking",
+    "network",
+    "attacks",
+    "attack"
+   ],
+   "slug": "wireless-wpa2-attacks",
+   "triggers": [
+    "capture the wpa2 handshake",
+    "pmkid attack with no clients",
+    "crack the wifi psk offline"
+   ]
+  }
+ ]
+}

@@ -71,7 +71,7 @@ $ sploit watch                       # runs in the background · stop: sploit wa
 
 ## Run it with your agent
 
-Open your agent **inside the workspace** and describe the task in plain English — the matching skill loads itself.
+Open your agent **inside the workspace** and describe the task in plain English — the matching skill loads itself. `./sploit install` auto-configures every agent it detects on your machine — linking the skills where the agent has a native skills directory (Claude Code, Kimi Code, Cursor) and adding a small, clearly-marked pointer block to the agent's global instructions file otherwise (Codex, Gemini, OpenCode). Re-run it anytime; it's idempotent and `--uninstall` removes exactly what it added.
 
 <details open>
 <summary><b>Claude Code</b></summary>
@@ -88,7 +88,7 @@ Open your agent **inside the workspace** and describe the task in plain English 
   ✔ wrote findings/idor-orders.md
 ```
 
-`./sploit install` linked the skills into `~/.claude/skills/`, so Claude Code finds them in **any** folder and loads the one that fits your request.
+`./sploit install` linked the skills into `~/.claude/skills/` (and wired every other detected agent the same way — native skills dirs where they exist, a managed pointer block in the global instructions file otherwise), so Claude Code finds them in **any** folder and loads the one that fits your request.
 </details>
 
 <details>

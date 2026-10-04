@@ -2,7 +2,7 @@
 # sploit — the friendly front door to SploitAgent.
 #
 #   sploit new <target> [dir]   create an engagement workspace (anywhere) with the skills wired in
-#   sploit install              expose skills to Claude Code everywhere + put `sploit` on PATH
+#   sploit install              expose skills to every detected agent + put `sploit` on PATH
 #   sploit list                 list engagements under the current directory
 #   sploit help                 show this help
 #
@@ -39,8 +39,8 @@ ${B}SploitAgent${R} — security skills for AI agents (authorized use only)
       ${D}--copy${R}                  copy the skills into the workspace (portable; survives moving the repo)
   ${G}sploit watch${R}                open the console (runs in the background — your terminal stays free)
       ${D}--stop${R}                  stop the background console      ${D}--fg${R}  run it in the foreground
-  ${G}sploit install${R}              expose skills to Claude Code everywhere + put 'sploit' on PATH
-  ${G}sploit uninstall${R}            remove the installed skills + take 'sploit' off PATH
+  ${G}sploit install${R}              expose skills to every detected agent + put 'sploit' on PATH
+  ${G}sploit uninstall${R}            remove the installed skills & agent wiring + take 'sploit' off PATH
   ${G}sploit update${R}               git pull the library + refresh the installed skills and links
   ${G}sploit list${R}                 list engagement workspaces under the current directory
   ${G}sploit version${R}              show the installed version
@@ -249,13 +249,13 @@ EOF
 do_install(){
   local uninstall=0 a
   for a in "$@"; do [ "$a" = "--uninstall" ] && uninstall=1; done
-  "$REPO_DIR/install.sh" "$@"          # global skills (~/.claude/skills), passes through --copy/--uninstall
+  "$REPO_DIR/install.sh" "$@"          # global skills + per-agent wiring, passes through --copy/--uninstall
   # put `sploit` on PATH so `sploit new` works from anywhere
   local bindir="$HOME/.local/bin"
   if [ "$uninstall" -eq 1 ]; then
     rm -f "$bindir/sploit"
     say ""
-    say "${G}✔${R} uninstalled ${B}sploit${R} — skills removed and $bindir/sploit deleted"
+    say "${G}✔${R} uninstalled ${B}sploit${R} — skills and agent wiring removed, $bindir/sploit deleted"
     return
   fi
   mkdir -p "$bindir"

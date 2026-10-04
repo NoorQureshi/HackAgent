@@ -88,7 +88,7 @@ $ sploit watch                       # runs in the background · stop: sploit wa
   ✔ wrote findings/idor-orders.md
 ```
 
-`./sploit install` 已把技能链接到 `~/.claude/skills/`,所以 Claude Code 能在**任何**文件夹中找到它们,并自动加载符合你请求的那一个。
+`./sploit install` 已把技能链接到 `~/.claude/skills/`(并以同样方式接入了检测到的其他智能体),所以 Claude Code 能在**任何**文件夹中找到它们,并自动加载符合你请求的那一个。
 </details>
 
 <details>

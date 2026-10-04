@@ -26,7 +26,8 @@ Then, e.g.:
 
 **Option B — make the skills available in every project.** Run the installer once; it links each
 skill into `~/.claude/skills/` in the one-directory-deep layout Claude Code expects (a plain
-`ln -s` of the whole `skills/` tree won't work, because the skills are nested under domain folders):
+`ln -s` of the whole `skills/` tree won't work, because the skills are nested under domain folders),
+and wires every other detected agent (Kimi Code, Cursor, Codex, Gemini) at the same time:
 ```bash
 git clone https://github.com/NoorQureshi/SploitAgent
 cd SploitAgent && ./install.sh          # --project scopes to one repo · --uninstall removes

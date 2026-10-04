@@ -7,6 +7,14 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **Multi-agent `sploit install`** — the installer now wires every detected agent,
+  not just Claude Code: it links the skills into the native global skills
+  directories of Kimi Code (`~/.kimi-code/skills`) and Cursor
+  (`~/.cursor/skills`), and appends a clearly-marked managed block pointing at
+  the library and its routing table to the global instructions files of Codex
+  (`~/.codex/AGENTS.md`), Gemini CLI (`~/.gemini/GEMINI.md`), and OpenCode
+  (`~/.config/opencode/AGENTS.md`). Idempotent re-runs; `--uninstall` removes
+  the links and blocks exactly.
 - **27 more skills (179 → 206, + `ctf` and `tools` domains)** — tool guides
   (Metasploit, Burp Suite, nuclei, sqlmap, nmap, hashcat, hydra, ffuf, curl, MCP
   bridges), original CTF playbooks (methodology, web, pwn, crypto, rev, forensics),

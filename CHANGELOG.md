@@ -7,6 +7,12 @@ and the project aims to follow [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **27 more skills (179 → 206, + `ctf` and `tools` domains)** — tool guides
+  (Metasploit, Burp Suite, nuclei, sqlmap, nmap, hashcat, hydra, ffuf, curl, MCP
+  bridges), original CTF playbooks (methodology, web, pwn, crypto, rev, forensics),
+  browser-extension reversing, browser automation, email & database security,
+  threat intel, deep forensics, kill-chain orchestration, evidence review, and two
+  original ai-ml skills (system-prompt leakage, sensitive-data disclosure).
 - **18 reverse-engineering / hardware skills** — big coverage expansion (161 → 179
   skills, 20 → 21 domains with the new `hardware` domain): IDA Pro, Ghidra, radare2,
   Binary Ninja, .NET, Go/Rust, macOS, JS and protocol reversing, thick clients,

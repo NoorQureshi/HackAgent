@@ -8,7 +8,7 @@ written so it loads on the right signals (service, vuln class, error string, por
 
 ## Organized by domain × type × stability × modes
 - **Domain** (the folder): `recon web api mobile cloud network wireless ad ai-ml code-review
-  exploit-dev reverse-engineering hardware cryptography privesc defense payloads reporting automation
+  exploit-dev reverse-engineering ctf hardware cryptography privesc defense payloads tools reporting automation
   tradecraft social-eng`.
 - **Type** (`type:`): `arsenal` (tool selection) · `technique` (a concrete chain) · `methodology`
   (how to operate) · `checklist` · `reference` (payloads/tables).

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skills — SploitAgent</title>
-<meta name="description" content="All 179 SploitAgent skills across 20 domains — what each covers, how a skill is structured, and the full catalog.">
+<meta name="description" content="All 206 SploitAgent skills across 20 domains — what each covers, how a skill is structured, and the full catalog.">
 <meta property="og:image" content="https://noorqureshi.github.io/SploitAgent/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/style.css">
@@ -25,7 +25,7 @@
 
 <main class="wrap page">
   <p class="kicker">THE LIBRARY</p>
-  <h1 class="title">20 domains, 179 skills</h1>
+  <h1 class="title">20 domains, 206 skills</h1>
   <p class="lead">Each skill is a single <code>SKILL.md</code>: a frontmatter block whose
     <code>description</code> is the load trigger, and a body that teaches the mechanism rather than
     pasting a payload. Every skill is tagged with OWASP / MITRE ATT&amp;CK / CWE, so coverage is measurable.</p>
@@ -37,16 +37,16 @@
   <section>
     <h2><span class="hash">#</span> Domains at a glance</h2>
     <div class="doms">
-      <span class="chip"><b>web</b> <span class="n">44</span></span>
-      <span class="chip"><b>ai-ml</b> <span class="n">9</span></span>
+      <span class="chip"><b>web</b> <span class="n">45</span></span>
+      <span class="chip"><b>ai-ml</b> <span class="n">11</span></span>
       <span class="chip"><b>cloud</b> <span class="n">9</span></span>
       <span class="chip"><b>api</b> <span class="n">9</span></span>
       <span class="chip"><b>recon</b> <span class="n">9</span></span>
-      <span class="chip"><b>defense</b> <span class="n">13</span></span>
+      <span class="chip"><b>defense</b> <span class="n">15</span></span>
       <span class="chip"><b>code-review</b> <span class="n">15</span></span>
       <span class="chip"><b>mobile</b> <span class="n">6</span></span>
       <span class="chip"><b>ad</b> <span class="n">5</span></span>
-      <span class="chip"><b>network</b> <span class="n">6</span></span>
+      <span class="chip"><b>network</b> <span class="n">8</span></span>
       <span class="chip"><b>wireless</b> <span class="n">2</span></span>
       <span class="chip"><b>privesc</b> <span class="n">4</span></span>
       <span class="chip"><b>exploit-dev</b> <span class="n">4</span></span>
@@ -54,9 +54,9 @@
       <span class="chip"><b>cryptography</b> <span class="n">2</span></span>
       <span class="chip"><b>social-eng</b> <span class="n">4</span></span>
       <span class="chip"><b>payloads</b> <span class="n">4</span></span>
-      <span class="chip"><b>reporting</b> <span class="n">5</span></span>
-      <span class="chip"><b>automation</b> <span class="n">2</span></span>
-      <span class="chip"><b>tradecraft</b> <span class="n">8</span></span>
+      <span class="chip"><b>reporting</b> <span class="n">6</span></span>
+      <span class="chip"><b>automation</b> <span class="n">3</span></span>
+      <span class="chip"><b>tradecraft</b> <span class="n">9</span></span>
     </div>
   </section>
 
@@ -64,25 +64,25 @@
     <h2><span class="hash">#</span> What each domain covers</h2>
     <table>
       <tr><th>Domain</th><th>#</th><th>Covers</th></tr>
-      <tr><td><code>web</code></td><td>44</td><td>XSS, SQLi, SSRF, SSTI, IDOR, XXE, CSRF, CORS, LFI, command injection, deserialization, OAuth, SAML, request smuggling, prototype pollution, cache poisoning, cache deception, host-header, CSP bypass, DOM clobbering, HTTP parameter pollution, postMessage, WebSocket, race conditions, business logic, file upload, JWT, 2FA/MFA bypass, account takeover, dependency confusion, client-side signing reversal, authenticated session handling, Python sandbox escape, Cypher injection, JDBC/connection-string RCE</td></tr>
-      <tr><td><code>ai-ml</code></td><td>9</td><td>Prompt injection, jailbreaks, RAG poisoning, model extraction, agent/tool &amp; MCP abuse, insecure output handling, supply chain, unbounded consumption</td></tr>
+      <tr><td><code>web</code></td><td>45</td><td>XSS, SQLi, SSRF, SSTI, IDOR, XXE, CSRF, CORS, LFI, command injection, deserialization, OAuth, SAML, request smuggling, prototype pollution, cache poisoning, cache deception, host-header, CSP bypass, DOM clobbering, HTTP parameter pollution, postMessage, WebSocket, race conditions, business logic, file upload, JWT, 2FA/MFA bypass, account takeover, dependency confusion, client-side signing reversal, authenticated session handling, Python sandbox escape, Cypher injection, JDBC/connection-string RCE</td></tr>
+      <tr><td><code>ai-ml</code></td><td>11</td><td>Prompt injection, jailbreaks, RAG poisoning, model extraction, agent/tool &amp; MCP abuse, insecure output handling, supply chain, unbounded consumption</td></tr>
       <tr><td><code>cloud</code></td><td>9</td><td>IMDS credential theft, object-storage exposure, Kubernetes, container escape, exposed Docker/daemon API abuse, IAM privilege escalation, registries, GCP, Azure / Entra ID</td></tr>
       <tr><td><code>api</code></td><td>9</td><td>BOLA/BFLA, GraphQL, gRPC, mass assignment, authentication attacks, fuzzing, version drift, NoSQL injection</td></tr>
       <tr><td><code>recon</code></td><td>9</td><td>Subdomain enumeration, DNS analysis, content &amp; JS discovery, OSINT, GitHub code-leak discovery, cloud-asset discovery, service enumeration, tech-stack fingerprinting</td></tr>
-      <tr><td><code>defense</code></td><td>13</td><td>Detection engineering (pipeline + Sigma/ATT&amp;CK), threat hunting, incident response, DFIR triage, network detection (NSM), cloud detection &amp; response, Active Directory defense, malware triage, hardening baselines, threat modeling, log analysis, purple teaming</td></tr>
+      <tr><td><code>defense</code></td><td>15</td><td>Detection engineering (pipeline + Sigma/ATT&amp;CK), threat hunting, incident response, DFIR triage, network detection (NSM), cloud detection &amp; response, Active Directory defense, malware triage, hardening baselines, threat modeling, log analysis, purple teaming</td></tr>
       <tr><td><code>code-review</code></td><td>15</td><td>Methodology, dangerous-sink catalog, secrets detection, CI/CD security, IaC (Terraform/Ansible/K8s), smart contracts (Solidity), Python, Node.js, PHP, Java/Spring, Go, Ruby/Rails, .NET/C#, C/C++, Rust</td></tr>
       <tr><td><code>mobile</code></td><td>6</td><td>Android &amp; iOS assessment, certificate-pinning bypass, deep-link abuse, WebView abuse</td></tr>
       <tr><td><code>ad</code></td><td>5</td><td>Kerberoasting / AS-REP, ADCS (ESC1–8), ACL/DACL abuse, Kerberos delegation abuse (RBCD / S4U / coercion→relay), pivoting arsenal</td></tr>
-      <tr><td><code>network</code></td><td>6</td><td>Service attacks, pivoting &amp; tunneling, NTLM coercion &amp; relay, password spraying &amp; credential stuffing, perimeter appliance &amp; VPN offensive, hash &amp; credential cracking</td></tr>
+      <tr><td><code>network</code></td><td>8</td><td>Service attacks, pivoting &amp; tunneling, NTLM coercion &amp; relay, password spraying &amp; credential stuffing, perimeter appliance &amp; VPN offensive, hash &amp; credential cracking</td></tr>
       <tr><td><code>wireless</code></td><td>2</td><td>WPA2-PSK handshake/PMKID capture &amp; cracking, evil-twin / rogue-AP enterprise (PEAP-MSCHAPv2) credential harvesting (pentest-only)</td></tr>
       <tr><td><code>privesc</code></td><td>4</td><td>Post-foothold enumeration &amp; credential hunting, Linux arsenal, GTFOBins (sudo/SUID/capabilities), Windows token impersonation</td></tr>
       <tr><td><code>exploit-dev</code></td><td>4</td><td>Exploit chaining &amp; impact amplification, PoC development, memory-corruption exploitation (ROP / format string / ret2libc)</td></tr>
       <tr><td><code>reverse-engineering</code></td><td>16</td><td>Native binary triage, deobfuscation (packed / JS / WASM / JSVMP), firmware extraction &amp; analysis</td></tr>
       <tr><td><code>cryptography</code></td><td>2</td><td>Weak/textbook RSA (JWT RS256, custom signatures), symmetric oracles (CBC padding, ECB, hash length extension)</td></tr>
       <tr><td><code>payloads</code></td><td>4</td><td>WAF/filter bypass, XSS polyglots, reverse shells &amp; TTY upgrade, file transfers</td></tr>
-      <tr><td><code>reporting</code></td><td>5</td><td>Finding triage &amp; validation, bug-bounty write-up, penetration-test report, CVSS/severity scoring, triage communication</td></tr>
-      <tr><td><code>automation</code></td><td>2</td><td>Recon pipelines, custom nuclei templates</td></tr>
-      <tr><td><code>tradecraft</code></td><td>8</td><td>Scope &amp; rules of engagement, attack-scenario planning, attack-path mapping, pivot/decision-making across skills, target selection, duplicate avoidance, bug-bounty platform intelligence, complex multi-stage engagements</td></tr>
+      <tr><td><code>reporting</code></td><td>6</td><td>Finding triage &amp; validation, bug-bounty write-up, penetration-test report, CVSS/severity scoring, triage communication</td></tr>
+      <tr><td><code>automation</code></td><td>3</td><td>Recon pipelines, custom nuclei templates</td></tr>
+      <tr><td><code>tradecraft</code></td><td>9</td><td>Scope &amp; rules of engagement, attack-scenario planning, attack-path mapping, pivot/decision-making across skills, target selection, duplicate avoidance, bug-bounty platform intelligence, complex multi-stage engagements</td></tr>
       <tr><td><code>social-eng</code></td><td>4</td><td>Authorized human-factor testing: methodology, phishing, vishing &amp; pretexting, physical assessment (pentest-only)</td></tr>
     </table>
   </section>

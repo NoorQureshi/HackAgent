@@ -1,5 +1,5 @@
 {
- "count": 179,
+ "count": 206,
  "generated_by": "tools/catalog.py routing",
  "matcher": "token-idf overlap \u2014 documented in tools/test_routing.py",
  "skills": [
@@ -10,16 +10,16 @@
     "esc8",
     "ca",
     "misconfigurations",
-    "domain",
     "admin",
     "certificate",
-    "template",
     "adcs",
-    "active",
+    "template",
+    "domain",
     "directory",
-    "services",
     "escalate",
+    "active",
     "ad",
+    "services",
     "attack"
    ],
    "slug": "ad-adcs",
@@ -40,10 +40,10 @@
     "genericwrite",
     "writeowner",
     "addmember",
+    "directory",
     "lateral",
     "movement",
     "active",
-    "directory",
     "object",
     "ad",
     "escalation",
@@ -88,14 +88,14 @@
     "kerberoasting",
     "rep",
     "roasting",
-    "crack",
     "kerberos",
-    "offline",
     "user",
+    "offline",
+    "crack",
     "recover",
-    "service",
     "ad",
-    "request"
+    "request",
+    "service"
    ],
    "slug": "ad-kerberoasting",
    "triggers": [
@@ -111,11 +111,11 @@
     "tunneling",
     "cracking",
     "pivot",
+    "directory",
     "arsenal",
     "active",
-    "directory",
-    "password",
     "engagements",
+    "password",
     "ad",
     "authorized"
    ],
@@ -134,17 +134,17 @@
     "chosen",
     "args",
     "coerce",
-    "agent",
-    "tools",
     "exfil",
+    "agent",
     "tool",
-    "llm",
     "attacker",
+    "llm",
     "data",
     "privilege",
-    "ai",
     "ssrf",
-    "rce"
+    "rce",
+    "ai",
+    "abuse"
    ],
    "slug": "ai-agent-tool-abuse",
    "triggers": [
@@ -162,16 +162,16 @@
     "downstream",
     "calls",
     "output",
-    "sql",
     "handling",
+    "sql",
     "shell",
     "trust",
     "insecure",
     "apps",
-    "llm",
     "xss",
     "model",
-    "ai"
+    "llm",
+    "exploit"
    ],
    "slug": "ai-insecure-output-handling",
    "triggers": [
@@ -186,11 +186,11 @@
     "jailbreak",
     "produce",
     "ignore",
-    "guardrails",
     "restricted",
-    "output",
     "policy",
     "safety",
+    "guardrails",
+    "output",
     "llm",
     "ai",
     "bypass"
@@ -230,20 +230,20 @@
   {
    "domain": "ai-ml",
    "keywords": [
-    "servers",
     "integrations",
     "descriptions",
     "results",
+    "servers",
     "broad",
     "context",
-    "mcp",
-    "agent",
     "poisoning",
-    "assess",
-    "prompt",
+    "mcp",
     "protocol",
-    "tool",
+    "agent",
+    "prompt",
+    "assess",
     "model",
+    "tool",
     "ai",
     "via"
    ],
@@ -259,26 +259,26 @@
    "keywords": [
     "extraction",
     "steal",
-    "training",
-    "query",
     "stealing",
     "membership",
-    "extract",
     "ml",
     "parameters",
+    "training",
+    "query",
     "inference",
+    "extract",
     "system",
     "prompt",
+    "model",
     "access",
     "llm",
-    "model",
     "data"
    ],
    "slug": "ai-model-extraction",
    "triggers": [
     "test for ml/llm model's parameters",
     "stealing",
-    "extraction steal training"
+    "extraction steal stealing"
    ]
   },
   {
@@ -293,9 +293,9 @@
     "prompt",
     "apps",
     "function",
+    "test",
     "tool",
     "llm",
-    "test",
     "data",
     "ai",
     "bypass",
@@ -311,16 +311,16 @@
   {
    "domain": "ai-ml",
    "keywords": [
-    "rag",
     "knowledge",
     "base",
     "retrieved",
     "hijacks",
     "exfiltrates",
+    "rag",
     "indirect",
-    "scale",
     "poisoning",
     "poison",
+    "scale",
     "pipeline",
     "content",
     "prompt",
@@ -338,6 +338,33 @@
   {
    "domain": "ai-ml",
    "keywords": [
+    "sensitive",
+    "disclose",
+    "never",
+    "reveal",
+    "memorization",
+    "pii",
+    "tenant",
+    "conversation",
+    "training",
+    "rag",
+    "disclosure",
+    "context",
+    "leakage",
+    "logs",
+    "secrets",
+    "app"
+   ],
+   "slug": "ai-sensitive-data-disclosure",
+   "triggers": [
+    "make the llm leak training data",
+    "extract pii from the chatbot",
+    "rag context data leakage"
+   ]
+  },
+  {
+   "domain": "ai-ml",
+   "keywords": [
     "supply",
     "models",
     "datasets",
@@ -347,8 +374,8 @@
     "deserialization",
     "unsafe",
     "chain",
-    "llm",
     "model",
+    "llm",
     "ai",
     "attack"
    ],
@@ -360,18 +387,45 @@
    ]
   },
   {
+   "domain": "ai-ml",
+   "keywords": [
+    "developer",
+    "instructions",
+    "reveals",
+    "definitions",
+    "extract",
+    "map",
+    "guardrails",
+    "system",
+    "leakage",
+    "hidden",
+    "prompt",
+    "internal",
+    "endpoints",
+    "app",
+    "tool",
+    "llm"
+   ],
+   "slug": "ai-system-prompt-leakage",
+   "triggers": [
+    "extract the system prompt",
+    "leak the hidden instructions",
+    "reveal the llm's system prompt"
+   ]
+  },
+  {
    "domain": "api",
    "keywords": [
-    "leakage",
     "jwt",
     "handling",
-    "weak",
     "key",
+    "leakage",
+    "weak",
     "session",
     "break",
     "authentication",
-    "endpoints",
     "token",
+    "endpoints",
     "auth",
     "attacks",
     "api"
@@ -379,19 +433,19 @@
    "slug": "api-auth-attacks",
    "triggers": [
     "test for api authentication",
-    "key leakage",
-    "leakage jwt handling"
+    "token handling",
+    "jwt handling key"
    ]
   },
   {
    "domain": "api",
    "keywords": [
     "bola",
-    "json",
     "broken",
-    "level",
     "authorization",
     "rest",
+    "json",
+    "level",
     "apis",
     "risk",
     "object",
@@ -486,7 +540,6 @@
     "mongo",
     "agg",
     "facet",
-    "mongodb",
     "aggregation",
     "allowlist",
     "nesting",
@@ -497,6 +550,7 @@
     "lookup",
     "sibling",
     "collections",
+    "mongodb",
     "stage",
     "pipeline"
    ],
@@ -518,10 +572,10 @@
     "grpc",
     "nothing",
     "skipped",
-    "testing",
     "ordered",
-    "methodology",
     "gets",
+    "testing",
+    "methodology",
     "api"
    ],
    "slug": "api-testing-checklist",
@@ -540,11 +594,11 @@
     "missed",
     "improper",
     "inventory",
-    "management",
     "fix",
+    "management",
     "versions",
-    "api",
     "find",
+    "api",
     "attack"
    ],
    "slug": "api-versioning",
@@ -557,23 +611,48 @@
   {
    "domain": "automation",
    "keywords": [
-    "nuclei",
+    "playwright",
+    "automated",
+    "login",
+    "form",
+    "payload",
+    "submission",
+    "ui",
+    "drive",
+    "automation",
+    "browser",
+    "agent",
+    "app",
+    "scope",
+    "web"
+   ],
+   "slug": "automation-browser",
+   "triggers": [
+    "drive the browser to reproduce this",
+    "automate login and click through the app",
+    "headless browser interaction for testing"
+   ]
+  },
+  {
+   "domain": "automation",
+   "keywords": [
     "templates",
     "codify",
     "scannable",
+    "nuclei",
     "mass",
-    "check",
     "custom",
     "repeatable",
-    "automation",
+    "check",
     "write",
+    "automation",
     "finding"
    ],
    "slug": "automation-nuclei-templates",
    "triggers": [
     "test for custom nuclei templates",
     "mass-scannable check",
-    "nuclei templates codify"
+    "templates codify scannable"
    ]
   },
   {
@@ -582,14 +661,14 @@
     "resumable",
     "continuous",
     "coverage",
-    "tools",
     "repeatable",
-    "automation",
     "pipeline",
     "bounty",
+    "automation",
     "chain",
     "bug",
-    "recon"
+    "recon",
+    "tools"
    ],
    "slug": "automation-recon-pipeline",
    "triggers": [
@@ -609,10 +688,10 @@
     "misconfig",
     "azure",
     "storage",
-    "app",
     "token",
     "theft",
     "ad",
+    "app",
     "cloud",
     "abuse",
     "attack"
@@ -643,21 +722,21 @@
   {
    "domain": "cloud",
    "keywords": [
-    "daemon",
     "privileged",
     "compromise",
     "2375",
     "2376",
     "mounted",
     "sock",
+    "daemon",
     "docker",
     "container",
     "exposed",
     "host",
     "turn",
     "cloud",
-    "api",
-    "abuse"
+    "abuse",
+    "api"
    ],
    "slug": "cloud-docker-api-abuse",
    "triggers": [
@@ -674,8 +753,8 @@
     "image",
     "baked",
     "layers",
-    "docker",
     "push",
+    "docker",
     "loot",
     "container",
     "pull",
@@ -748,9 +827,9 @@
     "imds",
     "metadata",
     "escalate",
-    "service",
     "credential",
     "theft",
+    "service",
     "ssrf",
     "via",
     "cloud"
@@ -792,9 +871,9 @@
     "gcs",
     "blob",
     "prove",
-    "object",
     "storage",
     "azure",
+    "object",
     "cloud",
     "find"
    ],
@@ -814,13 +893,13 @@
     "workflows",
     "poisoned",
     "secret",
-    "leakage",
     "ci",
     "flaws",
+    "leakage",
     "injection",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-cicd",
    "triggers": [
@@ -841,8 +920,8 @@
     "sinks",
     "api",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-cpp",
    "triggers": [
@@ -883,8 +962,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-dotnet",
    "triggers": [
@@ -902,8 +981,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
     "code",
+    "security",
     "web"
    ],
    "slug": "code-review-go",
@@ -925,8 +1004,8 @@
     "manifests",
     "kubernetes",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-iac",
    "triggers": [
@@ -944,8 +1023,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-java",
    "triggers": [
@@ -959,20 +1038,20 @@
    "keywords": [
     "manual",
     "reading",
+    "systematic",
     "source",
     "methodology",
-    "systematic",
     "bugs",
     "find",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-methodology",
    "triggers": [
     "test for manual source-code security review",
     "bugs by reading code",
-    "manual reading source"
+    "manual reading systematic"
    ]
   },
   {
@@ -988,8 +1067,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-nodejs",
    "triggers": [
@@ -1010,8 +1089,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-php",
    "triggers": [
@@ -1024,8 +1103,8 @@
    "domain": "code-review",
    "keywords": [
     "django",
-    "flask",
     "fastapi",
+    "flask",
     "python",
     "specific",
     "framework",
@@ -1033,8 +1112,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-python",
    "triggers": [
@@ -1052,8 +1131,8 @@
     "dangerous",
     "sinks",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-ruby",
    "triggers": [
@@ -1073,14 +1152,14 @@
     "safe",
     "language",
     "unsafe",
-    "memory",
     "bugs",
     "logic",
-    "injection",
+    "memory",
     "sinks",
+    "injection",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-rust",
    "triggers": [
@@ -1092,8 +1171,8 @@
   {
    "domain": "code-review",
    "keywords": [
-    "git",
     "leaked",
+    "git",
     "history",
     "ci",
     "secrets",
@@ -1124,8 +1203,8 @@
     "bugs",
     "access",
     "review",
-    "security",
-    "code"
+    "code",
+    "security"
    ],
    "slug": "code-review-solidity",
    "triggers": [
@@ -1142,16 +1221,16 @@
     "decrypt",
     "encrypted",
     "cookies",
-    "oracles",
     "cbc",
     "ecb",
     "block",
     "shuffling",
     "forge",
     "padding",
+    "oracles",
+    "tokens",
     "crypto",
     "weak",
-    "tokens",
     "key"
    ],
    "slug": "crypto-oracle-attacks",
@@ -1164,9 +1243,9 @@
   {
    "domain": "cryptography",
    "keywords": [
-    "rsa",
     "plaintext",
     "ciphertext",
+    "rsa",
     "parameters",
     "padding",
     "private",
@@ -1186,6 +1265,167 @@
    ]
   },
   {
+   "domain": "ctf",
+   "keywords": [
+    "like",
+    "spec",
+    "weaknesses",
+    "xor",
+    "pad",
+    "provided",
+    "encryption",
+    "rsa",
+    "oracles",
+    "parameter",
+    "multi",
+    "crypto",
+    "playbook",
+    "script",
+    "time",
+    "challenge"
+   ],
+   "slug": "ctf-crypto",
+   "triggers": [
+    "solve this ctf crypto challenge",
+    "weak rsa in a ctf",
+    "xor cipher ctf solution"
+   ]
+  },
+  {
+   "domain": "ctf",
+   "keywords": [
+    "quick",
+    "pcaps",
+    "images",
+    "stego",
+    "binwalk",
+    "carving",
+    "wireshark",
+    "export",
+    "five",
+    "forensics",
+    "wins",
+    "dumps",
+    "disk",
+    "volatility",
+    "playbook",
+    "files"
+   ],
+   "slug": "ctf-forensics",
+   "triggers": [
+    "ctf forensics pcap analysis",
+    "find the flag in this image stego",
+    "ctf memory dump challenge"
+   ]
+  },
+  {
+   "domain": "ctf",
+   "keywords": [
+    "category",
+    "handout",
+    "artifacts",
+    "10",
+    "minutes",
+    "budget",
+    "points",
+    "management",
+    "intended",
+    "technique",
+    "methodology",
+    "time",
+    "identify",
+    "first",
+    "challenge",
+    "ctf"
+   ],
+   "slug": "ctf-methodology",
+   "triggers": [
+    "how do i approach this ctf challenge",
+    "ctf triage first ten minutes",
+    "what category is this challenge"
+   ]
+  },
+  {
+   "domain": "ctf",
+   "keywords": [
+    "pwntools",
+    "workflow",
+    "reproduce",
+    "environment",
+    "locally",
+    "pwn",
+    "nc",
+    "remote",
+    "provided",
+    "playbook",
+    "port",
+    "challenge",
+    "ctf",
+    "services",
+    "host"
+   ],
+   "slug": "ctf-pwn",
+   "triggers": [
+    "pwn this ctf binary",
+    "remote pwntools exploit for the ctf",
+    "ctf format string challenge"
+   ]
+  },
+  {
+   "domain": "ctf",
+   "keywords": [
+    "rev",
+    "reversing",
+    "speed",
+    "flag",
+    "locate",
+    "xrefs",
+    "solve",
+    "obfuscation",
+    "check",
+    "anti",
+    "crack",
+    "debug",
+    "strings",
+    "ctf",
+    "binaries",
+    "run"
+   ],
+   "slug": "ctf-rev",
+   "triggers": [
+    "reverse this ctf crackme",
+    "bypass the anti-debug check ctf",
+    "z3 solve the flag constraints"
+   ]
+  },
+  {
+   "domain": "ctf",
+   "keywords": [
+    "recurring",
+    "shapes",
+    "jeopardy",
+    "challenges",
+    "backups",
+    "git",
+    "flask",
+    "ssti",
+    "source",
+    "disclosure",
+    "playbook",
+    "debug",
+    "challenge",
+    "ctf",
+    "ssrf",
+    "web"
+   ],
+   "slug": "ctf-web",
+   "triggers": [
+    "web ctf challenge walkthrough",
+    "flask ssti ctf",
+    "ctf source disclosure tricks"
+   ]
+  },
+  {
    "domain": "defense",
    "keywords": [
     "harden",
@@ -1196,13 +1436,13 @@
     "delegation",
     "relay",
     "adcs",
-    "active",
     "directory",
     "detect",
+    "active",
     "ad",
     "attacks",
-    "defense",
-    "abuse"
+    "abuse",
+    "defense"
    ],
    "slug": "defense-ad-defense",
    "triggers": [
@@ -1217,19 +1457,19 @@
     "respond",
     "planes",
     "persistence",
-    "audit",
     "imds",
+    "audit",
     "control",
-    "logs",
     "detect",
+    "logs",
     "credential",
-    "detection",
     "theft",
+    "detection",
     "privilege",
     "escalation",
     "attacks",
-    "defense",
-    "cloud"
+    "cloud",
+    "abuse"
    ],
    "slug": "defense-cloud-detection",
    "triggers": [
@@ -1267,9 +1507,9 @@
     "convert",
     "siem",
     "detections",
-    "map",
     "att",
     "ck",
+    "map",
     "write",
     "rules",
     "detection",
@@ -1293,13 +1533,13 @@
     "first",
     "activity",
     "linux",
-    "windows",
     "response",
-    "scope",
+    "windows",
     "attacker",
+    "scope",
     "triage",
-    "defense",
-    "find"
+    "find",
+    "defense"
    ],
    "slug": "defense-dfir-triage",
    "triggers": [
@@ -1311,15 +1551,42 @@
   {
    "domain": "defense",
    "keywords": [
+    "forensic",
+    "artifact",
+    "super",
+    "timelines",
+    "plaso",
+    "pcap",
+    "tshark",
+    "forensics",
+    "dumps",
+    "volatility",
+    "disk",
+    "deep",
+    "windows",
+    "memory",
+    "host",
+    "analysis"
+   ],
+   "slug": "defense-forensics",
+   "triggers": [
+    "deep analysis of this disk image",
+    "plaso super timeline from host artifacts",
+    "windows forensic artifact deep dive"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
     "hardening",
     "baseline",
     "offensive",
-    "vuln",
-    "plus",
     "baselines",
     "findings",
     "fix",
+    "vuln",
     "class",
+    "plus",
     "config",
     "concrete",
     "side",
@@ -1357,19 +1624,19 @@
   {
    "domain": "defense",
    "keywords": [
-    "log",
     "endpoint",
     "look",
+    "log",
     "hunt",
     "queries",
-    "activity",
     "concrete",
+    "activity",
     "logs",
     "attacker",
     "auth",
     "analysis",
-    "defense",
     "cloud",
+    "defense",
     "web"
    ],
    "slug": "defense-log-analysis",
@@ -1384,10 +1651,10 @@
    "keywords": [
     "suspicious",
     "process",
-    "iocs",
     "yield",
     "malware",
     "malicious",
+    "iocs",
     "safely",
     "static",
     "file",
@@ -1400,7 +1667,7 @@
    "triggers": [
     "test for suspicious file",
     "is it malicious",
-    "suspicious process iocs"
+    "suspicious process yield"
    ]
   },
   {
@@ -1410,9 +1677,9 @@
     "c2",
     "beaconing",
     "tunnelling",
-    "activity",
     "dns",
     "exfil",
+    "activity",
     "lateral",
     "movement",
     "detect",
@@ -1440,8 +1707,8 @@
     "validate",
     "specific",
     "response",
-    "detection",
     "attacker",
+    "detection",
     "run",
     "defense"
    ],
@@ -1461,12 +1728,12 @@
     "hypothesis",
     "guided",
     "searching",
-    "threat",
     "hunt",
     "driven",
     "att",
     "ck",
     "edr",
+    "threat",
     "hunting",
     "logs",
     "defense"
@@ -1476,6 +1743,33 @@
     "test for intrusions no alert fired",
     "hypothesis-driven",
     "intrusions alert fired"
+   ]
+  },
+  {
+   "domain": "defense",
+   "keywords": [
+    "intel",
+    "enrich",
+    "campaigns",
+    "scam",
+    "narratives",
+    "sources",
+    "bounded",
+    "twitter",
+    "collection",
+    "xquik",
+    "independent",
+    "iocs",
+    "plus",
+    "threat",
+    "impersonation",
+    "public"
+   ],
+   "slug": "defense-threat-intel",
+   "triggers": [
+    "track this threat actor's infrastructure",
+    "collect intel on this campaign",
+    "corroborate these iocs"
    ]
   },
   {
@@ -1491,10 +1785,10 @@
     "system",
     "risk",
     "model",
-    "defense",
     "find",
-    "attack",
-    "code"
+    "defense",
+    "code",
+    "attack"
    ],
    "slug": "defense-threat-modeling",
    "triggers": [
@@ -1537,10 +1831,10 @@
     "format",
     "execution",
     "stack",
-    "strings",
-    "memory",
     "native",
     "binary",
+    "strings",
+    "memory",
     "bug",
     "exploit",
     "turn",
@@ -1558,9 +1852,9 @@
    "keywords": [
     "poc",
     "development",
-    "vulnerability",
     "raw",
     "day",
+    "vulnerability",
     "working",
     "known",
     "reliable",
@@ -1574,26 +1868,26 @@
    "triggers": [
     "test for known/1-day vulnerability",
     "reliable poc",
-    "poc development vulnerability"
+    "poc development raw"
    ]
   },
   {
    "domain": "exploit-dev",
    "keywords": [
-    "pwn",
     "heap",
     "kernel",
     "taking",
     "crash",
     "stable",
-    "remote",
+    "pwn",
     "corruption",
+    "remote",
     "reliable",
     "known",
     "stack",
+    "local",
     "engineer",
     "memory",
-    "local",
     "chain",
     "bug"
    ],
@@ -1621,8 +1915,8 @@
     "s7",
     "dnp3",
     "passive",
-    "first",
-    "hardware"
+    "hardware",
+    "safely"
    ],
    "slug": "hardware-ot-ics",
    "triggers": [
@@ -1647,8 +1941,8 @@
     "non",
     "wi",
     "fi",
-    "identify",
     "hardware",
+    "identify",
     "authorized"
    ],
    "slug": "hardware-radio-sdr",
@@ -1671,11 +1965,11 @@
     "root",
     "console",
     "interrupt",
-    "debug",
     "device",
     "hardware",
-    "logs",
+    "debug",
     "discover",
+    "logs",
     "read"
    ],
    "slug": "hardware-security",
@@ -1689,18 +1983,18 @@
    "domain": "mobile",
    "keywords": [
     "android",
-    "assess",
-    "app",
     "static",
     "mobile",
     "assessment",
-    "dynamic"
+    "dynamic",
+    "assess",
+    "app"
    ],
    "slug": "mobile-android-assessment",
    "triggers": [
     "test for android app",
     "check android app",
-    "android assess app"
+    "android static mobile"
    ]
   },
   {
@@ -1736,11 +2030,11 @@
     "cert",
     "pinning",
     "tls",
-    "proxy",
     "certificate",
+    "proxy",
     "traffic",
-    "app",
     "mobile",
+    "app",
     "bypass"
    ],
    "slug": "mobile-cert-pinning-bypass",
@@ -1760,12 +2054,12 @@
     "links",
     "redirect",
     "reaching",
-    "deep",
     "custom",
+    "deep",
     "url",
-    "internal",
     "mobile",
     "token",
+    "internal",
     "theft",
     "abuse"
    ],
@@ -1780,18 +2074,18 @@
    "domain": "mobile",
    "keywords": [
     "ios",
-    "assess",
-    "app",
     "static",
     "mobile",
     "assessment",
-    "dynamic"
+    "dynamic",
+    "assess",
+    "app"
    ],
    "slug": "mobile-ios-assessment",
    "triggers": [
     "test for ios app",
     "check ios app",
-    "ios assess app"
+    "ios static mobile"
    ]
   },
   {
@@ -1804,9 +2098,9 @@
     "insecure",
     "mobile",
     "file",
-    "access",
     "xss",
     "js",
+    "access",
     "exploit",
     "abuse"
    ],
@@ -1832,8 +2126,8 @@
     "appliance",
     "safe",
     "firmware",
-    "version",
     "inference",
+    "version",
     "crypto",
     "mode"
    ],
@@ -1847,18 +2141,18 @@
   {
    "domain": "network",
    "keywords": [
-    "hashes",
     "handshakes",
     "pick",
     "right",
+    "wordlist",
+    "hashes",
+    "captured",
+    "format",
     "hashcat",
     "john",
-    "wordlist",
-    "crack",
-    "captured",
-    "engagement",
-    "format",
     "cracking",
+    "engagement",
+    "crack",
     "identify",
     "mode",
     "rules",
@@ -1874,14 +2168,68 @@
   {
    "domain": "network",
    "keywords": [
+    "reachable",
+    "postgresql",
+    "mysql",
+    "mssql",
+    "default",
+    "grants",
+    "database",
+    "mongodb",
+    "redis",
+    "unauthenticated",
+    "accounts",
+    "broad",
+    "weak",
+    "assess",
+    "services",
+    "access"
+   ],
+   "slug": "network-database-security",
+   "triggers": [
+    "assess this exposed database",
+    "redis unauthenticated access check",
+    "mssql xp_cmdshell escalation review"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
+    "dissect",
+    "samples",
+    "urls",
+    "attachments",
+    "spoofability",
+    "spf",
+    "dkim",
+    "dmarc",
+    "alignment",
+    "recognize",
+    "email",
+    "headers",
+    "domain",
+    "phishing",
+    "assess",
+    "network"
+   ],
+   "slug": "network-email-security",
+   "triggers": [
+    "analyze this phishing email",
+    "check the domain spf dkim dmarc",
+    "trace the received headers"
+   ]
+  },
+  {
+   "domain": "network",
+   "keywords": [
     "ntlm",
     "smb",
     "ldap",
     "relay",
     "coerce",
+    "adcs",
     "lateral",
     "movement",
-    "adcs",
     "authentication",
     "privilege",
     "escalation",
@@ -1909,9 +2257,9 @@
     "accounts",
     "low",
     "known",
-    "password",
     "exposed",
     "users",
+    "password",
     "credential"
    ],
    "slug": "network-password-spraying",
@@ -1931,8 +2279,8 @@
     "pivoting",
     "tunneling",
     "foothold",
-    "port",
     "pivot",
+    "port",
     "internal",
     "network"
    ],
@@ -1948,8 +2296,8 @@
    "keywords": [
     "surfaced",
     "non",
-    "services",
     "service",
+    "services",
     "network",
     "attacks",
     "recon",
@@ -1960,34 +2308,34 @@
    "triggers": [
     "test for non-web network services surfaced by recon",
     "check non-web network services surfaced by recon",
-    "surfaced non services"
+    "surfaced non service"
    ]
   },
   {
    "domain": "payloads",
    "keywords": [
     "move",
-    "drive",
     "linpeas",
-    "nc",
     "exploits",
     "transfers",
     "shared",
     "upload",
-    "files",
-    "tools",
+    "nc",
     "pull",
     "loot",
     "back",
     "payloads",
+    "files",
+    "drive",
     "pivot",
-    "file"
+    "file",
+    "target"
    ],
    "slug": "payloads-file-transfers",
    "triggers": [
     "test for files on/off a target",
     "linpeas",
-    "move drive linpeas"
+    "move linpeas exploits"
    ]
   },
   {
@@ -2016,8 +2364,8 @@
     "wafs",
     "filters",
     "blocking",
-    "waf",
     "payloads",
+    "waf",
     "bypass"
    ],
    "slug": "payloads-waf-bypass",
@@ -2033,14 +2381,14 @@
     "polyglots",
     "breaking",
     "attribute",
-    "shot",
-    "context",
     "fire",
     "html",
+    "shot",
+    "context",
     "payloads",
     "url",
-    "one",
     "xss",
+    "one",
     "js",
     "sinks"
    ],
@@ -2054,11 +2402,11 @@
   {
    "domain": "privesc",
    "keywords": [
-    "arsenal",
     "linux",
-    "windows",
     "local",
     "privesc",
+    "arsenal",
+    "windows",
     "engagements",
     "tool",
     "privilege",
@@ -2069,7 +2417,7 @@
    "triggers": [
     "test for linux + windows local privilege-escalation tool arsenal",
     "check linux + windows local privilege-escalation tool arsenal",
-    "arsenal linux windows"
+    "linux local privesc"
    ]
   },
   {
@@ -2077,26 +2425,26 @@
    "keywords": [
     "situational",
     "awareness",
-    "post",
     "foothold",
     "lead",
     "systematic",
+    "post",
     "loot",
     "hunting",
     "linux",
-    "windows",
     "privesc",
-    "enumeration",
+    "windows",
     "build",
-    "host",
+    "enumeration",
     "credential",
+    "host",
     "find"
    ],
    "slug": "privesc-enumeration",
    "triggers": [
     "test for post-foothold host enumeration",
     "situational awareness",
-    "situational awareness post"
+    "situational awareness foothold"
    ]
   },
   {
@@ -2109,8 +2457,8 @@
     "capabilities",
     "techniques",
     "linux",
-    "rules",
     "privesc",
+    "rules",
     "binaries",
     "privilege",
     "escalation",
@@ -2126,7 +2474,6 @@
   {
    "domain": "privesc",
    "keywords": [
-    "impersonation",
     "seimpersonate",
     "seassignprimarytoken",
     "potato",
@@ -2134,9 +2481,10 @@
     "related",
     "privileges",
     "tokens",
+    "impersonation",
     "system",
-    "windows",
     "privesc",
+    "windows",
     "token",
     "privilege",
     "escalation",
@@ -2156,12 +2504,12 @@
     "port",
     "arsenal",
     "discovery",
-    "service",
     "engagements",
-    "host",
+    "service",
     "tool",
-    "recon",
-    "authorized"
+    "host",
+    "authorized",
+    "recon"
    ],
    "slug": "recon-arsenal",
    "triggers": [
@@ -2182,10 +2530,10 @@
     "aws",
     "assets",
     "gcp",
-    "services",
     "azure",
     "discover",
     "apps",
+    "services",
     "recon",
     "cloud"
    ],
@@ -2199,15 +2547,15 @@
   {
    "domain": "recon",
    "keywords": [
-    "paths",
     "routes",
-    "hidden",
+    "paths",
     "params",
+    "hidden",
     "content",
     "discovery",
     "discover",
-    "endpoints",
     "exposed",
+    "endpoints",
     "js",
     "target",
     "recon",
@@ -2280,9 +2628,9 @@
     "functionality",
     "params",
     "hidden",
+    "javascript",
     "endpoints",
     "secrets",
-    "javascript",
     "js",
     "analysis",
     "recon"
@@ -2312,7 +2660,7 @@
     "target",
     "recon",
     "cloud",
-    "attack"
+    "code"
    ],
    "slug": "recon-osint",
    "triggers": [
@@ -2327,15 +2675,15 @@
     "enum",
     "enumerate",
     "subdomains",
-    "live",
     "subdomain",
+    "live",
     "external",
-    "hosts",
     "program",
+    "hosts",
     "bounty",
     "build",
-    "surface",
     "assessment",
+    "surface",
     "bug",
     "recon",
     "attack"
@@ -2357,13 +2705,13 @@
     "frontend",
     "cms",
     "backend",
-    "cdn",
-    "identify",
     "stack",
     "runtime",
-    "waf",
+    "cdn",
     "versions",
+    "identify",
     "framework",
+    "waf",
     "public",
     "server"
    ],
@@ -2378,27 +2726,27 @@
    "domain": "reporting",
    "keywords": [
     "writeup",
-    "confirmed",
     "friendly",
     "hackerone",
     "bugcrowd",
     "correct",
     "clean",
+    "confirmed",
     "report",
     "evidence",
-    "severity",
     "bounty",
+    "severity",
     "reporting",
     "finding",
     "bug",
-    "triage",
-    "turn"
+    "turn",
+    "triage"
    ],
    "slug": "reporting-bug-bounty-writeup",
    "triggers": [
     "test for confirmed finding",
     "hackerone/bugcrowd",
-    "writeup confirmed friendly"
+    "writeup friendly hackerone"
    ]
   },
   {
@@ -2411,13 +2759,13 @@
     "vector",
     "reconcile",
     "demonstrated",
-    "scale",
-    "severity",
     "impact",
     "program",
+    "scale",
+    "severity",
+    "build",
     "reporting",
-    "finding",
-    "build"
+    "finding"
    ],
    "slug": "reporting-cvss-scoring",
    "triggers": [
@@ -2429,10 +2777,37 @@
   {
    "domain": "reporting",
    "keywords": [
-    "pentest",
+    "pre",
+    "handoff",
+    "every",
+    "traceable",
+    "reproducible",
+    "leads",
+    "audit",
+    "package",
+    "confirmed",
+    "log",
+    "closed",
+    "evidence",
+    "engagement",
+    "activity",
+    "reporting",
+    "finding"
+   ],
+   "slug": "reporting-evidence-review",
+   "triggers": [
+    "audit this case before handoff",
+    "evidence chain of custody check",
+    "is this finding submission-ready"
+   ]
+  },
+  {
+   "domain": "reporting",
+   "keywords": [
     "professional",
     "penetration",
     "deliverable",
+    "pentest",
     "report",
     "structure",
     "engagement",
@@ -2445,7 +2820,7 @@
    "triggers": [
     "test for professional penetration-test report",
     "engagement deliverable",
-    "pentest professional penetration"
+    "professional penetration deliverable"
    ]
   },
   {
@@ -2479,14 +2854,14 @@
    "domain": "reporting",
    "keywords": [
     "validation",
-    "kill",
     "false",
     "positives",
-    "confirm",
     "deduplicate",
     "validate",
-    "check",
+    "kill",
+    "confirm",
     "impact",
+    "check",
     "write",
     "reporting",
     "finding",
@@ -2497,7 +2872,7 @@
    "triggers": [
     "test for finding before you write it up",
     "deduplicate",
-    "validation kill false"
+    "validation false positives"
    ]
   },
   {
@@ -2511,13 +2886,13 @@
     "exports",
     "imports",
     "types",
-    "strings",
     "python",
-    "engineer",
     "references",
     "patching",
-    "automation",
     "binary",
+    "engineer",
+    "strings",
+    "automation",
     "cross"
    ],
    "slug": "reverse-eng-binary-ninja",
@@ -2539,13 +2914,13 @@
     "static",
     "dynamic",
     "read",
-    "triage",
-    "run",
     "dangerous",
+    "run",
+    "triage",
     "analysis",
     "sinks",
     "find",
-    "reverse"
+    "eng"
    ],
    "slug": "reverse-eng-binary-triage",
    "triggers": [
@@ -2559,7 +2934,6 @@
    "keywords": [
     "deobfuscation",
     "peel",
-    "obfuscation",
     "until",
     "readable",
     "callable",
@@ -2567,18 +2941,19 @@
     "minified",
     "webassembly",
     "vm",
+    "obfuscation",
     "obfuscated",
     "protected",
     "native",
-    "binaries",
     "javascript",
+    "binaries",
     "js"
    ],
    "slug": "reverse-eng-deobfuscation",
    "triggers": [
     "test for obfuscation off code",
     "webassembly",
-    "deobfuscation peel obfuscation"
+    "deobfuscation peel until"
    ]
   },
   {
@@ -2589,14 +2964,14 @@
     "il",
     "dotnet",
     "net",
-    "debug",
     "patch",
     "managed",
     "decompile",
     "c",
+    "debug",
     "binaries",
-    "reverse",
-    "eng"
+    "eng",
+    "reverse"
    ],
    "slug": "reverse-eng-dotnet",
    "triggers": [
@@ -2623,7 +2998,7 @@
     "target",
     "analysis",
     "authorized",
-    "reverse"
+    "eng"
    ],
    "slug": "reverse-eng-edr-analysis",
    "triggers": [
@@ -2639,17 +3014,17 @@
     "backdoors",
     "behind",
     "firmware",
-    "extract",
     "analyze",
     "device",
     "vulnerable",
-    "version",
     "appliance",
-    "services",
+    "extract",
+    "version",
     "secrets",
+    "services",
     "find",
-    "reverse",
-    "eng"
+    "eng",
+    "reverse"
    ],
    "slug": "reverse-eng-firmware",
    "triggers": [
@@ -2667,15 +3042,15 @@
     "batch",
     "ida",
     "gui",
-    "mcp",
     "decompile",
     "scripting",
     "ci",
-    "engineer",
+    "mcp",
     "references",
+    "engineer",
     "cross",
-    "reverse",
-    "eng"
+    "eng",
+    "reverse"
    ],
    "slug": "reverse-eng-ghidra",
    "triggers": [
@@ -2701,8 +3076,8 @@
     "specific",
     "recover",
     "binaries",
-    "reverse",
-    "eng"
+    "eng",
+    "reverse"
    ],
    "slug": "reverse-eng-go-rust",
    "triggers": [
@@ -2719,16 +3094,16 @@
     "rays",
     "ida",
     "types",
-    "bridge",
     "driven",
-    "deep",
     "decompile",
     "gui",
-    "mcp",
-    "agent",
+    "bridge",
+    "deep",
     "engineering",
     "references",
     "patching",
+    "mcp",
+    "agent",
     "cross"
    ],
    "slug": "reverse-eng-ida",
@@ -2741,22 +3116,22 @@
   {
    "domain": "reverse-engineering",
    "keywords": [
-    "trace",
     "fires",
     "given",
-    "encryption",
     "inputs",
     "front",
+    "trace",
     "signing",
-    "script",
+    "encryption",
     "capture",
     "runtime",
+    "script",
     "function",
     "javascript",
     "request",
     "js",
-    "reverse",
-    "eng"
+    "eng",
+    "reverse"
    ],
    "slug": "reverse-eng-js",
    "triggers": [
@@ -2774,15 +3149,15 @@
     "codesign",
     "notarization",
     "entitlements",
-    "objective",
     "swift",
     "symbol",
     "recovery",
     "lldb",
     "state",
+    "objective",
     "frida",
     "c",
-    "app",
+    "dynamic",
     "binaries"
    ],
    "slug": "reverse-eng-macos",
@@ -2850,7 +3225,6 @@
    "domain": "reverse-engineering",
    "keywords": [
     "layout",
-    "type",
     "dictionary",
     "field",
     "meanings",
@@ -2858,13 +3232,14 @@
     "traffic",
     "frame",
     "message",
+    "type",
     "custom",
-    "client",
     "protocol",
+    "client",
     "binary",
     "recover",
     "network",
-    "reverse"
+    "eng"
    ],
    "slug": "reverse-eng-protocol",
    "triggers": [
@@ -2884,12 +3259,12 @@
     "command",
     "imports",
     "needed",
-    "strings",
     "scripting",
     "gui",
     "references",
     "patching",
     "binary",
+    "strings",
     "cross",
     "analysis"
    ],
@@ -2907,18 +3282,18 @@
     "desktop",
     "boundaries",
     "ipc",
-    "map",
     "work",
     "config",
-    "files",
-    "client",
+    "map",
     "trust",
     "local",
+    "files",
     "storage",
-    "surface",
+    "client",
     "credential",
+    "surface",
     "test",
-    "security"
+    "eng"
    ],
    "slug": "reverse-eng-thick-client",
    "triggers": [
@@ -2932,14 +3307,14 @@
    "keywords": [
     "plan",
     "load",
-    "guardrails",
     "human",
-    "methodology",
-    "first",
+    "guardrails",
     "factor",
     "social",
+    "methodology",
     "engineering",
     "safely",
+    "first",
     "assessment",
     "test",
     "run",
@@ -2950,7 +3325,7 @@
    "triggers": [
     "test for authorized social-engineering assessment safely",
     "load-first guardrails",
-    "plan load guardrails"
+    "plan load human"
    ]
   },
   {
@@ -2963,11 +3338,11 @@
     "tracking",
     "human",
     "page",
-    "phishing",
     "factor",
-    "risk",
     "pretext",
     "social",
+    "phishing",
+    "risk",
     "assessment",
     "run",
     "authorized",
@@ -3016,13 +3391,13 @@
     "staff",
     "help",
     "desks",
-    "verification",
     "procedures",
     "scenarios",
     "follow",
+    "verification",
     "pretext",
-    "phishing",
     "social",
+    "phishing",
     "safely",
     "test",
     "run"
@@ -3035,22 +3410,339 @@
    ]
   },
   {
+   "domain": "tools",
+   "keywords": [
+    "sploitagent",
+    "skill",
+    "pentest",
+    "job",
+    "load",
+    "domain",
+    "arsenal",
+    "selection",
+    "tool",
+    "cross",
+    "tools"
+   ],
+   "slug": "tools-arsenal",
+   "triggers": [
+    "which tool should i use for this job",
+    "pentest tool selection",
+    "map the task to the right tool"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "suite",
+    "repeater",
+    "intruder",
+    "collaborator",
+    "oob",
+    "manually",
+    "burp",
+    "proxy",
+    "history",
+    "scanning",
+    "drive",
+    "testing",
+    "active",
+    "enumeration",
+    "triage",
+    "tools"
+   ],
+   "slug": "tools-burp-suite",
+   "triggers": [
+    "drive burp suite for this test",
+    "burp intruder attack setup",
+    "burp collaborator oob confirmation"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "curl",
+    "ground",
+    "truth",
+    "403s",
+    "globoff",
+    "bracket",
+    "verification",
+    "headers",
+    "http",
+    "impersonation",
+    "cdn",
+    "client",
+    "browser",
+    "waf",
+    "tools",
+    "recon"
+   ],
+   "slug": "tools-curl",
+   "triggers": [
+    "craft this curl request",
+    "curl through the waf with browser headers",
+    "curl debugging the api"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "ffuf",
+    "vhost",
+    "placement",
+    "bodies",
+    "keyword",
+    "paths",
+    "query",
+    "fuzz",
+    "targets",
+    "parameter",
+    "post",
+    "content",
+    "discovery",
+    "strings",
+    "host",
+    "tools"
+   ],
+   "slug": "tools-ffuf",
+   "triggers": [
+    "ffuf directory fuzzing",
+    "fuzz parameters with ffuf",
+    "ffuf vhost discovery"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "gpu",
+    "ripper",
+    "cpu",
+    "hash",
+    "modes",
+    "straight",
+    "mask",
+    "combinator",
+    "hashcat",
+    "hashes",
+    "john",
+    "offline",
+    "crack",
+    "mode",
+    "rules",
+    "password"
+   ],
+   "slug": "tools-hashcat",
+   "triggers": [
+    "crack this hash with hashcat",
+    "hashcat mask attack",
+    "rule-based password cracking"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "hydra",
+    "online",
+    "alternatives",
+    "medusa",
+    "ncrack",
+    "patator",
+    "crowbar",
+    "modules",
+    "live",
+    "password",
+    "services",
+    "service",
+    "run",
+    "attacks",
+    "tools"
+   ],
+   "slug": "tools-hydra",
+   "triggers": [
+    "brute force this login with hydra",
+    "online password attack against ssh",
+    "hydra http form brute force"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "bridges",
+    "expose",
+    "cli",
+    "kali",
+    "generic",
+    "terminal",
+    "metasploitmcp",
+    "pentestmcp",
+    "bundle",
+    "servers",
+    "bridge",
+    "docker",
+    "mcp",
+    "agent",
+    "server",
+    "ai"
+   ],
+   "slug": "tools-mcp-bridges",
+   "triggers": [
+    "connect my agent to kali tools",
+    "mcp server for metasploit",
+    "wire security tools into the agent"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "metasploit",
+    "msfconsole",
+    "msfrpcd",
+    "hanging",
+    "toolchain",
+    "invocations",
+    "rpc",
+    "exploitation",
+    "phase",
+    "shot",
+    "daemon",
+    "drive",
+    "mode",
+    "one",
+    "tools"
+   ],
+   "slug": "tools-metasploit",
+   "triggers": [
+    "run metasploit against this service",
+    "msfconsole non-interactive exploit",
+    "metasploit module for this cve"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "nmap",
+    "masscan",
+    "scan",
+    "syn",
+    "connect",
+    "udp",
+    "nse",
+    "type",
+    "os",
+    "vuln",
+    "operate",
+    "scanning",
+    "version",
+    "port",
+    "hosts",
+    "selection"
+   ],
+   "slug": "tools-nmap",
+   "triggers": [
+    "nmap scan this network range",
+    "nse vulnerability scripts",
+    "service version detection with nmap"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "tag",
+    "bulk",
+    "limiting",
+    "proxying",
+    "nuclei",
+    "vulnerability",
+    "rate",
+    "json",
+    "operate",
+    "template",
+    "scanning",
+    "scale",
+    "targets",
+    "output",
+    "severity",
+    "selection"
+   ],
+   "slug": "tools-nuclei",
+   "triggers": [
+    "run nuclei against the scope",
+    "nuclei scan triage",
+    "nuclei templates for this cve"
+   ]
+  },
+  {
+   "domain": "tools",
+   "keywords": [
+    "sqlmap",
+    "tuning",
+    "tamper",
+    "scripts",
+    "evasion",
+    "db",
+    "confirm",
+    "burp",
+    "operate",
+    "sql",
+    "level",
+    "requests",
+    "risk",
+    "waf",
+    "selection",
+    "target"
+   ],
+   "slug": "tools-sqlmap",
+   "triggers": [
+    "run sqlmap on this endpoint",
+    "sqlmap tamper script for the waf",
+    "dump the database with sqlmap"
+   ]
+  },
+  {
+   "domain": "tradecraft",
+   "keywords": [
+    "orchestrate",
+    "initial",
+    "gates",
+    "kill",
+    "objective",
+    "phase",
+    "multi",
+    "stage",
+    "lateral",
+    "movement",
+    "chain",
+    "access",
+    "tradecraft",
+    "privilege",
+    "escalation",
+    "recon"
+   ],
+   "slug": "tradecraft-attack-chain",
+   "triggers": [
+    "run the full kill chain",
+    "orchestrate the engagement phases",
+    "phase-gate the red team operation"
+   ]
+  },
+  {
    "domain": "tradecraft",
    "keywords": [
     "mapping",
     "nodes",
     "identities",
     "edges",
-    "technique",
     "next",
     "graph",
     "assets",
+    "technique",
     "gets",
     "path",
     "trust",
     "one",
-    "tradecraft",
     "model",
+    "tradecraft",
     "target",
     "find"
    ],
@@ -3070,12 +3762,12 @@
     "isolation",
     "scenarios",
     "multiple",
-    "technique",
     "concrete",
     "ordered",
-    "scope",
+    "technique",
     "one",
     "tradecraft",
+    "scope",
     "turn",
     "attack"
    ],
@@ -3094,21 +3786,21 @@
     "understand",
     "major",
     "differ",
-    "disclosure",
     "reputation",
     "play",
     "correctly",
+    "disclosure",
     "bounty",
     "rules",
-    "scope",
     "tradecraft",
     "bug",
+    "scope",
     "triage"
    ],
    "slug": "tradecraft-bugbounty-platforms",
    "triggers": [
     "test for major bug-bounty platforms differ",
-    "disclosure",
+    "reputation",
     "bugbounty platforms understand"
    ]
   },
@@ -3117,16 +3809,16 @@
    "keywords": [
     "complex",
     "discipline",
-    "multi",
-    "targets",
     "several",
     "needs",
     "structure",
-    "stage",
     "multiple",
+    "multi",
+    "stage",
+    "targets",
     "source",
-    "hosts",
     "path",
+    "hosts",
     "engagements",
     "bugs",
     "chain",
@@ -3136,7 +3828,7 @@
    "triggers": [
     "test for discipline for complex",
     "multi-stage targets",
-    "complex discipline multi"
+    "complex discipline several"
    ]
   },
   {
@@ -3145,9 +3837,9 @@
     "avoidance",
     "avoid",
     "burning",
-    "closed",
     "duplicates",
     "duplicate",
+    "closed",
     "time",
     "bugs",
     "tradecraft"
@@ -3194,8 +3886,8 @@
     "everything",
     "authorization",
     "testing",
-    "scope",
-    "tradecraft"
+    "tradecraft",
+    "scope"
    ],
    "slug": "tradecraft-scope-roe",
    "triggers": [
@@ -3207,7 +3899,6 @@
   {
    "domain": "tradecraft",
    "keywords": [
-    "selection",
     "choose",
     "spend",
     "effort",
@@ -3215,6 +3906,7 @@
     "return",
     "asset",
     "program",
+    "selection",
     "surface",
     "tradecraft",
     "target"
@@ -3223,26 +3915,26 @@
    "triggers": [
     "test for where to spend effort",
     "which asset",
-    "selection choose spend"
+    "choose spend effort"
    ]
   },
   {
    "domain": "web",
    "keywords": [
-    "email",
     "change",
     "linking",
     "seize",
     "another",
     "account",
     "reset",
+    "email",
     "takeover",
     "systematic",
     "hunting",
     "flaws",
     "user",
-    "password",
     "session",
+    "password",
     "web"
    ],
    "slug": "web-account-takeover",
@@ -3257,17 +3949,17 @@
    "keywords": [
     "exploitation",
     "arsenal",
-    "enumeration",
     "engagements",
+    "enumeration",
     "tool",
     "authorized",
     "web"
    ],
    "slug": "web-arsenal",
    "triggers": [
-    "test for web enumeration + exploitation tool arsenal",
-    "check web enumeration + exploitation tool arsenal",
-    "exploitation arsenal enumeration"
+    "web attack tool selection",
+    "web payload and scanner choices",
+    "client-side exploitation toolkit"
    ]
   },
   {
@@ -3295,9 +3987,9 @@
     "hand",
     "authenticated",
     "mfa",
-    "post",
     "handling",
     "otp",
+    "post",
     "session",
     "surface",
     "auth",
@@ -3316,10 +4008,10 @@
    "domain": "web",
    "keywords": [
     "abusing",
-    "intended",
     "unintended",
     "ways",
     "business",
+    "intended",
     "functionality",
     "flaws",
     "logic",
@@ -3340,12 +4032,12 @@
     "cache",
     "deception",
     "trick",
-    "cdn",
     "authenticated",
+    "cdn",
     "victim",
     "response",
-    "public",
     "url",
+    "public",
     "read",
     "web"
    ],
@@ -3385,10 +4077,10 @@
    "domain": "web",
    "keywords": [
     "clickjacking",
-    "ui",
     "redress",
     "clicks",
     "hit",
+    "ui",
     "frame",
     "actions",
     "victim",
@@ -3410,11 +4102,11 @@
     "outside",
     "signing",
     "obfuscated",
-    "fuzz",
     "protected",
-    "browser",
+    "fuzz",
     "client",
     "side",
+    "browser",
     "request",
     "js",
     "bypass",
@@ -3434,9 +4126,9 @@
    "keywords": [
     "reaches",
     "arbitrary",
-    "os",
     "command",
     "input",
+    "os",
     "user",
     "shell",
     "execution",
@@ -3461,8 +4153,8 @@
     "theft",
     "read",
     "data",
-    "cross",
     "exploit",
+    "cross",
     "web"
    ],
    "slug": "web-cors",
@@ -3503,12 +4195,12 @@
     "perform",
     "changing",
     "forgery",
-    "browser",
     "state",
     "actions",
     "site",
     "force",
     "victim",
+    "browser",
     "request",
     "cross",
     "web"
@@ -3552,16 +4244,16 @@
     "confusion",
     "substitution",
     "publish",
-    "package",
     "matching",
     "name",
     "systems",
     "yours",
     "malicious",
+    "package",
     "pull",
+    "build",
     "public",
     "internal",
-    "build",
     "web"
    ],
    "slug": "web-dependency-confusion",
@@ -3614,12 +4306,39 @@
   {
    "domain": "web",
    "keywords": [
+    "extension",
+    "extensions",
+    "chrome",
+    "edge",
+    "mv2",
+    "mv3",
+    "firefox",
+    "unpack",
+    "crx",
+    "xpi",
+    "permission",
+    "trace",
+    "engineer",
+    "browser",
+    "assess",
+    "surface"
+   ],
+   "slug": "web-extension-reverse",
+   "triggers": [
+    "analyze this browser extension",
+    "chrome extension security review",
+    "malicious extension manifest triage"
+   ]
+  },
+  {
+   "domain": "web",
+   "keywords": [
     "upload",
     "stored",
     "file",
     "xss",
-    "ssrf",
     "rce",
+    "ssrf",
     "turn",
     "web"
    ],
@@ -3657,20 +4376,20 @@
   {
    "domain": "web",
    "keywords": [
-    "parameter",
     "validator",
     "disagree",
     "value",
-    "wins",
     "bypassing",
-    "http",
     "pollution",
     "send",
     "backend",
+    "wins",
     "filters",
     "business",
-    "waf",
+    "http",
+    "parameter",
     "control",
+    "waf",
     "logic",
     "access"
    ],
@@ -3678,7 +4397,7 @@
    "triggers": [
     "test for same parameter more than once",
     "bypassing filters",
-    "parameter validator disagree"
+    "validator disagree value"
    ]
   },
   {
@@ -3689,9 +4408,9 @@
     "direct",
     "broken",
     "objects",
-    "object",
     "control",
     "insecure",
+    "object",
     "access",
     "web"
    ],
@@ -3707,24 +4426,24 @@
    "keywords": [
     "jdbc",
     "controllable",
-    "database",
     "connection",
     "string",
     "driver",
     "itself",
+    "database",
     "url",
     "attacker",
     "rce",
-    "via",
-    "attacks",
     "turn",
+    "attacks",
+    "via",
     "web"
    ],
    "slug": "web-jdbc-attacks",
    "triggers": [
     "test for attacker-controllable database connection string / jdbc url",
     "check attacker-controllable database connection string / jdbc url",
-    "jdbc controllable database"
+    "jdbc controllable connection"
    ]
   },
   {
@@ -3734,9 +4453,9 @@
     "traversal",
     "inclusion",
     "sometimes",
-    "files",
     "path",
     "local",
+    "files",
     "file",
     "read",
     "rce",
@@ -3825,8 +4544,8 @@
     "oauth",
     "phishing",
     "users",
-    "chain",
     "token",
+    "chain",
     "theft",
     "attacker",
     "ssrf",
@@ -3855,8 +4574,8 @@
     "insecure",
     "xss",
     "data",
-    "cross",
     "exploit",
+    "cross",
     "web"
    ],
    "slug": "web-postmessage",
@@ -3878,8 +4597,8 @@
     "xss",
     "auth",
     "rce",
-    "via",
     "bypass",
+    "via",
     "web"
    ],
    "slug": "web-prototype-pollution",
@@ -3895,12 +4614,12 @@
     "sandbox",
     "eval",
     "jail",
-    "keyword",
     "blocklists",
     "exec",
     "escape",
     "reach",
     "defeat",
+    "keyword",
     "restricted",
     "reaching",
     "objects",
@@ -3925,8 +4644,8 @@
     "concurrent",
     "fire",
     "limits",
-    "requests",
     "single",
+    "requests",
     "break",
     "exploit",
     "web"
@@ -3941,12 +4660,12 @@
   {
    "domain": "web",
    "keywords": [
-    "rate",
     "limit",
     "enable",
     "brute",
     "guessing",
     "coupon",
+    "rate",
     "limits",
     "anti",
     "force",
@@ -3961,7 +4680,7 @@
    "triggers": [
     "test for rate limits",
     "otp guessing",
-    "rate limit enable"
+    "limit enable brute"
    ]
   },
   {
@@ -3971,8 +4690,8 @@
     "cl",
     "te",
     "desync",
-    "http",
     "front",
+    "http",
     "back",
     "poison",
     "requests",
@@ -4059,10 +4778,10 @@
    "domain": "web",
    "keywords": [
     "gopher",
-    "redis",
     "speaking",
-    "unauthenticated",
     "cron",
+    "redis",
+    "unauthenticated",
     "job",
     "write",
     "side",
@@ -4078,8 +4797,8 @@
    "slug": "web-ssrf-gopher-redis-rce",
    "triggers": [
     "test for server-side request",
-    "unauthenticated redis",
-    "gopher redis speaking"
+    "cron job",
+    "gopher speaking cron"
    ]
   },
   {
@@ -4128,9 +4847,9 @@
     "checklist",
     "nothing",
     "skipped",
-    "testing",
     "ordered",
     "gets",
+    "testing",
     "web"
    ],
    "slug": "web-testing-checklist",
@@ -4154,9 +4873,9 @@
     "self",
     "built",
     "rp",
-    "requests",
     "hardware",
     "key",
+    "requests",
     "web"
    ],
    "slug": "web-webauthn-software-authenticator",
@@ -4244,13 +4963,13 @@
     "enterprise",
     "peap",
     "mschapv2",
-    "challenge",
     "captive",
     "portal",
     "wireless",
     "credentials",
     "wpa2",
-    "capture"
+    "capture",
+    "challenge"
    ],
    "slug": "wireless-evil-twin",
    "triggers": [
@@ -4270,10 +4989,10 @@
     "wpa2",
     "wi",
     "fi",
-    "offline",
-    "mode",
     "capture",
+    "offline",
     "cracking",
+    "mode",
     "discovery",
     "network",
     "attacks",

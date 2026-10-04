@@ -1,5 +1,5 @@
 {
- "count": 179,
+ "count": 206,
  "generated_by": "tools/catalog.py",
  "skills": [
   {
@@ -227,6 +227,24 @@
    "path": "skills/ai-ml/ai-rag-poisoning"
   },
   {
+   "name": "ai-sensitive-data-disclosure",
+   "domain": "ai-ml",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "Make an LLM app disclose sensitive data it should never reveal: training-data memorization, secrets/PII in RAG context, cross-tenant leakage, conversation logs.",
+   "tags": [
+    "LLM02:2025-Sensitive-Information-Disclosure",
+    "LLM06:2025-Excessive-Agency",
+    "CWE-200",
+    "CWE-359"
+   ],
+   "path": "skills/ai-ml/ai-sensitive-data-disclosure"
+  },
+  {
    "name": "ai-supply-chain",
    "domain": "ai-ml",
    "type": "technique",
@@ -244,6 +262,23 @@
     "CWE-1357"
    ],
    "path": "skills/ai-ml/ai-supply-chain"
+  },
+  {
+   "name": "ai-system-prompt-leakage",
+   "domain": "ai-ml",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Extract an LLM app's system prompt / hidden developer instructions \u2014 the attack map that reveals guardrails, tool definitions, internal endpoints, and\u2026",
+   "tags": [
+    "LLM07:2025-System-Prompt-Leakage",
+    "LLM01:2025-Prompt-Injection",
+    "CWE-200"
+   ],
+   "path": "skills/ai-ml/ai-system-prompt-leakage"
   },
   {
    "name": "api-auth-attacks",
@@ -389,6 +424,21 @@
     "CWE-1059"
    ],
    "path": "skills/api/api-versioning"
+  },
+  {
+   "name": "automation-browser",
+   "domain": "automation",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "info",
+   "summary": "Drive a real browser against an in-scope web app with Playwright / agent-browser: automated login, form and payload submission through the UI, scrapin\u2026",
+   "tags": [
+    "T1059.007"
+   ],
+   "path": "skills/automation/automation-browser"
   },
   {
    "name": "automation-nuclei-templates",
@@ -900,6 +950,98 @@
    "path": "skills/cryptography/crypto-rsa-attacks"
   },
   {
+   "name": "ctf-crypto",
+   "domain": "ctf",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "CTF crypto challenge playbook \u2014 read the provided encryption script like a spec, attack RSA parameter weaknesses, XOR/multi-time-pad oracles, and home\u2026",
+   "tags": [
+    "CWE-327",
+    "CWE-780"
+   ],
+   "path": "skills/ctf/ctf-crypto"
+  },
+  {
+   "name": "ctf-forensics",
+   "domain": "ctf",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "defense"
+   ],
+   "severity": "medium",
+   "summary": "CTF forensics playbook \u2014 quick wins on pcaps, memory dumps, disk images, and stego files: binwalk carving, Wireshark object export, Volatility's five \u2026",
+   "tags": [],
+   "path": "skills/ctf/ctf-forensics"
+  },
+  {
+   "name": "ctf-methodology",
+   "domain": "ctf",
+   "type": "methodology",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "info",
+   "summary": "CTF challenge triage and time management \u2014 identify the category and intended technique from the handout artifacts in the first 10 minutes, budget points vs.",
+   "tags": [],
+   "path": "skills/ctf/ctf-methodology"
+  },
+  {
+   "name": "ctf-pwn",
+   "domain": "ctf",
+   "type": "technique",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "critical",
+   "summary": "CTF pwn challenge playbook \u2014 fast pwntools workflow against \"nc host port\" services: reproduce the remote environment locally with the provided libc/l\u2026",
+   "tags": [
+    "CWE-121",
+    "CWE-134",
+    "CWE-416"
+   ],
+   "path": "skills/ctf/ctf-pwn"
+  },
+  {
+   "name": "ctf-rev",
+   "domain": "ctf",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "CTF reversing speed-run \u2014 crack flag-check binaries fast: locate the check via strings/xrefs, bypass anti-debug and obfuscation, and solve constraint-\u2026",
+   "tags": [
+    "CWE-798"
+   ],
+   "path": "skills/ctf/ctf-rev"
+  },
+  {
+   "name": "ctf-web",
+   "domain": "ctf",
+   "type": "methodology",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "CTF web challenge playbook \u2014 the recurring shapes jeopardy web challenges take: source disclosure (.git, backups, flask debug), SSTI/SSRF in their CTF\u2026",
+   "tags": [
+    "A03:2021-Injection",
+    "A01:2021-Broken-Access-Control",
+    "CWE-94",
+    "CWE-918",
+    "CWE-697"
+   ],
+   "path": "skills/ctf/ctf-web"
+  },
+  {
    "name": "defense-ad-defense",
    "domain": "defense",
    "type": "technique",
@@ -976,6 +1118,22 @@
     "T1053"
    ],
    "path": "skills/defense/defense-dfir-triage"
+  },
+  {
+   "name": "defense-forensics",
+   "domain": "defense",
+   "type": "methodology",
+   "modes": [
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Deep forensic artifact analysis after triage \u2014 memory dumps (Volatility 3), disk and super-timelines (Plaso), PCAP (tshark), and Windows host artifact\u2026",
+   "tags": [
+    "T1059",
+    "T1543",
+    "T1078"
+   ],
+   "path": "skills/defense/defense-forensics"
   },
   {
    "name": "defense-hardening-baseline",
@@ -1082,6 +1240,18 @@
     "T1071"
    ],
    "path": "skills/defense/defense-threat-hunting"
+  },
+  {
+   "name": "defense-threat-intel",
+   "domain": "defense",
+   "type": "methodology",
+   "modes": [
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Enrich IOCs, campaigns, impersonation, and scam narratives from public sources \u2014 bounded public X/Twitter collection via Xquik plus independent corrob\u2026",
+   "tags": [],
+   "path": "skills/defense/defense-threat-intel"
   },
   {
    "name": "defense-threat-modeling",
@@ -1336,6 +1506,42 @@
     "CWE-521"
    ],
    "path": "skills/network/network-credential-cracking"
+  },
+  {
+   "name": "network-database-security",
+   "domain": "network",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "high",
+   "summary": "Assess reachable database services \u2014 PostgreSQL/MySQL/MSSQL/MongoDB/Redis \u2014 for unauthenticated access, weak/default accounts, over-broad grants, and \u2026",
+   "tags": [
+    "T1190",
+    "T1078",
+    "CWE-306",
+    "CWE-284"
+   ],
+   "path": "skills/network/network-database-security"
+  },
+  {
+   "name": "network-email-security",
+   "domain": "network",
+   "type": "checklist",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "high",
+   "summary": "Email security review: dissect phishing samples (headers, URLs, attachments), assess a domain's spoofability via SPF/DKIM/DMARC alignment, recognize B\u2026",
+   "tags": [
+    "T1566",
+    "T1566.002",
+    "T1078",
+    "CWE-290"
+   ],
+   "path": "skills/network/network-email-security"
   },
   {
    "name": "network-ntlm-relay",
@@ -1694,6 +1900,20 @@
    "summary": "Assign a defensible severity to a finding \u2014 build the CVSS 3.1 vector from demonstrated impact and reconcile it with the program's own scale.",
    "tags": [],
    "path": "skills/reporting/reporting-cvss-scoring"
+  },
+  {
+   "name": "reporting-evidence-review",
+   "domain": "reporting",
+   "type": "checklist",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Pre-handoff audit of an engagement package \u2014 scope confirmed, every finding traceable to reproducible evidence, activity-log leads closed with rationa\u2026",
+   "tags": [],
+   "path": "skills/reporting/reporting-evidence-review"
   },
   {
    "name": "reporting-pentest-report",
@@ -2060,6 +2280,187 @@
     "T1566.004"
    ],
    "path": "skills/social-eng/social-eng-vishing-pretext"
+  },
+  {
+   "name": "tools-arsenal",
+   "domain": "tools",
+   "type": "arsenal",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Cross-domain pentest tool selection \u2014 which tool for which job, and which SploitAgent skill to load for it.",
+   "tags": [],
+   "path": "skills/tools/tools-arsenal"
+  },
+  {
+   "name": "tools-burp-suite",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Drive Burp Suite for web/API testing \u2014 proxy history triage, Repeater, Intruder enumeration, Collaborator OOB, active scanning \u2014 manually or agent-dri\u2026",
+   "tags": [],
+   "path": "skills/tools/tools-burp-suite"
+  },
+  {
+   "name": "tools-curl",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "info",
+   "summary": "Use curl as the ground-truth HTTP client during recon and verification \u2014 browser-impersonation headers for CDN/WAF 403s, --globoff for bracket params,\u2026",
+   "tags": [],
+   "path": "skills/tools/tools-curl"
+  },
+  {
+   "name": "tools-ffuf",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "info",
+   "summary": "Fuzz web targets with ffuf for content, parameter, and vhost discovery \u2014 FUZZ keyword placement in paths, query strings, POST bodies and Host headers,\u2026",
+   "tags": [
+    "T1595.003"
+   ],
+   "path": "skills/tools/tools-ffuf"
+  },
+  {
+   "name": "tools-hashcat",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "medium",
+   "summary": "Crack password hashes offline with hashcat (GPU) and John the Ripper (CPU) \u2014 hash-mode selection, attack modes (straight/mask/combinator/rules), the -\u2026",
+   "tags": [
+    "T1110.002"
+   ],
+   "path": "skills/tools/tools-hashcat"
+  },
+  {
+   "name": "tools-hydra",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "medium",
+   "summary": "Run online password attacks against live services with hydra and its alternatives (medusa, ncrack, patator, crowbar) \u2014 service modules, http-post-form\u2026",
+   "tags": [
+    "T1110.001"
+   ],
+   "path": "skills/tools/tools-hydra"
+  },
+  {
+   "name": "tools-mcp-bridges",
+   "domain": "tools",
+   "type": "arsenal",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "info",
+   "summary": "Expose CLI security tools to an AI agent through MCP servers \u2014 mcp-kali-server generic terminal bridge, MetasploitMCP, pentestMCP Docker bundle, mcp-s\u2026",
+   "tags": [],
+   "path": "skills/tools/tools-mcp-bridges"
+  },
+  {
+   "name": "tools-metasploit",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "Drive Metasploit (msfconsole/msfrpcd) for the exploitation phase without hanging the toolchain \u2014 one-shot -x invocations, RPC daemon mode for persiste\u2026",
+   "tags": [
+    "T1190",
+    "T1059"
+   ],
+   "path": "skills/tools/tools-metasploit"
+  },
+  {
+   "name": "tools-nmap",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Operate nmap and masscan for port/service scanning of in-scope hosts \u2014 scan-type selection (SYN/connect/UDP), version and OS detection, NSE vuln scrip\u2026",
+   "tags": [
+    "T1595.001",
+    "T1046"
+   ],
+   "path": "skills/tools/tools-nmap"
+  },
+  {
+   "name": "tools-nuclei",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "info",
+   "summary": "Operate nuclei for template-based vulnerability scanning at scale \u2014 severity/tag selection, bulk targets, rate limiting, proxying, JSON output, and sa\u2026",
+   "tags": [
+    "T1595.002"
+   ],
+   "path": "skills/tools/tools-nuclei"
+  },
+  {
+   "name": "tools-sqlmap",
+   "domain": "tools",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty"
+   ],
+   "severity": "high",
+   "summary": "Operate sqlmap to confirm and exploit SQL injection \u2014 target selection from Burp requests, level/risk tuning, tamper scripts for WAF evasion, DB enume\u2026",
+   "tags": [
+    "T1190",
+    "CWE-89"
+   ],
+   "path": "skills/tools/tools-sqlmap"
+  },
+  {
+   "name": "tradecraft-attack-chain",
+   "domain": "tradecraft",
+   "type": "methodology",
+   "modes": [
+    "pentest"
+   ],
+   "severity": "high",
+   "summary": "Orchestrate a full multi-stage kill chain \u2014 recon \u2192 initial access \u2192 privilege escalation \u2192 lateral movement \u2192 objective \u2014 with phase gates, per-phase\u2026",
+   "tags": [
+    "T1190",
+    "T1078",
+    "T1021",
+    "T1558"
+   ],
+   "path": "skills/tradecraft/tradecraft-attack-chain"
   },
   {
    "name": "tradecraft-attack-path-mapping",
@@ -2438,6 +2839,23 @@
     "CWE-79"
    ],
    "path": "skills/web/web-dom-clobbering"
+  },
+  {
+   "name": "web-extension-reverse",
+   "domain": "web",
+   "type": "technique",
+   "modes": [
+    "pentest",
+    "bugbounty",
+    "defense"
+   ],
+   "severity": "medium",
+   "summary": "Reverse engineer browser extensions (Chrome/Edge MV2/MV3, Firefox) for an authorized review: unpack .crx/.xpi, assess the permission surface, trace ba\u2026",
+   "tags": [
+    "T1176",
+    "CWE-798"
+   ],
+   "path": "skills/web/web-extension-reverse"
   },
   {
    "name": "web-file-upload",

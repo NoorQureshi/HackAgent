@@ -41,6 +41,8 @@
         "exploit-dev",
         "reverse-engineering",
         "hardware",
+        "ctf",
+        "tools",
         "cryptography",
         "privesc",
         "defense",

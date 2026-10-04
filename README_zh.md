@@ -158,32 +158,34 @@ $ sploit watch                       # runs in the background · stop: sploit wa
 
 **161 个技能,横跨 20 个领域。** [🔎 搜索全部](https://noorqureshi.github.io/SploitAgent/catalog.html) · 或浏览 [CATALOG.md](CATALOG.md)。
 
-`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `hardware` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
+`web` · `api` · `cloud` · `ad` · `network` · `wireless` · `recon` · `mobile` · `ai-ml` · `code-review` · `reverse-engineering` · `ctf` · `hardware` · `cryptography` · `exploit-dev` · `privesc` · `payloads` · `tools` · `defense` · `reporting` · `automation` · `tradecraft` · `social-eng`
 
 <details>
 <summary><b>查看每个领域的覆盖范围</b></summary>
 
 | 领域 | # | 覆盖内容 |
 |---|:--:|---|
-| [`web`](skills/web) | 44 | XSS、SQLi、SSRF、SSTI、IDOR、XXE、CSRF、CORS、LFI、命令注入、反序列化、OAuth、SAML、请求走私、原型链污染、缓存投毒、缓存欺骗、Host 头攻击、点击劫持、CSP 绕过、DOM clobbering、HTTP 参数污染、postMessage、WebSocket、条件竞争、业务逻辑、文件上传、JWT、2FA/MFA 绕过、账户接管、依赖混淆、客户端签名逆向、认证会话处理、Python 沙箱逃逸、Cypher 注入、JDBC/连接串 RCE |
-| [`ai-ml`](skills/ai-ml) | 9 | 提示注入、越狱、RAG 投毒、模型窃取、agent/工具与 MCP 滥用、不安全的输出处理、供应链、无限制资源消耗 |
+| [`web`](skills/web) | 45 | XSS、SQLi、SSRF、SSTI、IDOR、XXE、CSRF、CORS、LFI、命令注入、反序列化、OAuth、SAML、请求走私、原型链污染、缓存投毒、缓存欺骗、Host 头攻击、点击劫持、CSP 绕过、DOM clobbering、HTTP 参数污染、postMessage、WebSocket、条件竞争、业务逻辑、文件上传、JWT、2FA/MFA 绕过、账户接管、依赖混淆、客户端签名逆向、认证会话处理、Python 沙箱逃逸、Cypher 注入、JDBC/连接串 RCE 、浏览器扩展逆向|
+| [`ai-ml`](skills/ai-ml) | 11 | 提示注入、越狱、RAG 投毒、模型窃取、agent/工具与 MCP 滥用、不安全的输出处理、供应链、无限制资源消耗 、系统提示词泄露、敏感数据泄露|
 | [`cloud`](skills/cloud) | 9 | IMDS 凭据窃取、对象存储暴露、Kubernetes、容器逃逸、暴露的 Docker/daemon API 滥用、IAM 提权、镜像仓库、GCP、Azure / Entra ID |
 | [`api`](skills/api) | 9 | BOLA/BFLA、GraphQL、gRPC、批量赋值、认证攻击、模糊测试、版本漂移、NoSQL 注入 |
 | [`recon`](skills/recon) | 9 | 子域名枚举、DNS 分析、内容与 JS 发现、OSINT、GitHub 代码泄露发现、云资产发现、服务枚举、技术栈指纹识别 |
-| [`defense`](skills/defense) | 13 | 检测工程(流水线 + Sigma/ATT&CK)、威胁狩猎、事件响应、DFIR 分诊、网络检测(NSM)、云检测与响应、Active Directory 防御、恶意软件分诊、加固基线、威胁建模、日志分析、紫队演练 |
+| [`defense`](skills/defense) | 15 | 检测工程(流水线 + Sigma/ATT&CK)、威胁狩猎、事件响应、DFIR 分诊、网络检测(NSM)、云检测与响应、Active Directory 防御、恶意软件分诊、加固基线、威胁建模、日志分析、紫队演练 、威胁情报、深度取证分析|
 | [`code-review`](skills/code-review) | 15 | 方法论、危险汇聚点(sink)目录、密钥检测、CI/CD 安全、IaC(Terraform/Ansible/K8s)、智能合约(Solidity)、Python、Node.js、PHP、Java/Spring、Go、Ruby/Rails、.NET/C#、C/C++、Rust |
 | [`mobile`](skills/mobile) | 5 | Android 与 iOS 评估、证书固定绕过、deep-link 滥用、WebView 滥用 |
 | [`ad`](skills/ad) | 5 | Kerberoasting / AS-REP、ADCS(ESC1–8)、ACL/DACL 滥用、Kerberos 委派滥用(RBCD / S4U / 胁迫→中继)、横向移动武器库 |
-| [`network`](skills/network) | 6 | 服务攻击、横向与隧道、NTLM 胁迫与中继、密码喷洒与撞库、边界设备与 VPN 攻防、哈希与凭据破解 |
+| [`network`](skills/network) | 8 | 服务攻击、横向与隧道、NTLM 胁迫与中继、密码喷洒与撞库、边界设备与 VPN 攻防、哈希与凭据破解 、邮件安全(钓鱼分析、SPF/DKIM/DMARC)、数据库安全评估|
 | [`wireless`](skills/wireless) | 2 | WPA2-PSK 握手包/PMKID 捕获与破解、evil-twin / 恶意 AP 企业级(PEAP-MSCHAPv2)凭据收割 |
 | [`privesc`](skills/privesc) | 4 | 立足点后的枚举与凭据搜寻、Linux 武器库、GTFOBins(sudo/SUID/capabilities)、Windows 令牌冒用 |
 | [`exploit-dev`](skills/exploit-dev) | 3 | 漏洞链组合与影响放大、PoC 开发、内存破坏利用(ROP / 格式化字符串 / ret2libc) |
 | [`reverse-engineering`](skills/reverse-engineering) | 3 | 原生二进制分诊、反混淆(加壳/JS/WASM/JSVMP)、固件提取与分析 |
+| [`ctf`](skills/ctf) | 6 | CTF 方法论(10 分钟快速分诊)、web / pwn / crypto / rev / forensics 题型攻略 |
+| [`tools`](skills/tools) | 11 | Metasploit、Burp Suite、nuclei、sqlmap、nmap、hashcat、hydra、ffuf、curl、MCP 工具桥接、工具选型 |
 | [`cryptography`](skills/cryptography) | 2 | 弱/教科书式 RSA(JWT RS256、自研签名)、对称预言机(CBC padding、ECB、哈希长度扩展) |
 | [`payloads`](skills/payloads) | 4 | WAF/过滤器绕过、XSS polyglot、反弹 shell 与 TTY 升级、文件传输 |
-| [`reporting`](skills/reporting) | 5 | 漏洞分诊与验证、漏洞赏金报告撰写、渗透测试报告、CVSS/严重性评分、分诊沟通 |
-| [`automation`](skills/automation) | 2 | 侦察流水线、自定义 nuclei 模板 |
-| [`tradecraft`](skills/tradecraft) | 8 | 范围与交战规则、攻击场景规划、攻击路径映射、跨技能的转向/决策、目标选择、重复规避、漏洞赏金平台情报、复杂多阶段行动 |
+| [`reporting`](skills/reporting) | 6 | 漏洞分诊与验证、漏洞赏金报告撰写、渗透测试报告、CVSS/严重性评分、分诊沟通 、证据审查|
+| [`automation`](skills/automation) | 3 | 侦察流水线、自定义 nuclei 模板 、浏览器自动化|
+| [`tradecraft`](skills/tradecraft) | 9 | 范围与交战规则、攻击场景规划、攻击路径映射、跨技能的转向/决策、目标选择、重复规避、漏洞赏金平台情报、复杂多阶段行动 、杀伤链编排|
 | [`social-eng`](skills/social-eng) | 4 | 已授权的人因测试:方法论、钓鱼、语音钓鱼/伪装话术、物理评估(仅限渗透测试) |
 
 </details>

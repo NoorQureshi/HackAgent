@@ -29,6 +29,15 @@ attribution line:
 - `skills/hardware/hardware-security`
 - `skills/hardware/hardware-radio-sdr`
 - `skills/hardware/hardware-ot-ics`
+- `skills/web/web-extension-reverse`
+- `skills/automation/automation-browser`
+- `skills/network/network-email-security`
+- `skills/network/network-database-security`
+- `skills/defense/defense-threat-intel`
+- `skills/defense/defense-forensics`
+- `skills/tradecraft/tradecraft-attack-chain`
+- `skills/reporting/reporting-evidence-review`
+- `skills/tools/` (all tool-guide skills)
 
 reverse-skill's GPL/AGPL-licensed components (CTF-Sandbox-Orchestrator, Pentest
 Swarm AI integrations) are **not** included in SploitAgent.
